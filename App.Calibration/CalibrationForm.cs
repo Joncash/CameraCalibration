@@ -15,5 +15,13 @@ namespace App.Calibration
         {
             InitializeComponent();
         }
+
+        private void flowLayoutPanel_Resize(object sender, EventArgs e)
+        {
+            var flowPanel = sender as FlowLayoutPanel;
+            flowPanel.Controls.OfType<Panel>().ToList().ForEach(x => {
+                x.Width = flowPanel.Width - 20;
+            });
+        }
     }
 }
