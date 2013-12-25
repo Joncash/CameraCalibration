@@ -20,7 +20,7 @@ namespace App.Calibration
         {
             var flowPanel = sender as FlowLayoutPanel;
             flowPanel.Controls.OfType<Panel>().ToList().ForEach(x => {
-                x.Width = flowPanel.Width - 20;
+                x.Width = flowPanel.Width - 25;
             });
         }
     }

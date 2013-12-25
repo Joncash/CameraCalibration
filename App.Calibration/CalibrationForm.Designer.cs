@@ -60,7 +60,7 @@
             this.QualityIssuesExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
             this.CalibrationPlateExtractionParametersExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
             this.ResultTabPage = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.ResultFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.expandCollapsePanel1 = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
             this.CameraParameterExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
             this.CameraPoseExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
@@ -79,7 +79,7 @@
             this.CalibrationFlowLayoutPanel.SuspendLayout();
             this.ImageSourceExpandCollapsePanel.SuspendLayout();
             this.ResultTabPage.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.ResultFlowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // CalibrationTab
@@ -120,6 +120,7 @@
             this.SettingsFlowLayoutPanel.Name = "SettingsFlowLayoutPanel";
             this.SettingsFlowLayoutPanel.Size = new System.Drawing.Size(1003, 574);
             this.SettingsFlowLayoutPanel.TabIndex = 4;
+            this.SettingsFlowLayoutPanel.WrapContents = false;
             this.SettingsFlowLayoutPanel.Resize += new System.EventHandler(this.flowLayoutPanel_Resize);
             // 
             // CalibrationTaskExpandPanel
@@ -369,18 +370,21 @@
             // 
             // CalibrationFlowLayoutPanel
             // 
+            this.CalibrationFlowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CalibrationFlowLayoutPanel.AutoScroll = true;
             this.CalibrationFlowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
             this.CalibrationFlowLayoutPanel.Controls.Add(this.ImageSourceExpandCollapsePanel);
             this.CalibrationFlowLayoutPanel.Controls.Add(this.CalibrationExpandCollapsePanel);
             this.CalibrationFlowLayoutPanel.Controls.Add(this.QualityIssuesExpandCollapsePanel);
             this.CalibrationFlowLayoutPanel.Controls.Add(this.CalibrationPlateExtractionParametersExpandCollapsePanel);
-            this.CalibrationFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CalibrationFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.CalibrationFlowLayoutPanel.Location = new System.Drawing.Point(3, 3);
             this.CalibrationFlowLayoutPanel.Name = "CalibrationFlowLayoutPanel";
             this.CalibrationFlowLayoutPanel.Size = new System.Drawing.Size(1003, 574);
             this.CalibrationFlowLayoutPanel.TabIndex = 5;
+            this.CalibrationFlowLayoutPanel.WrapContents = false;
             this.CalibrationFlowLayoutPanel.Resize += new System.EventHandler(this.flowLayoutPanel_Resize);
             // 
             // ImageSourceExpandCollapsePanel
@@ -430,7 +434,7 @@
             this.CalibrationExpandCollapsePanel.IsExpanded = true;
             this.CalibrationExpandCollapsePanel.Location = new System.Drawing.Point(3, 101);
             this.CalibrationExpandCollapsePanel.Name = "CalibrationExpandCollapsePanel";
-            this.CalibrationExpandCollapsePanel.Size = new System.Drawing.Size(987, 98);
+            this.CalibrationExpandCollapsePanel.Size = new System.Drawing.Size(987, 350);
             this.CalibrationExpandCollapsePanel.TabIndex = 2;
             this.CalibrationExpandCollapsePanel.Text = "Calibration";
             this.CalibrationExpandCollapsePanel.UseAnimation = false;
@@ -442,7 +446,7 @@
             this.QualityIssuesExpandCollapsePanel.ButtonStyle = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonStyle.Circle;
             this.QualityIssuesExpandCollapsePanel.ExpandedHeight = 0;
             this.QualityIssuesExpandCollapsePanel.IsExpanded = true;
-            this.QualityIssuesExpandCollapsePanel.Location = new System.Drawing.Point(3, 205);
+            this.QualityIssuesExpandCollapsePanel.Location = new System.Drawing.Point(3, 457);
             this.QualityIssuesExpandCollapsePanel.Name = "QualityIssuesExpandCollapsePanel";
             this.QualityIssuesExpandCollapsePanel.Size = new System.Drawing.Size(987, 164);
             this.QualityIssuesExpandCollapsePanel.TabIndex = 3;
@@ -456,7 +460,7 @@
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.ButtonStyle = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonStyle.Circle;
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.ExpandedHeight = 0;
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.IsExpanded = true;
-            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Location = new System.Drawing.Point(3, 375);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Location = new System.Drawing.Point(3, 627);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Name = "CalibrationPlateExtractionParametersExpandCollapsePanel";
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Size = new System.Drawing.Size(987, 196);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.TabIndex = 4;
@@ -465,7 +469,7 @@
             // 
             // ResultTabPage
             // 
-            this.ResultTabPage.Controls.Add(this.flowLayoutPanel1);
+            this.ResultTabPage.Controls.Add(this.ResultFlowLayoutPanel);
             this.ResultTabPage.Location = new System.Drawing.Point(4, 22);
             this.ResultTabPage.Name = "ResultTabPage";
             this.ResultTabPage.Size = new System.Drawing.Size(1009, 580);
@@ -473,21 +477,22 @@
             this.ResultTabPage.Text = "結果";
             this.ResultTabPage.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
+            // ResultFlowLayoutPanel
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.expandCollapsePanel1);
-            this.flowLayoutPanel1.Controls.Add(this.CameraParameterExpandCollapsePanel);
-            this.flowLayoutPanel1.Controls.Add(this.CameraPoseExpandCollapsePanel);
-            this.flowLayoutPanel1.Controls.Add(this.DisplayResultsExpandCollapsePanel);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1009, 580);
-            this.flowLayoutPanel1.TabIndex = 6;
-            this.flowLayoutPanel1.Resize += new System.EventHandler(this.flowLayoutPanel_Resize);
+            this.ResultFlowLayoutPanel.AutoScroll = true;
+            this.ResultFlowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ResultFlowLayoutPanel.Controls.Add(this.expandCollapsePanel1);
+            this.ResultFlowLayoutPanel.Controls.Add(this.CameraParameterExpandCollapsePanel);
+            this.ResultFlowLayoutPanel.Controls.Add(this.CameraPoseExpandCollapsePanel);
+            this.ResultFlowLayoutPanel.Controls.Add(this.DisplayResultsExpandCollapsePanel);
+            this.ResultFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ResultFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.ResultFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.ResultFlowLayoutPanel.Name = "ResultFlowLayoutPanel";
+            this.ResultFlowLayoutPanel.Size = new System.Drawing.Size(1009, 580);
+            this.ResultFlowLayoutPanel.TabIndex = 6;
+            this.ResultFlowLayoutPanel.WrapContents = false;
+            this.ResultFlowLayoutPanel.Resize += new System.EventHandler(this.flowLayoutPanel_Resize);
             // 
             // expandCollapsePanel1
             // 
@@ -572,7 +577,7 @@
             this.ImageSourceExpandCollapsePanel.ResumeLayout(false);
             this.ImageSourceExpandCollapsePanel.PerformLayout();
             this.ResultTabPage.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.ResultFlowLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -611,7 +616,7 @@
         private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel QualityIssuesExpandCollapsePanel;
         private System.Windows.Forms.RadioButton ImageSource_ImageAcquisitionAssistantRadioButton;
         private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel CalibrationPlateExtractionParametersExpandCollapsePanel;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel ResultFlowLayoutPanel;
         private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel expandCollapsePanel1;
         private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel CameraParameterExpandCollapsePanel;
         private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel CameraPoseExpandCollapsePanel;
