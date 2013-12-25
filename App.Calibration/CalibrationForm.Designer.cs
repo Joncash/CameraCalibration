@@ -380,6 +380,7 @@
             this.CalibrationFlowLayoutPanel.Name = "CalibrationFlowLayoutPanel";
             this.CalibrationFlowLayoutPanel.Size = new System.Drawing.Size(1003, 574);
             this.CalibrationFlowLayoutPanel.TabIndex = 5;
+            this.CalibrationFlowLayoutPanel.Resize += new System.EventHandler(this.flowLayoutPanel_Resize);
             // 
             // ImageSourceExpandCollapsePanel
             // 
@@ -485,6 +486,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1009, 580);
             this.flowLayoutPanel1.TabIndex = 6;
+            this.flowLayoutPanel1.Resize += new System.EventHandler(this.flowLayoutPanel_Resize);
             // 
             // expandCollapsePanel1
             // 
