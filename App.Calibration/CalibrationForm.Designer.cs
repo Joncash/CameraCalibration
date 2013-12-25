@@ -84,7 +84,8 @@
             // 
             // CalibrationTab
             // 
-            this.CalibrationTab.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.CalibrationTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CalibrationTab.Controls.Add(this.SettingsTabPage);
             this.CalibrationTab.Controls.Add(this.CalibrationTabPage);
@@ -550,6 +551,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1017, 606);
             this.Controls.Add(this.CalibrationTab);
+            this.MinimumSize = new System.Drawing.Size(700, 600);
             this.Name = "CalibrationForm";
             this.Text = "Camera Calibration";
             this.CalibrationTab.ResumeLayout(false);
