@@ -59,12 +59,51 @@
             this.CalibrationExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
             this.QualityIssuesExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
             this.CalibrationPlateExtractionParametersExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
+            this.GaussianFilterSizeTrackBar = new System.Windows.Forms.TrackBar();
+            this.MarkThreshodNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.GaussianFilterSizeNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.MinimumMarkDiametersNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.ResultTabPage = new System.Windows.Forms.TabPage();
             this.ResultFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.expandCollapsePanel1 = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
             this.CameraParameterExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
             this.CameraPoseExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
             this.DisplayResultsExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
+            this.MarkThreshodTrackBar = new System.Windows.Forms.TrackBar();
+            this.MinimumMarkDiametersTrackBar = new System.Windows.Forms.TrackBar();
+            this.GaussianFilterSizeResetButton = new System.Windows.Forms.Button();
+            this.MarkThreshodResetButton = new System.Windows.Forms.Button();
+            this.MinimumMarkDiametersResetButton = new System.Windows.Forms.Button();
+            this.MinimumThresholdResetButton = new System.Windows.Forms.Button();
+            this.ThresholdDecremetResetButton = new System.Windows.Forms.Button();
+            this.InitialThresholdResetButton = new System.Windows.Forms.Button();
+            this.MinimumThresholdTrackBar = new System.Windows.Forms.TrackBar();
+            this.ThresholdDecremetTrackBar = new System.Windows.Forms.TrackBar();
+            this.InitialThresholdTrackBar = new System.Windows.Forms.TrackBar();
+            this.ThresholdDecremetNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.InitialThresholdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.MinimumThresholdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.MaximumMarkDiametersResetButton = new System.Windows.Forms.Button();
+            this.MinimumContourLengthResetButton = new System.Windows.Forms.Button();
+            this.SmoothingAlphaButton = new System.Windows.Forms.Button();
+            this.MaximumMarkDiametersTrackBar = new System.Windows.Forms.TrackBar();
+            this.MinimumContourLengthTrackBar = new System.Windows.Forms.TrackBar();
+            this.SmoothingAlphaTrackBar = new System.Windows.Forms.TrackBar();
+            this.MinimumContourLengthNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.SmoothingAlphaNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.MaximumMarkDiametersNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.CalibrationTab.SuspendLayout();
             this.SettingsTabPage.SuspendLayout();
             this.SettingsFlowLayoutPanel.SuspendLayout();
@@ -78,8 +117,27 @@
             this.CalibrationTabPage.SuspendLayout();
             this.CalibrationFlowLayoutPanel.SuspendLayout();
             this.ImageSourceExpandCollapsePanel.SuspendLayout();
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GaussianFilterSizeTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MarkThreshodNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GaussianFilterSizeNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimumMarkDiametersNumericUpDown)).BeginInit();
             this.ResultTabPage.SuspendLayout();
             this.ResultFlowLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MarkThreshodTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimumMarkDiametersTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimumThresholdTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThresholdDecremetTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InitialThresholdTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThresholdDecremetNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InitialThresholdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimumThresholdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaximumMarkDiametersTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimumContourLengthTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SmoothingAlphaTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimumContourLengthNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SmoothingAlphaNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaximumMarkDiametersNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // CalibrationTab
@@ -458,14 +516,148 @@
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.ButtonSize = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonSize.Small;
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.ButtonStyle = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonStyle.Circle;
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MaximumMarkDiametersResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MinimumContourLengthResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.SmoothingAlphaButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MaximumMarkDiametersTrackBar);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MinimumContourLengthTrackBar);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.SmoothingAlphaTrackBar);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MinimumContourLengthNumericUpDown);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.SmoothingAlphaNumericUpDown);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MaximumMarkDiametersNumericUpDown);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label20);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label21);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label22);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label23);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MinimumThresholdResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.ThresholdDecremetResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.InitialThresholdResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MinimumThresholdTrackBar);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.ThresholdDecremetTrackBar);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.InitialThresholdTrackBar);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.ThresholdDecremetNumericUpDown);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.InitialThresholdNumericUpDown);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MinimumThresholdNumericUpDown);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label16);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label17);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label18);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label19);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MinimumMarkDiametersResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MarkThreshodResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.GaussianFilterSizeResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MinimumMarkDiametersTrackBar);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MarkThreshodTrackBar);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.GaussianFilterSizeTrackBar);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MarkThreshodNumericUpDown);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.GaussianFilterSizeNumericUpDown);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MinimumMarkDiametersNumericUpDown);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label15);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label14);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label13);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label12);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.ExpandedHeight = 0;
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.IsExpanded = true;
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Location = new System.Drawing.Point(3, 627);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Name = "CalibrationPlateExtractionParametersExpandCollapsePanel";
-            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Size = new System.Drawing.Size(987, 196);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Size = new System.Drawing.Size(987, 490);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.TabIndex = 4;
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Text = "Calibration Plate Extraction Parameters";
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.UseAnimation = false;
+            // 
+            // GaussianFilterSizeTrackBar
+            // 
+            this.GaussianFilterSizeTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GaussianFilterSizeTrackBar.BackColor = System.Drawing.Color.White;
+            this.GaussianFilterSizeTrackBar.Location = new System.Drawing.Point(239, 75);
+            this.GaussianFilterSizeTrackBar.Maximum = 11;
+            this.GaussianFilterSizeTrackBar.Name = "GaussianFilterSizeTrackBar";
+            this.GaussianFilterSizeTrackBar.Size = new System.Drawing.Size(688, 45);
+            this.GaussianFilterSizeTrackBar.TabIndex = 22;
+            this.GaussianFilterSizeTrackBar.Value = 3;
+            // 
+            // MarkThreshodNumericUpDown
+            // 
+            this.MarkThreshodNumericUpDown.Location = new System.Drawing.Point(176, 111);
+            this.MarkThreshodNumericUpDown.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.MarkThreshodNumericUpDown.Name = "MarkThreshodNumericUpDown";
+            this.MarkThreshodNumericUpDown.Size = new System.Drawing.Size(58, 21);
+            this.MarkThreshodNumericUpDown.TabIndex = 7;
+            this.MarkThreshodNumericUpDown.Value = new decimal(new int[] {
+            112,
+            0,
+            0,
+            0});
+            // 
+            // GaussianFilterSizeNumericUpDown
+            // 
+            this.GaussianFilterSizeNumericUpDown.Location = new System.Drawing.Point(176, 76);
+            this.GaussianFilterSizeNumericUpDown.Maximum = new decimal(new int[] {
+            11,
+            0,
+            0,
+            0});
+            this.GaussianFilterSizeNumericUpDown.Name = "GaussianFilterSizeNumericUpDown";
+            this.GaussianFilterSizeNumericUpDown.Size = new System.Drawing.Size(58, 21);
+            this.GaussianFilterSizeNumericUpDown.TabIndex = 6;
+            this.GaussianFilterSizeNumericUpDown.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // MinimumMarkDiametersNumericUpDown
+            // 
+            this.MinimumMarkDiametersNumericUpDown.Location = new System.Drawing.Point(176, 148);
+            this.MinimumMarkDiametersNumericUpDown.Name = "MinimumMarkDiametersNumericUpDown";
+            this.MinimumMarkDiametersNumericUpDown.Size = new System.Drawing.Size(58, 21);
+            this.MinimumMarkDiametersNumericUpDown.TabIndex = 5;
+            this.MinimumMarkDiametersNumericUpDown.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(18, 150);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(151, 15);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Minimum Mark Diameters";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(18, 113);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(90, 15);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Mark Threshod";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(18, 76);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(116, 15);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Gaussian Filter Size";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(15, 44);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(167, 15);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Locating the Calibration Plate";
             // 
             // ResultTabPage
             // 
@@ -550,6 +742,374 @@
             this.DisplayResultsExpandCollapsePanel.Text = "Display Results";
             this.DisplayResultsExpandCollapsePanel.UseAnimation = false;
             // 
+            // MarkThreshodTrackBar
+            // 
+            this.MarkThreshodTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MarkThreshodTrackBar.BackColor = System.Drawing.Color.White;
+            this.MarkThreshodTrackBar.Location = new System.Drawing.Point(239, 110);
+            this.MarkThreshodTrackBar.Maximum = 255;
+            this.MarkThreshodTrackBar.Name = "MarkThreshodTrackBar";
+            this.MarkThreshodTrackBar.Size = new System.Drawing.Size(688, 45);
+            this.MarkThreshodTrackBar.TabIndex = 23;
+            this.MarkThreshodTrackBar.Value = 112;
+            // 
+            // MinimumMarkDiametersTrackBar
+            // 
+            this.MinimumMarkDiametersTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinimumMarkDiametersTrackBar.BackColor = System.Drawing.Color.White;
+            this.MinimumMarkDiametersTrackBar.Location = new System.Drawing.Point(239, 147);
+            this.MinimumMarkDiametersTrackBar.Maximum = 100;
+            this.MinimumMarkDiametersTrackBar.Name = "MinimumMarkDiametersTrackBar";
+            this.MinimumMarkDiametersTrackBar.Size = new System.Drawing.Size(688, 45);
+            this.MinimumMarkDiametersTrackBar.TabIndex = 24;
+            this.MinimumMarkDiametersTrackBar.Value = 5;
+            // 
+            // GaussianFilterSizeResetButton
+            // 
+            this.GaussianFilterSizeResetButton.Location = new System.Drawing.Point(925, 72);
+            this.GaussianFilterSizeResetButton.Name = "GaussianFilterSizeResetButton";
+            this.GaussianFilterSizeResetButton.Size = new System.Drawing.Size(48, 23);
+            this.GaussianFilterSizeResetButton.TabIndex = 25;
+            this.GaussianFilterSizeResetButton.Text = "reset";
+            this.GaussianFilterSizeResetButton.UseVisualStyleBackColor = true;
+            // 
+            // MarkThreshodResetButton
+            // 
+            this.MarkThreshodResetButton.Location = new System.Drawing.Point(925, 109);
+            this.MarkThreshodResetButton.Name = "MarkThreshodResetButton";
+            this.MarkThreshodResetButton.Size = new System.Drawing.Size(48, 23);
+            this.MarkThreshodResetButton.TabIndex = 26;
+            this.MarkThreshodResetButton.Text = "reset";
+            this.MarkThreshodResetButton.UseVisualStyleBackColor = true;
+            // 
+            // MinimumMarkDiametersResetButton
+            // 
+            this.MinimumMarkDiametersResetButton.Location = new System.Drawing.Point(925, 146);
+            this.MinimumMarkDiametersResetButton.Name = "MinimumMarkDiametersResetButton";
+            this.MinimumMarkDiametersResetButton.Size = new System.Drawing.Size(48, 23);
+            this.MinimumMarkDiametersResetButton.TabIndex = 27;
+            this.MinimumMarkDiametersResetButton.Text = "reset";
+            this.MinimumMarkDiametersResetButton.UseVisualStyleBackColor = true;
+            // 
+            // MinimumThresholdResetButton
+            // 
+            this.MinimumThresholdResetButton.Location = new System.Drawing.Point(925, 287);
+            this.MinimumThresholdResetButton.Name = "MinimumThresholdResetButton";
+            this.MinimumThresholdResetButton.Size = new System.Drawing.Size(48, 23);
+            this.MinimumThresholdResetButton.TabIndex = 40;
+            this.MinimumThresholdResetButton.Text = "reset";
+            this.MinimumThresholdResetButton.UseVisualStyleBackColor = true;
+            // 
+            // ThresholdDecremetResetButton
+            // 
+            this.ThresholdDecremetResetButton.Location = new System.Drawing.Point(925, 250);
+            this.ThresholdDecremetResetButton.Name = "ThresholdDecremetResetButton";
+            this.ThresholdDecremetResetButton.Size = new System.Drawing.Size(48, 23);
+            this.ThresholdDecremetResetButton.TabIndex = 39;
+            this.ThresholdDecremetResetButton.Text = "reset";
+            this.ThresholdDecremetResetButton.UseVisualStyleBackColor = true;
+            // 
+            // InitialThresholdResetButton
+            // 
+            this.InitialThresholdResetButton.Location = new System.Drawing.Point(925, 213);
+            this.InitialThresholdResetButton.Name = "InitialThresholdResetButton";
+            this.InitialThresholdResetButton.Size = new System.Drawing.Size(48, 23);
+            this.InitialThresholdResetButton.TabIndex = 38;
+            this.InitialThresholdResetButton.Text = "reset";
+            this.InitialThresholdResetButton.UseVisualStyleBackColor = true;
+            // 
+            // MinimumThresholdTrackBar
+            // 
+            this.MinimumThresholdTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinimumThresholdTrackBar.BackColor = System.Drawing.Color.White;
+            this.MinimumThresholdTrackBar.Location = new System.Drawing.Point(239, 288);
+            this.MinimumThresholdTrackBar.Maximum = 100;
+            this.MinimumThresholdTrackBar.Minimum = 1;
+            this.MinimumThresholdTrackBar.Name = "MinimumThresholdTrackBar";
+            this.MinimumThresholdTrackBar.Size = new System.Drawing.Size(688, 45);
+            this.MinimumThresholdTrackBar.TabIndex = 37;
+            this.MinimumThresholdTrackBar.Value = 18;
+            // 
+            // ThresholdDecremetTrackBar
+            // 
+            this.ThresholdDecremetTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ThresholdDecremetTrackBar.BackColor = System.Drawing.Color.White;
+            this.ThresholdDecremetTrackBar.Location = new System.Drawing.Point(239, 251);
+            this.ThresholdDecremetTrackBar.Maximum = 100;
+            this.ThresholdDecremetTrackBar.Minimum = 1;
+            this.ThresholdDecremetTrackBar.Name = "ThresholdDecremetTrackBar";
+            this.ThresholdDecremetTrackBar.Size = new System.Drawing.Size(688, 45);
+            this.ThresholdDecremetTrackBar.TabIndex = 36;
+            this.ThresholdDecremetTrackBar.Value = 10;
+            // 
+            // InitialThresholdTrackBar
+            // 
+            this.InitialThresholdTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.InitialThresholdTrackBar.BackColor = System.Drawing.Color.White;
+            this.InitialThresholdTrackBar.Location = new System.Drawing.Point(239, 216);
+            this.InitialThresholdTrackBar.Maximum = 255;
+            this.InitialThresholdTrackBar.Minimum = 1;
+            this.InitialThresholdTrackBar.Name = "InitialThresholdTrackBar";
+            this.InitialThresholdTrackBar.Size = new System.Drawing.Size(688, 45);
+            this.InitialThresholdTrackBar.TabIndex = 35;
+            this.InitialThresholdTrackBar.Value = 128;
+            // 
+            // ThresholdDecremetNumericUpDown
+            // 
+            this.ThresholdDecremetNumericUpDown.Location = new System.Drawing.Point(176, 252);
+            this.ThresholdDecremetNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ThresholdDecremetNumericUpDown.Name = "ThresholdDecremetNumericUpDown";
+            this.ThresholdDecremetNumericUpDown.Size = new System.Drawing.Size(58, 21);
+            this.ThresholdDecremetNumericUpDown.TabIndex = 34;
+            this.ThresholdDecremetNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // InitialThresholdNumericUpDown
+            // 
+            this.InitialThresholdNumericUpDown.Location = new System.Drawing.Point(176, 217);
+            this.InitialThresholdNumericUpDown.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.InitialThresholdNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.InitialThresholdNumericUpDown.Name = "InitialThresholdNumericUpDown";
+            this.InitialThresholdNumericUpDown.Size = new System.Drawing.Size(58, 21);
+            this.InitialThresholdNumericUpDown.TabIndex = 33;
+            this.InitialThresholdNumericUpDown.Value = new decimal(new int[] {
+            128,
+            0,
+            0,
+            0});
+            // 
+            // MinimumThresholdNumericUpDown
+            // 
+            this.MinimumThresholdNumericUpDown.Location = new System.Drawing.Point(176, 289);
+            this.MinimumThresholdNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.MinimumThresholdNumericUpDown.Name = "MinimumThresholdNumericUpDown";
+            this.MinimumThresholdNumericUpDown.Size = new System.Drawing.Size(58, 21);
+            this.MinimumThresholdNumericUpDown.TabIndex = 32;
+            this.MinimumThresholdNumericUpDown.Value = new decimal(new int[] {
+            18,
+            0,
+            0,
+            0});
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(18, 291);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(118, 15);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "Minimum Threshold";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(18, 254);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(119, 15);
+            this.label17.TabIndex = 30;
+            this.label17.Text = "Threshold Decremet";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(18, 217);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(94, 15);
+            this.label18.TabIndex = 29;
+            this.label18.Text = "Initial Threshold";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Location = new System.Drawing.Point(15, 185);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(161, 15);
+            this.label19.TabIndex = 28;
+            this.label19.Text = "Extracting the Mark Regions";
+            // 
+            // MaximumMarkDiametersResetButton
+            // 
+            this.MaximumMarkDiametersResetButton.Location = new System.Drawing.Point(925, 427);
+            this.MaximumMarkDiametersResetButton.Name = "MaximumMarkDiametersResetButton";
+            this.MaximumMarkDiametersResetButton.Size = new System.Drawing.Size(48, 23);
+            this.MaximumMarkDiametersResetButton.TabIndex = 53;
+            this.MaximumMarkDiametersResetButton.Text = "reset";
+            this.MaximumMarkDiametersResetButton.UseVisualStyleBackColor = true;
+            // 
+            // MinimumContourLengthResetButton
+            // 
+            this.MinimumContourLengthResetButton.Location = new System.Drawing.Point(925, 390);
+            this.MinimumContourLengthResetButton.Name = "MinimumContourLengthResetButton";
+            this.MinimumContourLengthResetButton.Size = new System.Drawing.Size(48, 23);
+            this.MinimumContourLengthResetButton.TabIndex = 52;
+            this.MinimumContourLengthResetButton.Text = "reset";
+            this.MinimumContourLengthResetButton.UseVisualStyleBackColor = true;
+            // 
+            // SmoothingAlphaButton
+            // 
+            this.SmoothingAlphaButton.Location = new System.Drawing.Point(925, 353);
+            this.SmoothingAlphaButton.Name = "SmoothingAlphaButton";
+            this.SmoothingAlphaButton.Size = new System.Drawing.Size(48, 23);
+            this.SmoothingAlphaButton.TabIndex = 51;
+            this.SmoothingAlphaButton.Text = "reset";
+            this.SmoothingAlphaButton.UseVisualStyleBackColor = true;
+            // 
+            // MaximumMarkDiametersTrackBar
+            // 
+            this.MaximumMarkDiametersTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaximumMarkDiametersTrackBar.BackColor = System.Drawing.Color.White;
+            this.MaximumMarkDiametersTrackBar.Location = new System.Drawing.Point(239, 428);
+            this.MaximumMarkDiametersTrackBar.Name = "MaximumMarkDiametersTrackBar";
+            this.MaximumMarkDiametersTrackBar.Size = new System.Drawing.Size(688, 45);
+            this.MaximumMarkDiametersTrackBar.TabIndex = 50;
+            // 
+            // MinimumContourLengthTrackBar
+            // 
+            this.MinimumContourLengthTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinimumContourLengthTrackBar.BackColor = System.Drawing.Color.White;
+            this.MinimumContourLengthTrackBar.Location = new System.Drawing.Point(239, 391);
+            this.MinimumContourLengthTrackBar.Name = "MinimumContourLengthTrackBar";
+            this.MinimumContourLengthTrackBar.Size = new System.Drawing.Size(688, 45);
+            this.MinimumContourLengthTrackBar.TabIndex = 49;
+            // 
+            // SmoothingAlphaTrackBar
+            // 
+            this.SmoothingAlphaTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SmoothingAlphaTrackBar.BackColor = System.Drawing.Color.White;
+            this.SmoothingAlphaTrackBar.Location = new System.Drawing.Point(239, 356);
+            this.SmoothingAlphaTrackBar.Name = "SmoothingAlphaTrackBar";
+            this.SmoothingAlphaTrackBar.Size = new System.Drawing.Size(688, 45);
+            this.SmoothingAlphaTrackBar.TabIndex = 48;
+            // 
+            // MinimumContourLengthNumericUpDown
+            // 
+            this.MinimumContourLengthNumericUpDown.DecimalPlaces = 2;
+            this.MinimumContourLengthNumericUpDown.Location = new System.Drawing.Point(176, 392);
+            this.MinimumContourLengthNumericUpDown.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.MinimumContourLengthNumericUpDown.Name = "MinimumContourLengthNumericUpDown";
+            this.MinimumContourLengthNumericUpDown.Size = new System.Drawing.Size(58, 21);
+            this.MinimumContourLengthNumericUpDown.TabIndex = 47;
+            this.MinimumContourLengthNumericUpDown.Value = new decimal(new int[] {
+            1500,
+            0,
+            0,
+            131072});
+            // 
+            // SmoothingAlphaNumericUpDown
+            // 
+            this.SmoothingAlphaNumericUpDown.DecimalPlaces = 2;
+            this.SmoothingAlphaNumericUpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.SmoothingAlphaNumericUpDown.Location = new System.Drawing.Point(176, 357);
+            this.SmoothingAlphaNumericUpDown.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            131072});
+            this.SmoothingAlphaNumericUpDown.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            131072});
+            this.SmoothingAlphaNumericUpDown.Name = "SmoothingAlphaNumericUpDown";
+            this.SmoothingAlphaNumericUpDown.Size = new System.Drawing.Size(58, 21);
+            this.SmoothingAlphaNumericUpDown.TabIndex = 46;
+            this.SmoothingAlphaNumericUpDown.Value = new decimal(new int[] {
+            90,
+            0,
+            0,
+            131072});
+            // 
+            // MaximumMarkDiametersNumericUpDown
+            // 
+            this.MaximumMarkDiametersNumericUpDown.DecimalPlaces = 2;
+            this.MaximumMarkDiametersNumericUpDown.Location = new System.Drawing.Point(176, 429);
+            this.MaximumMarkDiametersNumericUpDown.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.MaximumMarkDiametersNumericUpDown.Name = "MaximumMarkDiametersNumericUpDown";
+            this.MaximumMarkDiametersNumericUpDown.Size = new System.Drawing.Size(58, 21);
+            this.MaximumMarkDiametersNumericUpDown.TabIndex = 45;
+            this.MaximumMarkDiametersNumericUpDown.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(18, 431);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(154, 15);
+            this.label20.TabIndex = 44;
+            this.label20.Text = "Maximum Mark Diameters";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(18, 394);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(147, 15);
+            this.label21.TabIndex = 43;
+            this.label21.Text = "Minimum Contour Length";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(18, 357);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(115, 15);
+            this.label22.TabIndex = 42;
+            this.label22.Text = "Smoothing ( Alpha )";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label23.Location = new System.Drawing.Point(15, 325);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(164, 15);
+            this.label23.TabIndex = 41;
+            this.label23.Text = "Extracting the Mark Contours";
+            // 
             // CalibrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -576,8 +1136,28 @@
             this.CalibrationFlowLayoutPanel.ResumeLayout(false);
             this.ImageSourceExpandCollapsePanel.ResumeLayout(false);
             this.ImageSourceExpandCollapsePanel.PerformLayout();
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.ResumeLayout(false);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GaussianFilterSizeTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MarkThreshodNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GaussianFilterSizeNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimumMarkDiametersNumericUpDown)).EndInit();
             this.ResultTabPage.ResumeLayout(false);
             this.ResultFlowLayoutPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MarkThreshodTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimumMarkDiametersTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimumThresholdTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThresholdDecremetTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InitialThresholdTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThresholdDecremetNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InitialThresholdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimumThresholdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaximumMarkDiametersTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimumContourLengthTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SmoothingAlphaTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimumContourLengthNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SmoothingAlphaNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaximumMarkDiametersNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -621,6 +1201,45 @@
         private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel CameraParameterExpandCollapsePanel;
         private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel CameraPoseExpandCollapsePanel;
         private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel DisplayResultsExpandCollapsePanel;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.NumericUpDown MarkThreshodNumericUpDown;
+        private System.Windows.Forms.NumericUpDown GaussianFilterSizeNumericUpDown;
+        private System.Windows.Forms.NumericUpDown MinimumMarkDiametersNumericUpDown;
+        private System.Windows.Forms.TrackBar GaussianFilterSizeTrackBar;
+        private System.Windows.Forms.TrackBar MinimumMarkDiametersTrackBar;
+        private System.Windows.Forms.TrackBar MarkThreshodTrackBar;
+        private System.Windows.Forms.Button MinimumMarkDiametersResetButton;
+        private System.Windows.Forms.Button MarkThreshodResetButton;
+        private System.Windows.Forms.Button GaussianFilterSizeResetButton;
+        private System.Windows.Forms.Button MaximumMarkDiametersResetButton;
+        private System.Windows.Forms.Button MinimumContourLengthResetButton;
+        private System.Windows.Forms.Button SmoothingAlphaButton;
+        private System.Windows.Forms.TrackBar MaximumMarkDiametersTrackBar;
+        private System.Windows.Forms.TrackBar MinimumContourLengthTrackBar;
+        private System.Windows.Forms.TrackBar SmoothingAlphaTrackBar;
+        private System.Windows.Forms.NumericUpDown MinimumContourLengthNumericUpDown;
+        private System.Windows.Forms.NumericUpDown SmoothingAlphaNumericUpDown;
+        private System.Windows.Forms.NumericUpDown MaximumMarkDiametersNumericUpDown;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button MinimumThresholdResetButton;
+        private System.Windows.Forms.Button ThresholdDecremetResetButton;
+        private System.Windows.Forms.Button InitialThresholdResetButton;
+        private System.Windows.Forms.TrackBar MinimumThresholdTrackBar;
+        private System.Windows.Forms.TrackBar ThresholdDecremetTrackBar;
+        private System.Windows.Forms.TrackBar InitialThresholdTrackBar;
+        private System.Windows.Forms.NumericUpDown ThresholdDecremetNumericUpDown;
+        private System.Windows.Forms.NumericUpDown InitialThresholdNumericUpDown;
+        private System.Windows.Forms.NumericUpDown MinimumThresholdNumericUpDown;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
     }
 }
 
