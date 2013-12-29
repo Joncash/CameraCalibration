@@ -25,6 +25,86 @@ namespace App.Calibration
                             this.Calibration_PlateExtractionParameters_GaussianFilterSizeNumericUpDown, 
                             this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar 
                         },
+                    },
+                    new CalibrationPlateExtractionParameterMapping()
+                    {
+                        Key = "MarkThreshod",
+                        DefaultValue = 112,
+                        ResetButton = Calibration_PlateExtractionParameters_MarkThreshodResetButton,
+                        ValueControls = new List<Control>(){ 
+                            this.Calibration_PlateExtractionParameters_MarkThreshodNumericUpDown, 
+                            this.Calibration_PlateExtractionParameters_MarkThreshodTrackBar 
+                        },
+                    },
+                    new CalibrationPlateExtractionParameterMapping()
+                    {
+                        Key = "MinimumMarkDiameters",
+                        DefaultValue = 5,
+                        ResetButton = Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton,
+                        ValueControls = new List<Control>(){ 
+                            this.Calibration_PlateExtractionParameters_MinimumMarkDiametersNumericUpDown, 
+                            this.Calibration_PlateExtractionParameters_MinimumMarkDiametersTrackBar 
+                        },
+                    },
+                    new CalibrationPlateExtractionParameterMapping()
+                    {
+                        Key = "InitialThreshold",
+                        DefaultValue = 128,
+                        ResetButton = Calibration_PlateExtractionParameters_InitialThresholdResetButton,
+                        ValueControls = new List<Control>(){ 
+                            this.Calibration_PlateExtractionParameters_InitialThresholdNumericUpDown, 
+                            this.Calibration_PlateExtractionParameters_InitialThresholdTrackBar 
+                        },
+                    },
+                    new CalibrationPlateExtractionParameterMapping()
+                    {
+                        Key = "ThresholdDecremet",
+                        DefaultValue = 10,
+                        ResetButton = Calibration_PlateExtractionParameters_ThresholdDecremetResetButton,
+                        ValueControls = new List<Control>(){ 
+                            this.Calibration_PlateExtractionParameters_ThresholdDecremetNumericUpDown, 
+                            this.Calibration_PlateExtractionParameters_ThresholdDecremetTrackBar 
+                        },
+                    },
+                    new CalibrationPlateExtractionParameterMapping()
+                    {
+                        Key = "MinimumThreshold",
+                        DefaultValue = 18,
+                        ResetButton = Calibration_PlateExtractionParameters_MinimumThresholdResetButton,
+                        ValueControls = new List<Control>(){ 
+                            this.Calibration_PlateExtractionParameters_MinimumThresholdNumericUpDown, 
+                            this.Calibration_PlateExtractionParameters_MinimumThresholdTrackBar 
+                        },
+                    },
+                    new CalibrationPlateExtractionParameterMapping()
+                    {
+                        Key = "SmoothingAlpha",
+                        DefaultValue = 0.9M,
+                        ResetButton = Calibration_PlateExtractionParameters_SmoothingAlphaResetButton,
+                        ValueControls = new List<Control>(){ 
+                            this.Calibration_PlateExtractionParameters_SmoothingAlphaNumericUpDown, 
+                            this.Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar 
+                        },
+                    },
+                    new CalibrationPlateExtractionParameterMapping()
+                    {
+                        Key = "MinimumContourLength",
+                        DefaultValue = 15,
+                        ResetButton = Calibration_PlateExtractionParameters_MinimumContourLengthResetButton,
+                        ValueControls = new List<Control>(){ 
+                            this.Calibration_PlateExtractionParameters_MinimumContourLengthNumericUpDown, 
+                            this.Calibration_PlateExtractionParameters_MinimumContourLengthTrackBar 
+                        },
+                    },
+                    new CalibrationPlateExtractionParameterMapping()
+                    {
+                        Key = "MaximumMarkDiameters",
+                        DefaultValue = 100,
+                        ResetButton = Calibration_PlateExtractionParameters_MaximumMarkDiametersResetButton,
+                        ValueControls = new List<Control>(){ 
+                            this.Calibration_PlateExtractionParameters_MaximumMarkDiametersNumericUpDown, 
+                            this.Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar 
+                        },
                     }
                 };
             }
@@ -49,7 +129,14 @@ namespace App.Calibration
             if (mapping != null)
             {
                 mapping.ValueControls.OfType<TrackBar>().All(x => {
-                    x.Value = (int)mapping.DefaultValue;
+                    if (x == Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar)
+                    {
+                        x.Value = (int)(mapping.DefaultValue * 10); ;
+                    }
+                    else
+                    {
+                        x.Value = (int)mapping.DefaultValue;
+                    }
                     return true;
                 });
 
@@ -69,7 +156,14 @@ namespace App.Calibration
             {
                 mapping.ValueControls.OfType<NumericUpDown>().All(x =>
                 {
-                    x.Value = currentTrackBar.Value;
+                    if (currentTrackBar == Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar)
+                    {
+                        x.Value = ((decimal)currentTrackBar.Value) / 10;
+                    }
+                    else
+                    {
+                        x.Value = currentTrackBar.Value;
+                    }
                     return true;
                 });
             }
@@ -83,7 +177,14 @@ namespace App.Calibration
             {
                 mapping.ValueControls.OfType<TrackBar>().All(x =>
                 {
-                    x.Value = (int)currentNumericUpDown.Value;
+                    if (currentNumericUpDown == Calibration_PlateExtractionParameters_SmoothingAlphaNumericUpDown)
+                    {
+                        x.Value = (int)(currentNumericUpDown.Value * 10);
+                    }
+                    else
+                    {
+                        x.Value = (int)currentNumericUpDown.Value;
+                    }
                     return true;
                 });
             }
