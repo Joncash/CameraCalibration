@@ -83,9 +83,9 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quality = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CalibrationPlateExtractionParametersExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
-            this.MaximumMarkDiametersResetButton = new System.Windows.Forms.Button();
-            this.MinimumContourLengthResetButton = new System.Windows.Forms.Button();
-            this.SmoothingAlphaButton = new System.Windows.Forms.Button();
+            this.Calibration_PlateExtractionParameters_ = new System.Windows.Forms.Button();
+            this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton = new System.Windows.Forms.Button();
+            this.Calibration_PlateExtractionParameters_SmoothingAlphaButton = new System.Windows.Forms.Button();
             this.Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar = new System.Windows.Forms.TrackBar();
             this.Calibration_PlateExtractionParameters_MinimumContourLengthTrackBar = new System.Windows.Forms.TrackBar();
             this.Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar = new System.Windows.Forms.TrackBar();
@@ -96,9 +96,9 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.MinimumThresholdResetButton = new System.Windows.Forms.Button();
-            this.ThresholdDecremetResetButton = new System.Windows.Forms.Button();
-            this.InitialThresholdResetButton = new System.Windows.Forms.Button();
+            this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton = new System.Windows.Forms.Button();
+            this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton = new System.Windows.Forms.Button();
+            this.Calibration_PlateExtractionParameters_InitialThresholdResetButton = new System.Windows.Forms.Button();
             this.Calibration_PlateExtractionParameters_MinimumThresholdTrackBar = new System.Windows.Forms.TrackBar();
             this.Calibration_PlateExtractionParameters_ThresholdDecremetTrackBar = new System.Windows.Forms.TrackBar();
             this.Calibration_PlateExtractionParameters_InitialThresholdTrackBar = new System.Windows.Forms.TrackBar();
@@ -109,9 +109,9 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.MinimumMarkDiametersResetButton = new System.Windows.Forms.Button();
-            this.MarkThreshodResetButton = new System.Windows.Forms.Button();
-            this.GaussianFilterSizeResetButton = new System.Windows.Forms.Button();
+            this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton = new System.Windows.Forms.Button();
+            this.Calibration_PlateExtractionParameters_MarkThreshodResetButton = new System.Windows.Forms.Button();
+            this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton = new System.Windows.Forms.Button();
             this.Calibration_PlateExtractionParameters_MinimumMarkDiametersTrackBar = new System.Windows.Forms.TrackBar();
             this.Calibration_PlateExtractionParameters_MarkThreshodTrackBar = new System.Windows.Forms.TrackBar();
             this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar = new System.Windows.Forms.TrackBar();
@@ -131,6 +131,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.CameraParameterExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
+            this.label57 = new System.Windows.Forms.Label();
             this.Result_CameraParameter_ExportButton = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
             this.Result_CameraParameter_ImageHeight = new System.Windows.Forms.TextBox();
@@ -186,7 +187,6 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label57 = new System.Windows.Forms.Label();
             this.CalibrationTab.SuspendLayout();
             this.SettingsTabPage.SuspendLayout();
             this.SettingsFlowLayoutPanel.SuspendLayout();
@@ -910,9 +910,9 @@
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.ButtonSize = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonSize.Small;
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.ButtonStyle = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonStyle.Circle;
-            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MaximumMarkDiametersResetButton);
-            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MinimumContourLengthResetButton);
-            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.SmoothingAlphaButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_SmoothingAlphaButton);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_MinimumContourLengthTrackBar);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar);
@@ -923,9 +923,9 @@
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label21);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label22);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label23);
-            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MinimumThresholdResetButton);
-            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.ThresholdDecremetResetButton);
-            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.InitialThresholdResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_InitialThresholdResetButton);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_MinimumThresholdTrackBar);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_ThresholdDecremetTrackBar);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_InitialThresholdTrackBar);
@@ -936,9 +936,9 @@
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label17);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label18);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label19);
-            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MinimumMarkDiametersResetButton);
-            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.MarkThreshodResetButton);
-            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.GaussianFilterSizeResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_MarkThreshodResetButton);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_MinimumMarkDiametersTrackBar);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_MarkThreshodTrackBar);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar);
@@ -958,32 +958,32 @@
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Text = "Calibration Plate Extraction Parameters";
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.UseAnimation = false;
             // 
-            // MaximumMarkDiametersResetButton
+            // Calibration_PlateExtractionParameters_
             // 
-            this.MaximumMarkDiametersResetButton.Location = new System.Drawing.Point(925, 427);
-            this.MaximumMarkDiametersResetButton.Name = "MaximumMarkDiametersResetButton";
-            this.MaximumMarkDiametersResetButton.Size = new System.Drawing.Size(48, 23);
-            this.MaximumMarkDiametersResetButton.TabIndex = 53;
-            this.MaximumMarkDiametersResetButton.Text = "reset";
-            this.MaximumMarkDiametersResetButton.UseVisualStyleBackColor = true;
+            this.Calibration_PlateExtractionParameters_.Location = new System.Drawing.Point(925, 427);
+            this.Calibration_PlateExtractionParameters_.Name = "Calibration_PlateExtractionParameters_";
+            this.Calibration_PlateExtractionParameters_.Size = new System.Drawing.Size(48, 23);
+            this.Calibration_PlateExtractionParameters_.TabIndex = 53;
+            this.Calibration_PlateExtractionParameters_.Text = "reset";
+            this.Calibration_PlateExtractionParameters_.UseVisualStyleBackColor = true;
             // 
-            // MinimumContourLengthResetButton
+            // Calibration_PlateExtractionParameters_MinimumContourLengthResetButton
             // 
-            this.MinimumContourLengthResetButton.Location = new System.Drawing.Point(925, 390);
-            this.MinimumContourLengthResetButton.Name = "MinimumContourLengthResetButton";
-            this.MinimumContourLengthResetButton.Size = new System.Drawing.Size(48, 23);
-            this.MinimumContourLengthResetButton.TabIndex = 52;
-            this.MinimumContourLengthResetButton.Text = "reset";
-            this.MinimumContourLengthResetButton.UseVisualStyleBackColor = true;
+            this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton.Location = new System.Drawing.Point(925, 390);
+            this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton.Name = "Calibration_PlateExtractionParameters_MinimumContourLengthResetButton";
+            this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton.Size = new System.Drawing.Size(48, 23);
+            this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton.TabIndex = 52;
+            this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton.Text = "reset";
+            this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton.UseVisualStyleBackColor = true;
             // 
-            // SmoothingAlphaButton
+            // Calibration_PlateExtractionParameters_SmoothingAlphaButton
             // 
-            this.SmoothingAlphaButton.Location = new System.Drawing.Point(925, 353);
-            this.SmoothingAlphaButton.Name = "SmoothingAlphaButton";
-            this.SmoothingAlphaButton.Size = new System.Drawing.Size(48, 23);
-            this.SmoothingAlphaButton.TabIndex = 51;
-            this.SmoothingAlphaButton.Text = "reset";
-            this.SmoothingAlphaButton.UseVisualStyleBackColor = true;
+            this.Calibration_PlateExtractionParameters_SmoothingAlphaButton.Location = new System.Drawing.Point(925, 353);
+            this.Calibration_PlateExtractionParameters_SmoothingAlphaButton.Name = "Calibration_PlateExtractionParameters_SmoothingAlphaButton";
+            this.Calibration_PlateExtractionParameters_SmoothingAlphaButton.Size = new System.Drawing.Size(48, 23);
+            this.Calibration_PlateExtractionParameters_SmoothingAlphaButton.TabIndex = 51;
+            this.Calibration_PlateExtractionParameters_SmoothingAlphaButton.Text = "reset";
+            this.Calibration_PlateExtractionParameters_SmoothingAlphaButton.UseVisualStyleBackColor = true;
             // 
             // Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar
             // 
@@ -1116,32 +1116,32 @@
             this.label23.TabIndex = 41;
             this.label23.Text = "Extracting the Mark Contours";
             // 
-            // MinimumThresholdResetButton
+            // Calibration_PlateExtractionParameters_MinimumThresholdResetButton
             // 
-            this.MinimumThresholdResetButton.Location = new System.Drawing.Point(925, 287);
-            this.MinimumThresholdResetButton.Name = "MinimumThresholdResetButton";
-            this.MinimumThresholdResetButton.Size = new System.Drawing.Size(48, 23);
-            this.MinimumThresholdResetButton.TabIndex = 40;
-            this.MinimumThresholdResetButton.Text = "reset";
-            this.MinimumThresholdResetButton.UseVisualStyleBackColor = true;
+            this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton.Location = new System.Drawing.Point(925, 287);
+            this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton.Name = "Calibration_PlateExtractionParameters_MinimumThresholdResetButton";
+            this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton.Size = new System.Drawing.Size(48, 23);
+            this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton.TabIndex = 40;
+            this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton.Text = "reset";
+            this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton.UseVisualStyleBackColor = true;
             // 
-            // ThresholdDecremetResetButton
+            // Calibration_PlateExtractionParameters_ThresholdDecremetResetButton
             // 
-            this.ThresholdDecremetResetButton.Location = new System.Drawing.Point(925, 250);
-            this.ThresholdDecremetResetButton.Name = "ThresholdDecremetResetButton";
-            this.ThresholdDecremetResetButton.Size = new System.Drawing.Size(48, 23);
-            this.ThresholdDecremetResetButton.TabIndex = 39;
-            this.ThresholdDecremetResetButton.Text = "reset";
-            this.ThresholdDecremetResetButton.UseVisualStyleBackColor = true;
+            this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton.Location = new System.Drawing.Point(925, 250);
+            this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton.Name = "Calibration_PlateExtractionParameters_ThresholdDecremetResetButton";
+            this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton.Size = new System.Drawing.Size(48, 23);
+            this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton.TabIndex = 39;
+            this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton.Text = "reset";
+            this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton.UseVisualStyleBackColor = true;
             // 
-            // InitialThresholdResetButton
+            // Calibration_PlateExtractionParameters_InitialThresholdResetButton
             // 
-            this.InitialThresholdResetButton.Location = new System.Drawing.Point(925, 213);
-            this.InitialThresholdResetButton.Name = "InitialThresholdResetButton";
-            this.InitialThresholdResetButton.Size = new System.Drawing.Size(48, 23);
-            this.InitialThresholdResetButton.TabIndex = 38;
-            this.InitialThresholdResetButton.Text = "reset";
-            this.InitialThresholdResetButton.UseVisualStyleBackColor = true;
+            this.Calibration_PlateExtractionParameters_InitialThresholdResetButton.Location = new System.Drawing.Point(925, 213);
+            this.Calibration_PlateExtractionParameters_InitialThresholdResetButton.Name = "Calibration_PlateExtractionParameters_InitialThresholdResetButton";
+            this.Calibration_PlateExtractionParameters_InitialThresholdResetButton.Size = new System.Drawing.Size(48, 23);
+            this.Calibration_PlateExtractionParameters_InitialThresholdResetButton.TabIndex = 38;
+            this.Calibration_PlateExtractionParameters_InitialThresholdResetButton.Text = "reset";
+            this.Calibration_PlateExtractionParameters_InitialThresholdResetButton.UseVisualStyleBackColor = true;
             // 
             // Calibration_PlateExtractionParameters_MinimumThresholdTrackBar
             // 
@@ -1275,32 +1275,33 @@
             this.label19.TabIndex = 28;
             this.label19.Text = "Extracting the Mark Regions";
             // 
-            // MinimumMarkDiametersResetButton
+            // Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton
             // 
-            this.MinimumMarkDiametersResetButton.Location = new System.Drawing.Point(925, 146);
-            this.MinimumMarkDiametersResetButton.Name = "MinimumMarkDiametersResetButton";
-            this.MinimumMarkDiametersResetButton.Size = new System.Drawing.Size(48, 23);
-            this.MinimumMarkDiametersResetButton.TabIndex = 27;
-            this.MinimumMarkDiametersResetButton.Text = "reset";
-            this.MinimumMarkDiametersResetButton.UseVisualStyleBackColor = true;
+            this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton.Location = new System.Drawing.Point(925, 146);
+            this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton.Name = "Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton";
+            this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton.Size = new System.Drawing.Size(48, 23);
+            this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton.TabIndex = 27;
+            this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton.Text = "reset";
+            this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton.UseVisualStyleBackColor = true;
             // 
-            // MarkThreshodResetButton
+            // Calibration_PlateExtractionParameters_MarkThreshodResetButton
             // 
-            this.MarkThreshodResetButton.Location = new System.Drawing.Point(925, 109);
-            this.MarkThreshodResetButton.Name = "MarkThreshodResetButton";
-            this.MarkThreshodResetButton.Size = new System.Drawing.Size(48, 23);
-            this.MarkThreshodResetButton.TabIndex = 26;
-            this.MarkThreshodResetButton.Text = "reset";
-            this.MarkThreshodResetButton.UseVisualStyleBackColor = true;
+            this.Calibration_PlateExtractionParameters_MarkThreshodResetButton.Location = new System.Drawing.Point(925, 109);
+            this.Calibration_PlateExtractionParameters_MarkThreshodResetButton.Name = "Calibration_PlateExtractionParameters_MarkThreshodResetButton";
+            this.Calibration_PlateExtractionParameters_MarkThreshodResetButton.Size = new System.Drawing.Size(48, 23);
+            this.Calibration_PlateExtractionParameters_MarkThreshodResetButton.TabIndex = 26;
+            this.Calibration_PlateExtractionParameters_MarkThreshodResetButton.Text = "reset";
+            this.Calibration_PlateExtractionParameters_MarkThreshodResetButton.UseVisualStyleBackColor = true;
             // 
-            // GaussianFilterSizeResetButton
+            // Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton
             // 
-            this.GaussianFilterSizeResetButton.Location = new System.Drawing.Point(925, 72);
-            this.GaussianFilterSizeResetButton.Name = "GaussianFilterSizeResetButton";
-            this.GaussianFilterSizeResetButton.Size = new System.Drawing.Size(48, 23);
-            this.GaussianFilterSizeResetButton.TabIndex = 25;
-            this.GaussianFilterSizeResetButton.Text = "reset";
-            this.GaussianFilterSizeResetButton.UseVisualStyleBackColor = true;
+            this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton.Location = new System.Drawing.Point(925, 72);
+            this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton.Name = "Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton";
+            this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton.Size = new System.Drawing.Size(48, 23);
+            this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton.TabIndex = 25;
+            this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton.Text = "reset";
+            this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton.UseVisualStyleBackColor = true;
+            this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton.Click += new System.EventHandler(this.Calibration_PlateExtractionParameters_ResetButton_Click);
             // 
             // Calibration_PlateExtractionParameters_MinimumMarkDiametersTrackBar
             // 
@@ -1337,6 +1338,7 @@
             this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar.Size = new System.Drawing.Size(674, 45);
             this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar.TabIndex = 22;
             this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar.Value = 3;
+            this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar.ValueChanged += new System.EventHandler(this.Calibration_PlateExtractionParameters_TrackBar_ValueChanged);
             // 
             // Calibration_PlateExtractionParameters_MarkThreshodNumericUpDown
             // 
@@ -1371,6 +1373,7 @@
             0,
             0,
             0});
+            this.Calibration_PlateExtractionParameters_GaussianFilterSizeNumericUpDown.ValueChanged += new System.EventHandler(this.Calibration_PlateExtractionParameters_NumericUpDown_ValueChanged);
             // 
             // Calibration_PlateExtractionParameters_MinimumMarkDiametersNumericUpDown
             // 
@@ -1552,6 +1555,17 @@
             this.CameraParameterExpandCollapsePanel.TabIndex = 2;
             this.CameraParameterExpandCollapsePanel.Text = "Camera Parameters";
             this.CameraParameterExpandCollapsePanel.UseAnimation = false;
+            // 
+            // label57
+            // 
+            this.label57.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label57.Location = new System.Drawing.Point(660, 127);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(9, 9);
+            this.label57.TabIndex = 32;
+            this.label57.Text = "2";
             // 
             // Result_CameraParameter_ExportButton
             // 
@@ -2100,17 +2114,6 @@
             this.radioButton2.Text = "Original Reference Image";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // label57
-            // 
-            this.label57.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label57.Location = new System.Drawing.Point(660, 127);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(9, 9);
-            this.label57.TabIndex = 32;
-            this.label57.Text = "2";
-            // 
             // CalibrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2239,12 +2242,12 @@
         private System.Windows.Forms.TrackBar Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar;
         private System.Windows.Forms.TrackBar Calibration_PlateExtractionParameters_MinimumMarkDiametersTrackBar;
         private System.Windows.Forms.TrackBar Calibration_PlateExtractionParameters_MarkThreshodTrackBar;
-        private System.Windows.Forms.Button MinimumMarkDiametersResetButton;
-        private System.Windows.Forms.Button MarkThreshodResetButton;
-        private System.Windows.Forms.Button GaussianFilterSizeResetButton;
-        private System.Windows.Forms.Button MaximumMarkDiametersResetButton;
-        private System.Windows.Forms.Button MinimumContourLengthResetButton;
-        private System.Windows.Forms.Button SmoothingAlphaButton;
+        private System.Windows.Forms.Button Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton;
+        private System.Windows.Forms.Button Calibration_PlateExtractionParameters_MarkThreshodResetButton;
+        private System.Windows.Forms.Button Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton;
+        private System.Windows.Forms.Button Calibration_PlateExtractionParameters_;
+        private System.Windows.Forms.Button Calibration_PlateExtractionParameters_MinimumContourLengthResetButton;
+        private System.Windows.Forms.Button Calibration_PlateExtractionParameters_SmoothingAlphaButton;
         private System.Windows.Forms.TrackBar Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar;
         private System.Windows.Forms.TrackBar Calibration_PlateExtractionParameters_MinimumContourLengthTrackBar;
         private System.Windows.Forms.TrackBar Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar;
@@ -2255,9 +2258,9 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button MinimumThresholdResetButton;
-        private System.Windows.Forms.Button ThresholdDecremetResetButton;
-        private System.Windows.Forms.Button InitialThresholdResetButton;
+        private System.Windows.Forms.Button Calibration_PlateExtractionParameters_MinimumThresholdResetButton;
+        private System.Windows.Forms.Button Calibration_PlateExtractionParameters_ThresholdDecremetResetButton;
+        private System.Windows.Forms.Button Calibration_PlateExtractionParameters_InitialThresholdResetButton;
         private System.Windows.Forms.TrackBar Calibration_PlateExtractionParameters_MinimumThresholdTrackBar;
         private System.Windows.Forms.TrackBar Calibration_PlateExtractionParameters_ThresholdDecremetTrackBar;
         private System.Windows.Forms.TrackBar Calibration_PlateExtractionParameters_InitialThresholdTrackBar;
