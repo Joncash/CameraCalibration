@@ -57,12 +57,28 @@
             this.Calibration_ImageSource_ImageAcquisitionAssistant = new System.Windows.Forms.RadioButton();
             this.Calibration_ImageSource_ImageFiles = new System.Windows.Forms.RadioButton();
             this.CalibrationExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
+            this.Calibration_Calibration_AutoUpdate = new System.Windows.Forms.CheckBox();
+            this.Calibration_Calibration_LiveTests = new System.Windows.Forms.CheckBox();
+            this.Calibration_Calibration_CalibrateButton = new System.Windows.Forms.Button();
+            this.Calibration_Calibration_SetReferenceButton = new System.Windows.Forms.Button();
+            this.Calibration_Calibration_UpdateButton = new System.Windows.Forms.Button();
+            this.Calibration_Calibration_SaveAllButton = new System.Windows.Forms.Button();
+            this.Calibration_Calibration_SaveButton = new System.Windows.Forms.Button();
+            this.Calibration_Calibration_RemoveAllButton = new System.Windows.Forms.Button();
+            this.Calibration_Calibration_RemoveButton = new System.Windows.Forms.Button();
+            this.Calibration_Calibration_LoadButton = new System.Windows.Forms.Button();
+            this.Calibration_Calibration_GridView = new System.Windows.Forms.DataGridView();
+            this.Image = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QualityIssuesExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
+            this.Calibration_QualityIssue_LiveTests = new System.Windows.Forms.CheckBox();
+            this.Calibration_QualityIssue_WarningLevel = new System.Windows.Forms.NumericUpDown();
+            this.label56 = new System.Windows.Forms.Label();
             this.Calibration_QualityIssue_SequenceTests = new System.Windows.Forms.ComboBox();
             this.label55 = new System.Windows.Forms.Label();
             this.Calibration_QualityIssue_ImageTests = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Calibration_QualityIssue_GridView = new System.Windows.Forms.DataGridView();
             this.Scope = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quality = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,7 +131,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.CameraParameterExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
-            this.SaveCameraParametersButton = new System.Windows.Forms.Button();
+            this.Result_CameraParameter_ExportButton = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
             this.Result_CameraParameter_ImageHeight = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
@@ -165,27 +181,12 @@
             this.Result_CameraPose_X = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
-            this.CameraPoseExportBatton = new System.Windows.Forms.Button();
+            this.Reult_CameraPose_ExportBatton = new System.Windows.Forms.Button();
             this.DisplayResultsExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label56 = new System.Windows.Forms.Label();
-            this.Calibration_QualityIssue_WarningLevel = new System.Windows.Forms.NumericUpDown();
-            this.Calibration_QualityIssue_LiveTests = new System.Windows.Forms.CheckBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Image = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.label57 = new System.Windows.Forms.Label();
             this.CalibrationTab.SuspendLayout();
             this.SettingsTabPage.SuspendLayout();
             this.SettingsFlowLayoutPanel.SuspendLayout();
@@ -200,8 +201,10 @@
             this.CalibrationFlowLayoutPanel.SuspendLayout();
             this.ImageSourceExpandCollapsePanel.SuspendLayout();
             this.CalibrationExpandCollapsePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Calibration_Calibration_GridView)).BeginInit();
             this.QualityIssuesExpandCollapsePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Calibration_QualityIssue_WarningLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Calibration_QualityIssue_GridView)).BeginInit();
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Calibration_PlateExtractionParameters_MinimumContourLengthTrackBar)).BeginInit();
@@ -233,8 +236,6 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.DisplayResultsExpandCollapsePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Calibration_QualityIssue_WarningLevel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // CalibrationTab
@@ -335,15 +336,15 @@
             // Settings_CalibrationPlate_Thickness
             // 
             this.Settings_CalibrationPlate_Thickness.DecimalPlaces = 3;
-            this.Settings_CalibrationPlate_Thickness.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             this.Settings_CalibrationPlate_Thickness.Location = new System.Drawing.Point(196, 81);
             this.Settings_CalibrationPlate_Thickness.Name = "Settings_CalibrationPlate_Thickness";
             this.Settings_CalibrationPlate_Thickness.Size = new System.Drawing.Size(231, 21);
             this.Settings_CalibrationPlate_Thickness.TabIndex = 3;
+            this.Settings_CalibrationPlate_Thickness.Value = new decimal(new int[] {
+            630,
+            0,
+            0,
+            196608});
             // 
             // label2
             // 
@@ -417,9 +418,19 @@
             0,
             65536});
             this.Settings_CameraParameters_CameraForcal.Location = new System.Drawing.Point(196, 147);
+            this.Settings_CameraParameters_CameraForcal.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.Settings_CameraParameters_CameraForcal.Name = "Settings_CameraParameters_CameraForcal";
             this.Settings_CameraParameters_CameraForcal.Size = new System.Drawing.Size(231, 21);
             this.Settings_CameraParameters_CameraForcal.TabIndex = 12;
+            this.Settings_CameraParameters_CameraForcal.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             // 
             // label10
             // 
@@ -451,6 +462,11 @@
             this.Settings_CameraParameters_CameraCellWithSy.Name = "Settings_CameraParameters_CameraCellWithSy";
             this.Settings_CameraParameters_CameraCellWithSy.Size = new System.Drawing.Size(231, 21);
             this.Settings_CameraParameters_CameraCellWithSy.TabIndex = 9;
+            this.Settings_CameraParameters_CameraCellWithSy.Value = new decimal(new int[] {
+            83,
+            0,
+            0,
+            65536});
             // 
             // label8
             // 
@@ -479,9 +495,19 @@
             0,
             65536});
             this.Settings_CameraParameters_CameraCellWithSx.Location = new System.Drawing.Point(196, 88);
+            this.Settings_CameraParameters_CameraCellWithSx.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.Settings_CameraParameters_CameraCellWithSx.Name = "Settings_CameraParameters_CameraCellWithSx";
             this.Settings_CameraParameters_CameraCellWithSx.Size = new System.Drawing.Size(231, 21);
             this.Settings_CameraParameters_CameraCellWithSx.TabIndex = 6;
+            this.Settings_CameraParameters_CameraCellWithSx.Value = new decimal(new int[] {
+            83,
+            0,
+            0,
+            65536});
             // 
             // label6
             // 
@@ -503,6 +529,7 @@
             this.Settings_CameraParameters_CameraModel.Name = "Settings_CameraParameters_CameraModel";
             this.Settings_CameraParameters_CameraModel.Size = new System.Drawing.Size(231, 21);
             this.Settings_CameraParameters_CameraModel.TabIndex = 4;
+            this.Settings_CameraParameters_CameraModel.Text = "Area Scan ( Division )";
             // 
             // label3
             // 
@@ -586,17 +613,17 @@
             this.CalibrationExpandCollapsePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.CalibrationExpandCollapsePanel.ButtonSize = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonSize.Small;
             this.CalibrationExpandCollapsePanel.ButtonStyle = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonStyle.Circle;
-            this.CalibrationExpandCollapsePanel.Controls.Add(this.checkBox3);
-            this.CalibrationExpandCollapsePanel.Controls.Add(this.checkBox2);
-            this.CalibrationExpandCollapsePanel.Controls.Add(this.button8);
-            this.CalibrationExpandCollapsePanel.Controls.Add(this.button7);
-            this.CalibrationExpandCollapsePanel.Controls.Add(this.button6);
-            this.CalibrationExpandCollapsePanel.Controls.Add(this.button5);
-            this.CalibrationExpandCollapsePanel.Controls.Add(this.button4);
-            this.CalibrationExpandCollapsePanel.Controls.Add(this.button3);
-            this.CalibrationExpandCollapsePanel.Controls.Add(this.button2);
-            this.CalibrationExpandCollapsePanel.Controls.Add(this.button1);
-            this.CalibrationExpandCollapsePanel.Controls.Add(this.dataGridView2);
+            this.CalibrationExpandCollapsePanel.Controls.Add(this.Calibration_Calibration_AutoUpdate);
+            this.CalibrationExpandCollapsePanel.Controls.Add(this.Calibration_Calibration_LiveTests);
+            this.CalibrationExpandCollapsePanel.Controls.Add(this.Calibration_Calibration_CalibrateButton);
+            this.CalibrationExpandCollapsePanel.Controls.Add(this.Calibration_Calibration_SetReferenceButton);
+            this.CalibrationExpandCollapsePanel.Controls.Add(this.Calibration_Calibration_UpdateButton);
+            this.CalibrationExpandCollapsePanel.Controls.Add(this.Calibration_Calibration_SaveAllButton);
+            this.CalibrationExpandCollapsePanel.Controls.Add(this.Calibration_Calibration_SaveButton);
+            this.CalibrationExpandCollapsePanel.Controls.Add(this.Calibration_Calibration_RemoveAllButton);
+            this.CalibrationExpandCollapsePanel.Controls.Add(this.Calibration_Calibration_RemoveButton);
+            this.CalibrationExpandCollapsePanel.Controls.Add(this.Calibration_Calibration_LoadButton);
+            this.CalibrationExpandCollapsePanel.Controls.Add(this.Calibration_Calibration_GridView);
             this.CalibrationExpandCollapsePanel.ExpandedHeight = 0;
             this.CalibrationExpandCollapsePanel.IsExpanded = true;
             this.CalibrationExpandCollapsePanel.Location = new System.Drawing.Point(3, 101);
@@ -605,6 +632,134 @@
             this.CalibrationExpandCollapsePanel.TabIndex = 2;
             this.CalibrationExpandCollapsePanel.Text = "Calibration";
             this.CalibrationExpandCollapsePanel.UseAnimation = false;
+            // 
+            // Calibration_Calibration_AutoUpdate
+            // 
+            this.Calibration_Calibration_AutoUpdate.AutoSize = true;
+            this.Calibration_Calibration_AutoUpdate.Checked = true;
+            this.Calibration_Calibration_AutoUpdate.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Calibration_Calibration_AutoUpdate.Location = new System.Drawing.Point(861, 279);
+            this.Calibration_Calibration_AutoUpdate.Name = "Calibration_Calibration_AutoUpdate";
+            this.Calibration_Calibration_AutoUpdate.Size = new System.Drawing.Size(93, 19);
+            this.Calibration_Calibration_AutoUpdate.TabIndex = 12;
+            this.Calibration_Calibration_AutoUpdate.Text = "Auto Update";
+            this.Calibration_Calibration_AutoUpdate.UseVisualStyleBackColor = true;
+            // 
+            // Calibration_Calibration_LiveTests
+            // 
+            this.Calibration_Calibration_LiveTests.AutoSize = true;
+            this.Calibration_Calibration_LiveTests.Checked = true;
+            this.Calibration_Calibration_LiveTests.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Calibration_Calibration_LiveTests.Location = new System.Drawing.Point(861, 88);
+            this.Calibration_Calibration_LiveTests.Name = "Calibration_Calibration_LiveTests";
+            this.Calibration_Calibration_LiveTests.Size = new System.Drawing.Size(80, 19);
+            this.Calibration_Calibration_LiveTests.TabIndex = 11;
+            this.Calibration_Calibration_LiveTests.Text = "Live Tests";
+            this.Calibration_Calibration_LiveTests.UseVisualStyleBackColor = true;
+            // 
+            // Calibration_Calibration_CalibrateButton
+            // 
+            this.Calibration_Calibration_CalibrateButton.Location = new System.Drawing.Point(859, 343);
+            this.Calibration_Calibration_CalibrateButton.Name = "Calibration_Calibration_CalibrateButton";
+            this.Calibration_Calibration_CalibrateButton.Size = new System.Drawing.Size(110, 23);
+            this.Calibration_Calibration_CalibrateButton.TabIndex = 10;
+            this.Calibration_Calibration_CalibrateButton.Text = "Calibrate";
+            this.Calibration_Calibration_CalibrateButton.UseVisualStyleBackColor = true;
+            // 
+            // Calibration_Calibration_SetReferenceButton
+            // 
+            this.Calibration_Calibration_SetReferenceButton.Location = new System.Drawing.Point(859, 314);
+            this.Calibration_Calibration_SetReferenceButton.Name = "Calibration_Calibration_SetReferenceButton";
+            this.Calibration_Calibration_SetReferenceButton.Size = new System.Drawing.Size(110, 23);
+            this.Calibration_Calibration_SetReferenceButton.TabIndex = 9;
+            this.Calibration_Calibration_SetReferenceButton.Text = "Set Reference";
+            this.Calibration_Calibration_SetReferenceButton.UseVisualStyleBackColor = true;
+            // 
+            // Calibration_Calibration_UpdateButton
+            // 
+            this.Calibration_Calibration_UpdateButton.Location = new System.Drawing.Point(859, 250);
+            this.Calibration_Calibration_UpdateButton.Name = "Calibration_Calibration_UpdateButton";
+            this.Calibration_Calibration_UpdateButton.Size = new System.Drawing.Size(110, 23);
+            this.Calibration_Calibration_UpdateButton.TabIndex = 8;
+            this.Calibration_Calibration_UpdateButton.Text = "Update ...";
+            this.Calibration_Calibration_UpdateButton.UseVisualStyleBackColor = true;
+            // 
+            // Calibration_Calibration_SaveAllButton
+            // 
+            this.Calibration_Calibration_SaveAllButton.Location = new System.Drawing.Point(859, 206);
+            this.Calibration_Calibration_SaveAllButton.Name = "Calibration_Calibration_SaveAllButton";
+            this.Calibration_Calibration_SaveAllButton.Size = new System.Drawing.Size(110, 23);
+            this.Calibration_Calibration_SaveAllButton.TabIndex = 7;
+            this.Calibration_Calibration_SaveAllButton.Text = "Save All ...";
+            this.Calibration_Calibration_SaveAllButton.UseVisualStyleBackColor = true;
+            // 
+            // Calibration_Calibration_SaveButton
+            // 
+            this.Calibration_Calibration_SaveButton.Location = new System.Drawing.Point(859, 177);
+            this.Calibration_Calibration_SaveButton.Name = "Calibration_Calibration_SaveButton";
+            this.Calibration_Calibration_SaveButton.Size = new System.Drawing.Size(110, 23);
+            this.Calibration_Calibration_SaveButton.TabIndex = 6;
+            this.Calibration_Calibration_SaveButton.Text = "Save ...";
+            this.Calibration_Calibration_SaveButton.UseVisualStyleBackColor = true;
+            // 
+            // Calibration_Calibration_RemoveAllButton
+            // 
+            this.Calibration_Calibration_RemoveAllButton.Location = new System.Drawing.Point(859, 148);
+            this.Calibration_Calibration_RemoveAllButton.Name = "Calibration_Calibration_RemoveAllButton";
+            this.Calibration_Calibration_RemoveAllButton.Size = new System.Drawing.Size(110, 23);
+            this.Calibration_Calibration_RemoveAllButton.TabIndex = 5;
+            this.Calibration_Calibration_RemoveAllButton.Text = "Remove All";
+            this.Calibration_Calibration_RemoveAllButton.UseVisualStyleBackColor = true;
+            // 
+            // Calibration_Calibration_RemoveButton
+            // 
+            this.Calibration_Calibration_RemoveButton.Location = new System.Drawing.Point(859, 119);
+            this.Calibration_Calibration_RemoveButton.Name = "Calibration_Calibration_RemoveButton";
+            this.Calibration_Calibration_RemoveButton.Size = new System.Drawing.Size(110, 23);
+            this.Calibration_Calibration_RemoveButton.TabIndex = 4;
+            this.Calibration_Calibration_RemoveButton.Text = "Remove";
+            this.Calibration_Calibration_RemoveButton.UseVisualStyleBackColor = true;
+            // 
+            // Calibration_Calibration_LoadButton
+            // 
+            this.Calibration_Calibration_LoadButton.Location = new System.Drawing.Point(859, 59);
+            this.Calibration_Calibration_LoadButton.Name = "Calibration_Calibration_LoadButton";
+            this.Calibration_Calibration_LoadButton.Size = new System.Drawing.Size(110, 23);
+            this.Calibration_Calibration_LoadButton.TabIndex = 3;
+            this.Calibration_Calibration_LoadButton.Text = "Load ...";
+            this.Calibration_Calibration_LoadButton.UseVisualStyleBackColor = true;
+            // 
+            // Calibration_Calibration_GridView
+            // 
+            this.Calibration_Calibration_GridView.AllowUserToAddRows = false;
+            this.Calibration_Calibration_GridView.AllowUserToDeleteRows = false;
+            this.Calibration_Calibration_GridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Calibration_Calibration_GridView.BackgroundColor = System.Drawing.Color.White;
+            this.Calibration_Calibration_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Calibration_Calibration_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Image,
+            this.Status});
+            this.Calibration_Calibration_GridView.Location = new System.Drawing.Point(21, 59);
+            this.Calibration_Calibration_GridView.Name = "Calibration_Calibration_GridView";
+            this.Calibration_Calibration_GridView.ReadOnly = true;
+            this.Calibration_Calibration_GridView.Size = new System.Drawing.Size(820, 323);
+            this.Calibration_Calibration_GridView.TabIndex = 2;
+            // 
+            // Image
+            // 
+            this.Image.HeaderText = "Image";
+            this.Image.Name = "Image";
+            this.Image.ReadOnly = true;
+            this.Image.Width = 150;
+            // 
+            // Status
+            // 
+            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
             // QualityIssuesExpandCollapsePanel
             // 
@@ -618,7 +773,7 @@
             this.QualityIssuesExpandCollapsePanel.Controls.Add(this.label55);
             this.QualityIssuesExpandCollapsePanel.Controls.Add(this.Calibration_QualityIssue_ImageTests);
             this.QualityIssuesExpandCollapsePanel.Controls.Add(this.label28);
-            this.QualityIssuesExpandCollapsePanel.Controls.Add(this.dataGridView1);
+            this.QualityIssuesExpandCollapsePanel.Controls.Add(this.Calibration_QualityIssue_GridView);
             this.QualityIssuesExpandCollapsePanel.ExpandedHeight = 0;
             this.QualityIssuesExpandCollapsePanel.IsExpanded = true;
             this.QualityIssuesExpandCollapsePanel.Location = new System.Drawing.Point(3, 503);
@@ -627,6 +782,44 @@
             this.QualityIssuesExpandCollapsePanel.TabIndex = 3;
             this.QualityIssuesExpandCollapsePanel.Text = "Quality Issues";
             this.QualityIssuesExpandCollapsePanel.UseAnimation = false;
+            // 
+            // Calibration_QualityIssue_LiveTests
+            // 
+            this.Calibration_QualityIssue_LiveTests.AutoSize = true;
+            this.Calibration_QualityIssue_LiveTests.Checked = true;
+            this.Calibration_QualityIssue_LiveTests.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Calibration_QualityIssue_LiveTests.Location = new System.Drawing.Point(861, 219);
+            this.Calibration_QualityIssue_LiveTests.Name = "Calibration_QualityIssue_LiveTests";
+            this.Calibration_QualityIssue_LiveTests.Size = new System.Drawing.Size(80, 19);
+            this.Calibration_QualityIssue_LiveTests.TabIndex = 8;
+            this.Calibration_QualityIssue_LiveTests.Text = "Live Tests";
+            this.Calibration_QualityIssue_LiveTests.UseVisualStyleBackColor = true;
+            // 
+            // Calibration_QualityIssue_WarningLevel
+            // 
+            this.Calibration_QualityIssue_WarningLevel.Location = new System.Drawing.Point(861, 180);
+            this.Calibration_QualityIssue_WarningLevel.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.Calibration_QualityIssue_WarningLevel.Name = "Calibration_QualityIssue_WarningLevel";
+            this.Calibration_QualityIssue_WarningLevel.Size = new System.Drawing.Size(90, 21);
+            this.Calibration_QualityIssue_WarningLevel.TabIndex = 7;
+            this.Calibration_QualityIssue_WarningLevel.Value = new decimal(new int[] {
+            70,
+            0,
+            0,
+            0});
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(858, 159);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(113, 15);
+            this.label56.TabIndex = 6;
+            this.label56.Text = "Warning Level ( % )";
             // 
             // Calibration_QualityIssue_SequenceTests
             // 
@@ -672,24 +865,24 @@
             this.label28.TabIndex = 2;
             this.label28.Text = "Image Tests";
             // 
-            // dataGridView1
+            // Calibration_QualityIssue_GridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Calibration_QualityIssue_GridView.AllowUserToAddRows = false;
+            this.Calibration_QualityIssue_GridView.AllowUserToDeleteRows = false;
+            this.Calibration_QualityIssue_GridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Calibration_QualityIssue_GridView.BackgroundColor = System.Drawing.Color.White;
+            this.Calibration_QualityIssue_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Calibration_QualityIssue_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Scope,
             this.Description,
             this.Quality});
-            this.dataGridView1.Location = new System.Drawing.Point(21, 45);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(820, 200);
-            this.dataGridView1.TabIndex = 1;
+            this.Calibration_QualityIssue_GridView.Location = new System.Drawing.Point(21, 45);
+            this.Calibration_QualityIssue_GridView.Name = "Calibration_QualityIssue_GridView";
+            this.Calibration_QualityIssue_GridView.ReadOnly = true;
+            this.Calibration_QualityIssue_GridView.Size = new System.Drawing.Size(820, 200);
+            this.Calibration_QualityIssue_GridView.TabIndex = 1;
             // 
             // Scope
             // 
@@ -1325,7 +1518,8 @@
             this.CameraParameterExpandCollapsePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.CameraParameterExpandCollapsePanel.ButtonSize = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonSize.Small;
             this.CameraParameterExpandCollapsePanel.ButtonStyle = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonStyle.Circle;
-            this.CameraParameterExpandCollapsePanel.Controls.Add(this.SaveCameraParametersButton);
+            this.CameraParameterExpandCollapsePanel.Controls.Add(this.label57);
+            this.CameraParameterExpandCollapsePanel.Controls.Add(this.Result_CameraParameter_ExportButton);
             this.CameraParameterExpandCollapsePanel.Controls.Add(this.label35);
             this.CameraParameterExpandCollapsePanel.Controls.Add(this.Result_CameraParameter_ImageHeight);
             this.CameraParameterExpandCollapsePanel.Controls.Add(this.label36);
@@ -1359,14 +1553,14 @@
             this.CameraParameterExpandCollapsePanel.Text = "Camera Parameters";
             this.CameraParameterExpandCollapsePanel.UseAnimation = false;
             // 
-            // SaveCameraParametersButton
+            // Result_CameraParameter_ExportButton
             // 
-            this.SaveCameraParametersButton.Location = new System.Drawing.Point(901, 48);
-            this.SaveCameraParametersButton.Name = "SaveCameraParametersButton";
-            this.SaveCameraParametersButton.Size = new System.Drawing.Size(75, 23);
-            this.SaveCameraParametersButton.TabIndex = 31;
-            this.SaveCameraParametersButton.Text = "Save...";
-            this.SaveCameraParametersButton.UseVisualStyleBackColor = true;
+            this.Result_CameraParameter_ExportButton.Location = new System.Drawing.Point(901, 48);
+            this.Result_CameraParameter_ExportButton.Name = "Result_CameraParameter_ExportButton";
+            this.Result_CameraParameter_ExportButton.Size = new System.Drawing.Size(75, 23);
+            this.Result_CameraParameter_ExportButton.TabIndex = 31;
+            this.Result_CameraParameter_ExportButton.Text = "Save...";
+            this.Result_CameraParameter_ExportButton.UseVisualStyleBackColor = true;
             // 
             // label35
             // 
@@ -1486,9 +1680,9 @@
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(638, 129);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(39, 15);
+            this.label33.Size = new System.Drawing.Size(28, 15);
             this.label33.TabIndex = 18;
-            this.label33.Text = "pixels";
+            this.label33.Text = "1/m";
             // 
             // Result_CameraParameter_Kappa
             // 
@@ -1514,9 +1708,9 @@
             this.label31.AutoSize = true;
             this.label31.Location = new System.Drawing.Point(638, 102);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(39, 15);
+            this.label31.Size = new System.Drawing.Size(29, 15);
             this.label31.TabIndex = 15;
-            this.label31.Text = "pixels";
+            this.label31.Text = "mm";
             // 
             // Result_CameraParameter_FocalLength
             // 
@@ -1542,9 +1736,9 @@
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(638, 75);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(39, 15);
+            this.label29.Size = new System.Drawing.Size(29, 15);
             this.label29.TabIndex = 12;
-            this.label29.Text = "pixels";
+            this.label29.Text = "mm";
             // 
             // Result_CameraParameter_CellHeightSy
             // 
@@ -1570,9 +1764,9 @@
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(638, 48);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(39, 15);
+            this.label27.Size = new System.Drawing.Size(29, 15);
             this.label27.TabIndex = 9;
-            this.label27.Text = "pixels";
+            this.label27.Text = "mm";
             // 
             // Result_CameraParameter_CellWidthSx
             // 
@@ -1603,7 +1797,7 @@
             this.CameraPoseExpandCollapsePanel.Controls.Add(this.panel4);
             this.CameraPoseExpandCollapsePanel.Controls.Add(this.panel2);
             this.CameraPoseExpandCollapsePanel.Controls.Add(this.panel1);
-            this.CameraPoseExpandCollapsePanel.Controls.Add(this.CameraPoseExportBatton);
+            this.CameraPoseExpandCollapsePanel.Controls.Add(this.Reult_CameraPose_ExportBatton);
             this.CameraPoseExpandCollapsePanel.ExpandedHeight = 0;
             this.CameraPoseExpandCollapsePanel.IsExpanded = true;
             this.CameraPoseExpandCollapsePanel.Location = new System.Drawing.Point(3, 397);
@@ -1847,15 +2041,15 @@
             this.label48.TabIndex = 31;
             this.label48.Text = "X";
             // 
-            // CameraPoseExportBatton
+            // Reult_CameraPose_ExportBatton
             // 
-            this.CameraPoseExportBatton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CameraPoseExportBatton.Location = new System.Drawing.Point(899, 48);
-            this.CameraPoseExportBatton.Name = "CameraPoseExportBatton";
-            this.CameraPoseExportBatton.Size = new System.Drawing.Size(75, 23);
-            this.CameraPoseExportBatton.TabIndex = 49;
-            this.CameraPoseExportBatton.Text = "Save...";
-            this.CameraPoseExportBatton.UseVisualStyleBackColor = true;
+            this.Reult_CameraPose_ExportBatton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Reult_CameraPose_ExportBatton.Location = new System.Drawing.Point(899, 48);
+            this.Reult_CameraPose_ExportBatton.Name = "Reult_CameraPose_ExportBatton";
+            this.Reult_CameraPose_ExportBatton.Size = new System.Drawing.Size(75, 23);
+            this.Reult_CameraPose_ExportBatton.TabIndex = 49;
+            this.Reult_CameraPose_ExportBatton.Text = "Save...";
+            this.Reult_CameraPose_ExportBatton.UseVisualStyleBackColor = true;
             // 
             // DisplayResultsExpandCollapsePanel
             // 
@@ -1906,171 +2100,16 @@
             this.radioButton2.Text = "Original Reference Image";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // label56
+            // label57
             // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(858, 159);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(113, 15);
-            this.label56.TabIndex = 6;
-            this.label56.Text = "Warning Level ( % )";
-            // 
-            // Calibration_QualityIssue_WarningLevel
-            // 
-            this.Calibration_QualityIssue_WarningLevel.Location = new System.Drawing.Point(861, 180);
-            this.Calibration_QualityIssue_WarningLevel.Maximum = new decimal(new int[] {
-            99,
-            0,
-            0,
-            0});
-            this.Calibration_QualityIssue_WarningLevel.Name = "Calibration_QualityIssue_WarningLevel";
-            this.Calibration_QualityIssue_WarningLevel.Size = new System.Drawing.Size(90, 20);
-            this.Calibration_QualityIssue_WarningLevel.TabIndex = 7;
-            this.Calibration_QualityIssue_WarningLevel.Value = new decimal(new int[] {
-            70,
-            0,
-            0,
-            0});
-            // 
-            // Calibration_QualityIssue_LiveTests
-            // 
-            this.Calibration_QualityIssue_LiveTests.AutoSize = true;
-            this.Calibration_QualityIssue_LiveTests.Checked = true;
-            this.Calibration_QualityIssue_LiveTests.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Calibration_QualityIssue_LiveTests.Location = new System.Drawing.Point(861, 219);
-            this.Calibration_QualityIssue_LiveTests.Name = "Calibration_QualityIssue_LiveTests";
-            this.Calibration_QualityIssue_LiveTests.Size = new System.Drawing.Size(80, 19);
-            this.Calibration_QualityIssue_LiveTests.TabIndex = 8;
-            this.Calibration_QualityIssue_LiveTests.Text = "Live Tests";
-            this.Calibration_QualityIssue_LiveTests.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Image,
-            this.Status});
-            this.dataGridView2.Location = new System.Drawing.Point(21, 59);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(820, 323);
-            this.dataGridView2.TabIndex = 2;
-            // 
-            // Image
-            // 
-            this.Image.HeaderText = "Image";
-            this.Image.Name = "Image";
-            this.Image.ReadOnly = true;
-            this.Image.Width = 150;
-            // 
-            // Status
-            // 
-            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(859, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Load ...";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(859, 119);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Remove";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(859, 148);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Remove All";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(859, 177);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Save ...";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(859, 206);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(110, 23);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Save All ...";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(859, 250);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(110, 23);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Update ...";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(859, 314);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(110, 23);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Set Reference";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(859, 343);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(110, 23);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "Calibrate";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Checked = true;
-            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Location = new System.Drawing.Point(861, 88);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 19);
-            this.checkBox2.TabIndex = 11;
-            this.checkBox2.Text = "Live Tests";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Checked = true;
-            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox3.Location = new System.Drawing.Point(861, 279);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(93, 19);
-            this.checkBox3.TabIndex = 12;
-            this.checkBox3.Text = "Auto Update";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.label57.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label57.Location = new System.Drawing.Point(660, 127);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(9, 9);
+            this.label57.TabIndex = 32;
+            this.label57.Text = "2";
             // 
             // CalibrationForm
             // 
@@ -2100,9 +2139,11 @@
             this.ImageSourceExpandCollapsePanel.PerformLayout();
             this.CalibrationExpandCollapsePanel.ResumeLayout(false);
             this.CalibrationExpandCollapsePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Calibration_Calibration_GridView)).EndInit();
             this.QualityIssuesExpandCollapsePanel.ResumeLayout(false);
             this.QualityIssuesExpandCollapsePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Calibration_QualityIssue_WarningLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Calibration_QualityIssue_GridView)).EndInit();
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.ResumeLayout(false);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar)).EndInit();
@@ -2145,8 +2186,6 @@
             this.panel1.PerformLayout();
             this.DisplayResultsExpandCollapsePanel.ResumeLayout(false);
             this.DisplayResultsExpandCollapsePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Calibration_QualityIssue_WarningLevel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2258,11 +2297,11 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox Result_CameraParameter_CellHeightSy;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Button SaveCameraParametersButton;
+        private System.Windows.Forms.Button Result_CameraParameter_ExportButton;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.TextBox Result_CameraPose_X;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Button CameraPoseExportBatton;
+        private System.Windows.Forms.Button Reult_CameraPose_ExportBatton;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -2287,7 +2326,7 @@
         private System.Windows.Forms.TextBox Result_CameraPose_Y;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Calibration_QualityIssue_GridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Scope;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quality;
@@ -2298,19 +2337,20 @@
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.NumericUpDown Calibration_QualityIssue_WarningLevel;
         private System.Windows.Forms.CheckBox Calibration_QualityIssue_LiveTests;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView Calibration_Calibration_GridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Image;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Button Calibration_Calibration_LoadButton;
+        private System.Windows.Forms.Button Calibration_Calibration_CalibrateButton;
+        private System.Windows.Forms.Button Calibration_Calibration_SetReferenceButton;
+        private System.Windows.Forms.Button Calibration_Calibration_UpdateButton;
+        private System.Windows.Forms.Button Calibration_Calibration_SaveAllButton;
+        private System.Windows.Forms.Button Calibration_Calibration_SaveButton;
+        private System.Windows.Forms.Button Calibration_Calibration_RemoveAllButton;
+        private System.Windows.Forms.Button Calibration_Calibration_RemoveButton;
+        private System.Windows.Forms.CheckBox Calibration_Calibration_LiveTests;
+        private System.Windows.Forms.CheckBox Calibration_Calibration_AutoUpdate;
+        private System.Windows.Forms.Label label57;
     }
 }
 
