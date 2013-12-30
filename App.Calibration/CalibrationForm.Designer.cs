@@ -34,11 +34,14 @@
             this.CalibrationTaskExpandPanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
             this.Settings_CalibrationTask_FullCalibration = new System.Windows.Forms.RadioButton();
             this.CalibrationPlateExpandPanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
+            this.Settings_CalibrationPlate_DescriptionFileButton = new System.Windows.Forms.Button();
+            this.Settings_CalibrationPlate_DescriptionFile = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Settings_CalibrationPlate_Thickness = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CameraParametersExpandPanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
+            this.Settings_CameraParameters_Telecentric = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.Settings_CameraParameters_CameraForcal = new System.Windows.Forms.NumericUpDown();
@@ -157,6 +160,7 @@
             this.Result_CameraParameter_CellWidthSx = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
             this.CameraPoseExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
+            this.Result_CameraPose_OriginalAtImageCorner = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Result_CameraPose_RotationZ = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
@@ -182,14 +186,9 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.Reult_CameraPose_ExportBatton = new System.Windows.Forms.Button();
-            this.DisplayResultsExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.Settings_CalibrationPlate_DescriptionFile = new System.Windows.Forms.TextBox();
-            this.Settings_CalibrationPlate_DescriptionFileButton = new System.Windows.Forms.Button();
-            this.Result_CameraPose_OriginalAtImageCorner = new System.Windows.Forms.CheckBox();
-            this.Settings_CameraParameters_Telecentric = new System.Windows.Forms.CheckBox();
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton = new System.Windows.Forms.RadioButton();
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox = new System.Windows.Forms.ComboBox();
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton = new System.Windows.Forms.Button();
             this.CalibrationTab.SuspendLayout();
             this.SettingsTabPage.SuspendLayout();
             this.SettingsFlowLayoutPanel.SuspendLayout();
@@ -238,7 +237,6 @@
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.DisplayResultsExpandCollapsePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // CalibrationTab
@@ -329,6 +327,23 @@
             this.CalibrationPlateExpandPanel.Text = "Calibration Plate";
             this.CalibrationPlateExpandPanel.UseAnimation = false;
             // 
+            // Settings_CalibrationPlate_DescriptionFileButton
+            // 
+            this.Settings_CalibrationPlate_DescriptionFileButton.Location = new System.Drawing.Point(885, 42);
+            this.Settings_CalibrationPlate_DescriptionFileButton.Name = "Settings_CalibrationPlate_DescriptionFileButton";
+            this.Settings_CalibrationPlate_DescriptionFileButton.Size = new System.Drawing.Size(75, 23);
+            this.Settings_CalibrationPlate_DescriptionFileButton.TabIndex = 6;
+            this.Settings_CalibrationPlate_DescriptionFileButton.Text = "Open ...";
+            this.Settings_CalibrationPlate_DescriptionFileButton.UseVisualStyleBackColor = true;
+            // 
+            // Settings_CalibrationPlate_DescriptionFile
+            // 
+            this.Settings_CalibrationPlate_DescriptionFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Settings_CalibrationPlate_DescriptionFile.Location = new System.Drawing.Point(196, 43);
+            this.Settings_CalibrationPlate_DescriptionFile.Name = "Settings_CalibrationPlate_DescriptionFile";
+            this.Settings_CalibrationPlate_DescriptionFile.Size = new System.Drawing.Size(683, 21);
+            this.Settings_CalibrationPlate_DescriptionFile.TabIndex = 5;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -395,6 +410,16 @@
             this.CameraParametersExpandPanel.TabIndex = 3;
             this.CameraParametersExpandPanel.Text = "Camera Parameters";
             this.CameraParametersExpandPanel.UseAnimation = false;
+            // 
+            // Settings_CameraParameters_Telecentric
+            // 
+            this.Settings_CameraParameters_Telecentric.AutoSize = true;
+            this.Settings_CameraParameters_Telecentric.Location = new System.Drawing.Point(483, 148);
+            this.Settings_CameraParameters_Telecentric.Name = "Settings_CameraParameters_Telecentric";
+            this.Settings_CameraParameters_Telecentric.Size = new System.Drawing.Size(86, 19);
+            this.Settings_CameraParameters_Telecentric.TabIndex = 55;
+            this.Settings_CameraParameters_Telecentric.Text = "Telecentric";
+            this.Settings_CameraParameters_Telecentric.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -581,12 +606,15 @@
             this.ImageSourceExpandCollapsePanel.BackColor = System.Drawing.Color.Transparent;
             this.ImageSourceExpandCollapsePanel.ButtonSize = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonSize.Small;
             this.ImageSourceExpandCollapsePanel.ButtonStyle = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonStyle.Circle;
+            this.ImageSourceExpandCollapsePanel.Controls.Add(this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton);
+            this.ImageSourceExpandCollapsePanel.Controls.Add(this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox);
+            this.ImageSourceExpandCollapsePanel.Controls.Add(this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton);
             this.ImageSourceExpandCollapsePanel.Controls.Add(this.Calibration_ImageSource_ImageFiles);
             this.ImageSourceExpandCollapsePanel.ExpandedHeight = 0;
             this.ImageSourceExpandCollapsePanel.IsExpanded = true;
             this.ImageSourceExpandCollapsePanel.Location = new System.Drawing.Point(3, 3);
             this.ImageSourceExpandCollapsePanel.Name = "ImageSourceExpandCollapsePanel";
-            this.ImageSourceExpandCollapsePanel.Size = new System.Drawing.Size(973, 77);
+            this.ImageSourceExpandCollapsePanel.Size = new System.Drawing.Size(973, 94);
             this.ImageSourceExpandCollapsePanel.TabIndex = 0;
             this.ImageSourceExpandCollapsePanel.Text = "Image Source";
             this.ImageSourceExpandCollapsePanel.UseAnimation = false;
@@ -595,11 +623,10 @@
             // 
             this.Calibration_ImageSource_ImageFiles.AutoSize = true;
             this.Calibration_ImageSource_ImageFiles.Checked = true;
-            this.Calibration_ImageSource_ImageFiles.Location = new System.Drawing.Point(35, 44);
+            this.Calibration_ImageSource_ImageFiles.Location = new System.Drawing.Point(35, 41);
             this.Calibration_ImageSource_ImageFiles.Name = "Calibration_ImageSource_ImageFiles";
             this.Calibration_ImageSource_ImageFiles.Size = new System.Drawing.Size(89, 19);
             this.Calibration_ImageSource_ImageFiles.TabIndex = 2;
-            this.Calibration_ImageSource_ImageFiles.TabStop = true;
             this.Calibration_ImageSource_ImageFiles.Text = "Image Files";
             this.Calibration_ImageSource_ImageFiles.UseVisualStyleBackColor = true;
             // 
@@ -621,7 +648,7 @@
             this.CalibrationExpandCollapsePanel.Controls.Add(this.Calibration_Calibration_GridView);
             this.CalibrationExpandCollapsePanel.ExpandedHeight = 0;
             this.CalibrationExpandCollapsePanel.IsExpanded = true;
-            this.CalibrationExpandCollapsePanel.Location = new System.Drawing.Point(3, 86);
+            this.CalibrationExpandCollapsePanel.Location = new System.Drawing.Point(3, 103);
             this.CalibrationExpandCollapsePanel.Name = "CalibrationExpandCollapsePanel";
             this.CalibrationExpandCollapsePanel.Size = new System.Drawing.Size(973, 396);
             this.CalibrationExpandCollapsePanel.TabIndex = 2;
@@ -771,7 +798,7 @@
             this.QualityIssuesExpandCollapsePanel.Controls.Add(this.Calibration_QualityIssue_GridView);
             this.QualityIssuesExpandCollapsePanel.ExpandedHeight = 0;
             this.QualityIssuesExpandCollapsePanel.IsExpanded = true;
-            this.QualityIssuesExpandCollapsePanel.Location = new System.Drawing.Point(3, 488);
+            this.QualityIssuesExpandCollapsePanel.Location = new System.Drawing.Point(3, 505);
             this.QualityIssuesExpandCollapsePanel.Name = "QualityIssuesExpandCollapsePanel";
             this.QualityIssuesExpandCollapsePanel.Size = new System.Drawing.Size(973, 248);
             this.QualityIssuesExpandCollapsePanel.TabIndex = 3;
@@ -946,7 +973,7 @@
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label12);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.ExpandedHeight = 0;
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.IsExpanded = true;
-            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Location = new System.Drawing.Point(3, 742);
+            this.CalibrationPlateExtractionParametersExpandCollapsePanel.Location = new System.Drawing.Point(3, 759);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Name = "CalibrationPlateExtractionParametersExpandCollapsePanel";
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.Size = new System.Drawing.Size(973, 490);
             this.CalibrationPlateExtractionParametersExpandCollapsePanel.TabIndex = 4;
@@ -1465,7 +1492,6 @@
             this.ResultFlowLayoutPanel.Controls.Add(this.expandCollapsePanel1);
             this.ResultFlowLayoutPanel.Controls.Add(this.CameraParameterExpandCollapsePanel);
             this.ResultFlowLayoutPanel.Controls.Add(this.CameraPoseExpandCollapsePanel);
-            this.ResultFlowLayoutPanel.Controls.Add(this.DisplayResultsExpandCollapsePanel);
             this.ResultFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ResultFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.ResultFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
@@ -1846,6 +1872,16 @@
             this.CameraPoseExpandCollapsePanel.Text = "Camera Pose";
             this.CameraPoseExpandCollapsePanel.UseAnimation = false;
             // 
+            // Result_CameraPose_OriginalAtImageCorner
+            // 
+            this.Result_CameraPose_OriginalAtImageCorner.AutoSize = true;
+            this.Result_CameraPose_OriginalAtImageCorner.Location = new System.Drawing.Point(22, 150);
+            this.Result_CameraPose_OriginalAtImageCorner.Name = "Result_CameraPose_OriginalAtImageCorner";
+            this.Result_CameraPose_OriginalAtImageCorner.Size = new System.Drawing.Size(150, 19);
+            this.Result_CameraPose_OriginalAtImageCorner.TabIndex = 54;
+            this.Result_CameraPose_OriginalAtImageCorner.Text = "Origin at Image Corner";
+            this.Result_CameraPose_OriginalAtImageCorner.UseVisualStyleBackColor = true;
+            // 
             // panel5
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -2096,91 +2132,35 @@
             this.Reult_CameraPose_ExportBatton.Text = "Save...";
             this.Reult_CameraPose_ExportBatton.UseVisualStyleBackColor = true;
             // 
-            // DisplayResultsExpandCollapsePanel
+            // Calibration_ImageSource_ImageAcquisitionAssistantRadioButton
             // 
-            this.DisplayResultsExpandCollapsePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.DisplayResultsExpandCollapsePanel.ButtonSize = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonSize.Small;
-            this.DisplayResultsExpandCollapsePanel.ButtonStyle = MakarovDev.ExpandCollapsePanel.ExpandCollapseButton.ExpandButtonStyle.Circle;
-            this.DisplayResultsExpandCollapsePanel.Controls.Add(this.checkBox1);
-            this.DisplayResultsExpandCollapsePanel.Controls.Add(this.radioButton3);
-            this.DisplayResultsExpandCollapsePanel.Controls.Add(this.radioButton2);
-            this.DisplayResultsExpandCollapsePanel.ExpandedHeight = 0;
-            this.DisplayResultsExpandCollapsePanel.IsExpanded = true;
-            this.DisplayResultsExpandCollapsePanel.Location = new System.Drawing.Point(3, 582);
-            this.DisplayResultsExpandCollapsePanel.Name = "DisplayResultsExpandCollapsePanel";
-            this.DisplayResultsExpandCollapsePanel.Size = new System.Drawing.Size(985, 196);
-            this.DisplayResultsExpandCollapsePanel.TabIndex = 4;
-            this.DisplayResultsExpandCollapsePanel.Text = "Display Results";
-            this.DisplayResultsExpandCollapsePanel.UseAnimation = false;
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.AutoSize = true;
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Location = new System.Drawing.Point(35, 66);
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Name = "Calibration_ImageSource_ImageAcquisitionAssistantRadioButton";
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Size = new System.Drawing.Size(173, 19);
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.TabIndex = 3;
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Text = "Image Acquisition Assistant";
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // Calibration_ImageSource_ImageAcquisitionAssistantComboBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(438, 50);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(155, 19);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Display Corrdinate Axes";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.FormattingEnabled = true;
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Items.AddRange(new object[] {
+            "Image Acquisition 01"});
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Location = new System.Drawing.Point(537, 66);
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Name = "Calibration_ImageSource_ImageAcquisitionAssistantComboBox";
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Size = new System.Drawing.Size(381, 21);
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.TabIndex = 4;
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Text = "Image Acquisition 01";
             // 
-            // radioButton3
+            // Calibration_ImageSource_ImageAcquisitionAssistantOpenButton
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(24, 74);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(179, 19);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Simulated Reference Image";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(24, 49);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(166, 19);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Original Reference Image";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // Settings_CalibrationPlate_DescriptionFile
-            // 
-            this.Settings_CalibrationPlate_DescriptionFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Settings_CalibrationPlate_DescriptionFile.Location = new System.Drawing.Point(196, 43);
-            this.Settings_CalibrationPlate_DescriptionFile.Name = "Settings_CalibrationPlate_DescriptionFile";
-            this.Settings_CalibrationPlate_DescriptionFile.Size = new System.Drawing.Size(683, 21);
-            this.Settings_CalibrationPlate_DescriptionFile.TabIndex = 5;
-            // 
-            // Settings_CalibrationPlate_DescriptionFileButton
-            // 
-            this.Settings_CalibrationPlate_DescriptionFileButton.Location = new System.Drawing.Point(885, 42);
-            this.Settings_CalibrationPlate_DescriptionFileButton.Name = "Settings_CalibrationPlate_DescriptionFileButton";
-            this.Settings_CalibrationPlate_DescriptionFileButton.Size = new System.Drawing.Size(75, 23);
-            this.Settings_CalibrationPlate_DescriptionFileButton.TabIndex = 6;
-            this.Settings_CalibrationPlate_DescriptionFileButton.Text = "Open ...";
-            this.Settings_CalibrationPlate_DescriptionFileButton.UseVisualStyleBackColor = true;
-            // 
-            // Result_CameraPose_OriginalAtImageCorner
-            // 
-            this.Result_CameraPose_OriginalAtImageCorner.AutoSize = true;
-            this.Result_CameraPose_OriginalAtImageCorner.Location = new System.Drawing.Point(22, 150);
-            this.Result_CameraPose_OriginalAtImageCorner.Name = "Result_CameraPose_OriginalAtImageCorner";
-            this.Result_CameraPose_OriginalAtImageCorner.Size = new System.Drawing.Size(150, 19);
-            this.Result_CameraPose_OriginalAtImageCorner.TabIndex = 54;
-            this.Result_CameraPose_OriginalAtImageCorner.Text = "Origin at Image Corner";
-            this.Result_CameraPose_OriginalAtImageCorner.UseVisualStyleBackColor = true;
-            // 
-            // Settings_CameraParameters_Telecentric
-            // 
-            this.Settings_CameraParameters_Telecentric.AutoSize = true;
-            this.Settings_CameraParameters_Telecentric.Location = new System.Drawing.Point(483, 148);
-            this.Settings_CameraParameters_Telecentric.Name = "Settings_CameraParameters_Telecentric";
-            this.Settings_CameraParameters_Telecentric.Size = new System.Drawing.Size(86, 19);
-            this.Settings_CameraParameters_Telecentric.TabIndex = 55;
-            this.Settings_CameraParameters_Telecentric.Text = "Telecentric";
-            this.Settings_CameraParameters_Telecentric.UseVisualStyleBackColor = true;
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Location = new System.Drawing.Point(924, 65);
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Name = "Calibration_ImageSource_ImageAcquisitionAssistantOpenButton";
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Size = new System.Drawing.Size(45, 23);
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.TabIndex = 5;
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Text = "Open";
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.UseVisualStyleBackColor = true;
             // 
             // CalibrationForm
             // 
@@ -2255,8 +2235,6 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.DisplayResultsExpandCollapsePanel.ResumeLayout(false);
-            this.DisplayResultsExpandCollapsePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2298,7 +2276,6 @@
         private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel expandCollapsePanel1;
         private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel CameraParameterExpandCollapsePanel;
         private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel CameraPoseExpandCollapsePanel;
-        private MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel DisplayResultsExpandCollapsePanel;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
@@ -2372,9 +2349,6 @@
         private System.Windows.Forms.TextBox Result_CameraPose_X;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Button Reult_CameraPose_ExportBatton;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.TextBox Result_CameraPose_RotationX;
         private System.Windows.Forms.Label label54;
@@ -2425,6 +2399,9 @@
         private System.Windows.Forms.TextBox Settings_CalibrationPlate_DescriptionFile;
         private System.Windows.Forms.CheckBox Result_CameraPose_OriginalAtImageCorner;
         private System.Windows.Forms.CheckBox Settings_CameraParameters_Telecentric;
+        private System.Windows.Forms.RadioButton Calibration_ImageSource_ImageAcquisitionAssistantRadioButton;
+        private System.Windows.Forms.Button Calibration_ImageSource_ImageAcquisitionAssistantOpenButton;
+        private System.Windows.Forms.ComboBox Calibration_ImageSource_ImageAcquisitionAssistantComboBox;
     }
 }
 
