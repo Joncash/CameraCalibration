@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalibrationModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -188,6 +189,161 @@ namespace App.Calibration
                     return true;
                 });
             }
+        }
+
+        private void Calibration_Calibration_CalibrateButton_Click(object sender, EventArgs e)
+        {
+            var settingParameters = getSettingParameters();
+            var calibrateParameters = getCalibrateParameters();
+            var resultParameters = getCalibrateResultParameters();
+
+            //var dict = new Dictionary<CalibrateResultType, object>();
+            //dict.Add(CalibrateResultType.CalibrationStatus_Status, "XX");
+            //setCalibrateResultParameters(dict);
+        }
+
+        private Dictionary<CalibrateSettingType, object> getSettingParameters()
+        {
+            Dictionary<CalibrateSettingType, object> parameters = new Dictionary<CalibrateSettingType, object>();
+            
+            parameters.Add(CalibrateSettingType.CalibrationTaskType,  CalibrationTaskType.FullCalibration);
+            parameters.Add(CalibrateSettingType.DescriptionFile,      Settings_CalibrationPlate_DescriptionFile.Text);
+            parameters.Add(CalibrateSettingType.Thickness,            Settings_CalibrationPlate_Thickness.Value);
+            parameters.Add(CalibrateSettingType.CameraModel,          Settings_CameraParameters_CameraModel.SelectedValue);
+            parameters.Add(CalibrateSettingType.CellWidthSx,          Settings_CameraParameters_CameraCellWithSx.Value);
+            parameters.Add(CalibrateSettingType.CellHeightSy,         Settings_CameraParameters_CameraCellHeightSy.Value);
+            parameters.Add(CalibrateSettingType.ForcalLength,         Settings_CameraParameters_CameraForcal.Value);
+            parameters.Add(CalibrateSettingType.Telecentric,          Settings_CameraParameters_Telecentric.Checked);
+
+            return parameters;
+        }
+
+        private Dictionary<CalibrateType, object> getCalibrateParameters()
+        {
+            Dictionary<CalibrateType, object> parameters = new Dictionary<CalibrateType, object>();
+
+            parameters.Add(CalibrateType.ImageSource_Type,                                  Calibration_ImageSource_ImageFiles.Checked ? CalibrateImageSourceType.ImageFiles : CalibrateImageSourceType.ImageAcquisitionAssistant);
+            parameters.Add(CalibrateType.ImageSource_ImageAcquisitionAssistant,             Calibration_ImageSource_ImageAcquisitionAssistantComboBox.SelectedValue);
+            parameters.Add(CalibrateType.Calibration_LiveTests,                             Calibration_Calibration_LiveTests.Checked);
+            parameters.Add(CalibrateType.Calibration_AutoUpdate,                            Calibration_Calibration_AutoUpdate.Checked);
+            parameters.Add(CalibrateType.QualityIssues_ImageTests,                          Calibration_QualityIssue_ImageTests.SelectedValue);
+            parameters.Add(CalibrateType.QualityIssues_SequenceTests,                       Calibration_QualityIssue_SequenceTests.SelectedValue);
+            parameters.Add(CalibrateType.QualityIssues_WarningLevel,                        Calibration_QualityIssue_WarningLevel.Value);
+            parameters.Add(CalibrateType.QualityIssues_LiveTests,                           Calibration_QualityIssue_LiveTests.Checked);
+            parameters.Add(CalibrateType.LocatingTheCalibrationPlate_GaussianFilterSize,    Calibration_PlateExtractionParameters_GaussianFilterSizeNumericUpDown.Value);
+            parameters.Add(CalibrateType.LocatingTheCalibrationPlate_MarkThreshod,          Calibration_PlateExtractionParameters_MarkThreshodNumericUpDown.Value);
+            parameters.Add(CalibrateType.LocatingTheCalibrationPlate_MinimumMarkDiameters,  Calibration_PlateExtractionParameters_MinimumMarkDiametersNumericUpDown.Value);
+            parameters.Add(CalibrateType.ExtractingTheMarkRegions_InitialThreshold,         Calibration_PlateExtractionParameters_InitialThresholdNumericUpDown.Value);
+            parameters.Add(CalibrateType.ExtractingTheMarkRegions_ThresholdDecremet,        Calibration_PlateExtractionParameters_ThresholdDecremetNumericUpDown.Value);
+            parameters.Add(CalibrateType.ExtractingTheMarkRegions_MinimumThreshold,         Calibration_PlateExtractionParameters_MinimumThresholdNumericUpDown.Value);
+            parameters.Add(CalibrateType.ExtractingTheMarkContours_Smoothing,               Calibration_PlateExtractionParameters_SmoothingAlphaNumericUpDown.Value);
+            parameters.Add(CalibrateType.ExtractingTheMarkContours_MinimumContourLength,    Calibration_PlateExtractionParameters_MinimumContourLengthNumericUpDown.Value);
+            parameters.Add(CalibrateType.ExtractingTheMarkContours_MaximumMarkDiameters,    Calibration_PlateExtractionParameters_MaximumMarkDiametersNumericUpDown.Value);
+
+            return parameters;
+        }
+
+        private Dictionary<CalibrateResultType, object> getCalibrateResultParameters()
+        {
+            Dictionary<CalibrateResultType, object> parameters = new Dictionary<CalibrateResultType, object>();
+
+            parameters.Add(CalibrateResultType.CalibrationStatus_Status,            Result_CalibrationStatus.Text);
+            parameters.Add(CalibrateResultType.CalibrationStatus_MeanError,         Result_CalibrationMeanError.Text);
+            parameters.Add(CalibrateResultType.CameraParameters_CellWidthSx,        Result_CameraParameter_CellWidthSx.Text);
+            parameters.Add(CalibrateResultType.CameraParameters_CellHeightSy,       Result_CameraParameter_CellHeightSy.Text);
+            parameters.Add(CalibrateResultType.CameraParameters_FocalLength,        Result_CameraParameter_FocalLength.Text);
+            parameters.Add(CalibrateResultType.CameraParameters_Kappa,              Result_CameraParameter_Kappa.Text);
+            parameters.Add(CalibrateResultType.CameraParameters_CenterColumnCx,     Result_CameraParameter_CenterColumnCx.Text);
+            parameters.Add(CalibrateResultType.CameraParameters_CenterRowCy,        Result_CameraParameter_CenterRowCy.Text);
+            parameters.Add(CalibrateResultType.CameraParameters_ImageWidth,         Result_CameraParameter_ImageWidth.Text);
+            parameters.Add(CalibrateResultType.CameraParameters_ImageHeight,        Result_CameraParameter_ImageHeight.Text);
+            parameters.Add(CalibrateResultType.CameraPose_X,                        Result_CameraPose_X.Text);
+            parameters.Add(CalibrateResultType.CameraPose_RotationX,                Result_CameraPose_RotationX.Text);
+            parameters.Add(CalibrateResultType.CameraPose_Y,                        Result_CameraPose_Y.Text);
+            parameters.Add(CalibrateResultType.CameraPose_RotationY,                Result_CameraPose_RotationY.Text);
+            parameters.Add(CalibrateResultType.CameraPose_Z,                        Result_CameraPose_Z.Text);
+            parameters.Add(CalibrateResultType.CameraPose_RotationZ,                Result_CameraPose_RotationZ.Text);
+            parameters.Add(CalibrateResultType.CameraPose_OriginalAtImageCorner,    Result_CameraPose_OriginalAtImageCorner.Checked);
+
+            return parameters;
+        }
+
+        private void setCalibrateResultParameters(Dictionary<CalibrateResultType, object> parameters)
+        {
+            foreach (var parameter in parameters)
+            {
+                switch (parameter.Key)
+                {
+                    case CalibrateResultType.CalibrationStatus_Status:
+                        Result_CalibrationStatus.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CalibrationStatus_MeanError:
+                        Result_CalibrationMeanError.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraParameters_CellWidthSx:
+                        Result_CameraParameter_CellWidthSx.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraParameters_CellHeightSy:
+                        Result_CameraParameter_CellHeightSy.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraParameters_FocalLength:
+                        Result_CameraParameter_FocalLength.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraParameters_Kappa:
+                        Result_CameraParameter_Kappa.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraParameters_CenterColumnCx:
+                        Result_CameraParameter_CenterColumnCx.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraParameters_CenterRowCy:
+                        Result_CameraParameter_CenterRowCy.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraParameters_ImageWidth:
+                        Result_CameraParameter_ImageWidth.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraParameters_ImageHeight:
+                        Result_CameraParameter_ImageHeight.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraPose_X:
+                        Result_CameraPose_RotationX.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraPose_RotationX:
+                        Result_CameraPose_RotationX.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraPose_Y:
+                        Result_CameraPose_Y.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraPose_RotationY:
+                        Result_CameraPose_RotationY.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraPose_Z:
+                        Result_CameraPose_Z.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraPose_RotationZ:
+                        Result_CameraPose_RotationZ.Text = getObjectDefaultStringValue(parameter.Value);
+                        break;
+                    case CalibrateResultType.CameraPose_OriginalAtImageCorner:
+                        Result_CameraPose_OriginalAtImageCorner.Checked = getObjectDefaultBoolValue(parameter.Value);
+                        break;
+                }
+            }
+        }
+
+        private bool getObjectDefaultBoolValue(object obj)
+        {
+            var value = getObjectDefaultStringValue(obj);
+            bool result = false;
+            if (!Boolean.TryParse(value, out result))
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
+        private string getObjectDefaultStringValue(object obj)
+        {
+            return obj != null ? obj.ToString() : String.Empty;
         }
     }
 }

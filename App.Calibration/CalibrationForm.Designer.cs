@@ -47,7 +47,7 @@
             this.Settings_CameraParameters_CameraForcal = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.Settings_CameraParameters_CameraCellWithSy = new System.Windows.Forms.NumericUpDown();
+            this.Settings_CameraParameters_CameraCellHeightSy = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Settings_CameraParameters_CameraCellWithSx = new System.Windows.Forms.NumericUpDown();
@@ -57,6 +57,9 @@
             this.CalibrationTabPage = new System.Windows.Forms.TabPage();
             this.CalibrationFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ImageSourceExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton = new System.Windows.Forms.Button();
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox = new System.Windows.Forms.ComboBox();
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton = new System.Windows.Forms.RadioButton();
             this.Calibration_ImageSource_ImageFiles = new System.Windows.Forms.RadioButton();
             this.CalibrationExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
             this.Calibration_Calibration_AutoUpdate = new System.Windows.Forms.CheckBox();
@@ -186,9 +189,6 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.Reult_CameraPose_ExportBatton = new System.Windows.Forms.Button();
-            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton = new System.Windows.Forms.RadioButton();
-            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox = new System.Windows.Forms.ComboBox();
-            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton = new System.Windows.Forms.Button();
             this.CalibrationTab.SuspendLayout();
             this.SettingsTabPage.SuspendLayout();
             this.SettingsFlowLayoutPanel.SuspendLayout();
@@ -197,7 +197,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Settings_CalibrationPlate_Thickness)).BeginInit();
             this.CameraParametersExpandPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_CameraParameters_CameraForcal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Settings_CameraParameters_CameraCellWithSy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Settings_CameraParameters_CameraCellHeightSy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_CameraParameters_CameraCellWithSx)).BeginInit();
             this.CalibrationTabPage.SuspendLayout();
             this.CalibrationFlowLayoutPanel.SuspendLayout();
@@ -395,7 +395,7 @@
             this.CameraParametersExpandPanel.Controls.Add(this.Settings_CameraParameters_CameraForcal);
             this.CameraParametersExpandPanel.Controls.Add(this.label10);
             this.CameraParametersExpandPanel.Controls.Add(this.label7);
-            this.CameraParametersExpandPanel.Controls.Add(this.Settings_CameraParameters_CameraCellWithSy);
+            this.CameraParametersExpandPanel.Controls.Add(this.Settings_CameraParameters_CameraCellHeightSy);
             this.CameraParametersExpandPanel.Controls.Add(this.label8);
             this.CameraParametersExpandPanel.Controls.Add(this.label5);
             this.CameraParametersExpandPanel.Controls.Add(this.Settings_CameraParameters_CameraCellWithSx);
@@ -481,19 +481,19 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "μm";
             // 
-            // Settings_CameraParameters_CameraCellWithSy
+            // Settings_CameraParameters_CameraCellHeightSy
             // 
-            this.Settings_CameraParameters_CameraCellWithSy.DecimalPlaces = 3;
-            this.Settings_CameraParameters_CameraCellWithSy.Increment = new decimal(new int[] {
+            this.Settings_CameraParameters_CameraCellHeightSy.DecimalPlaces = 3;
+            this.Settings_CameraParameters_CameraCellHeightSy.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.Settings_CameraParameters_CameraCellWithSy.Location = new System.Drawing.Point(196, 119);
-            this.Settings_CameraParameters_CameraCellWithSy.Name = "Settings_CameraParameters_CameraCellWithSy";
-            this.Settings_CameraParameters_CameraCellWithSy.Size = new System.Drawing.Size(231, 21);
-            this.Settings_CameraParameters_CameraCellWithSy.TabIndex = 9;
-            this.Settings_CameraParameters_CameraCellWithSy.Value = new decimal(new int[] {
+            this.Settings_CameraParameters_CameraCellHeightSy.Location = new System.Drawing.Point(196, 119);
+            this.Settings_CameraParameters_CameraCellHeightSy.Name = "Settings_CameraParameters_CameraCellHeightSy";
+            this.Settings_CameraParameters_CameraCellHeightSy.Size = new System.Drawing.Size(231, 21);
+            this.Settings_CameraParameters_CameraCellHeightSy.TabIndex = 9;
+            this.Settings_CameraParameters_CameraCellHeightSy.Value = new decimal(new int[] {
             83,
             0,
             0,
@@ -504,9 +504,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(35, 121);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 15);
+            this.label8.Size = new System.Drawing.Size(97, 15);
             this.label8.TabIndex = 8;
-            this.label8.Text = "Cell With ( Sy )";
+            this.label8.Text = "Cell Height ( Sy )";
             // 
             // label5
             // 
@@ -619,6 +619,36 @@
             this.ImageSourceExpandCollapsePanel.Text = "Image Source";
             this.ImageSourceExpandCollapsePanel.UseAnimation = false;
             // 
+            // Calibration_ImageSource_ImageAcquisitionAssistantOpenButton
+            // 
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Location = new System.Drawing.Point(924, 65);
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Name = "Calibration_ImageSource_ImageAcquisitionAssistantOpenButton";
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Size = new System.Drawing.Size(45, 23);
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.TabIndex = 5;
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Text = "Open";
+            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.UseVisualStyleBackColor = true;
+            // 
+            // Calibration_ImageSource_ImageAcquisitionAssistantComboBox
+            // 
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.FormattingEnabled = true;
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Items.AddRange(new object[] {
+            "Image Acquisition 01"});
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Location = new System.Drawing.Point(537, 66);
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Name = "Calibration_ImageSource_ImageAcquisitionAssistantComboBox";
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Size = new System.Drawing.Size(381, 21);
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.TabIndex = 4;
+            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Text = "Image Acquisition 01";
+            // 
+            // Calibration_ImageSource_ImageAcquisitionAssistantRadioButton
+            // 
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.AutoSize = true;
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Location = new System.Drawing.Point(35, 66);
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Name = "Calibration_ImageSource_ImageAcquisitionAssistantRadioButton";
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Size = new System.Drawing.Size(173, 19);
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.TabIndex = 3;
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Text = "Image Acquisition Assistant";
+            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.UseVisualStyleBackColor = true;
+            // 
             // Calibration_ImageSource_ImageFiles
             // 
             this.Calibration_ImageSource_ImageFiles.AutoSize = true;
@@ -627,6 +657,7 @@
             this.Calibration_ImageSource_ImageFiles.Name = "Calibration_ImageSource_ImageFiles";
             this.Calibration_ImageSource_ImageFiles.Size = new System.Drawing.Size(89, 19);
             this.Calibration_ImageSource_ImageFiles.TabIndex = 2;
+            this.Calibration_ImageSource_ImageFiles.TabStop = true;
             this.Calibration_ImageSource_ImageFiles.Text = "Image Files";
             this.Calibration_ImageSource_ImageFiles.UseVisualStyleBackColor = true;
             // 
@@ -687,6 +718,7 @@
             this.Calibration_Calibration_CalibrateButton.TabIndex = 10;
             this.Calibration_Calibration_CalibrateButton.Text = "Calibrate";
             this.Calibration_Calibration_CalibrateButton.UseVisualStyleBackColor = true;
+            this.Calibration_Calibration_CalibrateButton.Click += new System.EventHandler(this.Calibration_Calibration_CalibrateButton_Click);
             // 
             // Calibration_Calibration_SetReferenceButton
             // 
@@ -2132,36 +2164,6 @@
             this.Reult_CameraPose_ExportBatton.Text = "Save...";
             this.Reult_CameraPose_ExportBatton.UseVisualStyleBackColor = true;
             // 
-            // Calibration_ImageSource_ImageAcquisitionAssistantRadioButton
-            // 
-            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.AutoSize = true;
-            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Location = new System.Drawing.Point(35, 66);
-            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Name = "Calibration_ImageSource_ImageAcquisitionAssistantRadioButton";
-            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Size = new System.Drawing.Size(173, 19);
-            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.TabIndex = 3;
-            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Text = "Image Acquisition Assistant";
-            this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // Calibration_ImageSource_ImageAcquisitionAssistantComboBox
-            // 
-            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.FormattingEnabled = true;
-            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Items.AddRange(new object[] {
-            "Image Acquisition 01"});
-            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Location = new System.Drawing.Point(537, 66);
-            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Name = "Calibration_ImageSource_ImageAcquisitionAssistantComboBox";
-            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Size = new System.Drawing.Size(381, 21);
-            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.TabIndex = 4;
-            this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Text = "Image Acquisition 01";
-            // 
-            // Calibration_ImageSource_ImageAcquisitionAssistantOpenButton
-            // 
-            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Location = new System.Drawing.Point(924, 65);
-            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Name = "Calibration_ImageSource_ImageAcquisitionAssistantOpenButton";
-            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Size = new System.Drawing.Size(45, 23);
-            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.TabIndex = 5;
-            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Text = "Open";
-            this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.UseVisualStyleBackColor = true;
-            // 
             // CalibrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2182,7 +2184,7 @@
             this.CameraParametersExpandPanel.ResumeLayout(false);
             this.CameraParametersExpandPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_CameraParameters_CameraForcal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Settings_CameraParameters_CameraCellWithSy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Settings_CameraParameters_CameraCellHeightSy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_CameraParameters_CameraCellWithSx)).EndInit();
             this.CalibrationTabPage.ResumeLayout(false);
             this.CalibrationFlowLayoutPanel.ResumeLayout(false);
@@ -2257,7 +2259,7 @@
         private System.Windows.Forms.NumericUpDown Settings_CalibrationPlate_Thickness;
         private System.Windows.Forms.ComboBox Settings_CameraParameters_CameraModel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown Settings_CameraParameters_CameraCellWithSy;
+        private System.Windows.Forms.NumericUpDown Settings_CameraParameters_CameraCellHeightSy;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown Settings_CameraParameters_CameraCellWithSx;
