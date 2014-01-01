@@ -114,6 +114,7 @@ namespace App.Calibration
         public CalibrationForm()
         {
             InitializeComponent();
+			initCalibrationGrideViewOperatorUI();
         }
 
         private void flowLayoutPanel_Resize(object sender, EventArgs e)
@@ -345,5 +346,91 @@ namespace App.Calibration
         {
             return obj != null ? obj.ToString() : String.Empty;
         }
+
+		private void Calibration_Calibration_AutoUpdate_CheckedChanged(object sender, EventArgs e)
+		{
+			Calibration_Calibration_UpdateButton.Enabled = !Calibration_Calibration_AutoUpdate.Checked;
+		}
+
+        private void Settings_CalibrationPlate_DescriptionFileButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "Plate Description (*.descr)|*.descr|All files (*.*)|*.*";
+            openFileDialog.FilterIndex = 0;
+            openFileDialog.Multiselect = false; 
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Settings_CalibrationPlate_DescriptionFile.Text = openFileDialog.FileName;
+            }
+        }
+
+        private void Calibration_Calibration_LoadButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "Images (*.tif *.tiff *.gif *.bmp *.jpg *.jpeg *.jp2 *.png *.pcx *.pgm *.ppm *.pbm *.xwd *.ima)|*.tif;*.tiff;*.gif;*.bmp;*.jpg;*.jpeg;*.jp2;*.png;*.pcx;*.pgm;*.ppm;*.pbm;*.xwd;*.ima|All files (*.*)|*.*";
+            openFileDialog.FilterIndex = 0;
+            openFileDialog.Multiselect = true;
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+				var fileNames = openFileDialog.FileNames;
+				if (fileNames.Length > 0)
+				{
+					foreach (var fileName in fileNames)
+					{
+						// todo asynchronous
+						CalibrationImage imageModel = new CalibrationImage()
+						{
+							Image = fileName
+						};
+
+						Calibration_Calibration_GridView.Rows.Add(imageModel.Image, imageModel.Status);
+					}
+					initCalibrationGrideViewOperatorUI();
+					updateQualityIssuedGride();
+				}
+            }
+        }
+
+
+		private void Calibration_Calibration_RemoveButton_Click(object sender, EventArgs e)
+		{
+			foreach (DataGridViewRow row in Calibration_Calibration_GridView.SelectedRows)
+			{
+				Calibration_Calibration_GridView.Rows.Remove(row);
+			}
+			Calibration_Calibration_GridView.Refresh();
+			initCalibrationGrideViewOperatorUI();
+		}
+
+		
+		private void Calibration_Calibration_RemoveAllButton_Click(object sender, EventArgs e)
+		{
+			Calibration_Calibration_GridView.Rows.Clear();
+			Calibration_Calibration_GridView.Refresh();
+			initCalibrationGrideViewOperatorUI();
+		}
+
+		private void initCalibrationGrideViewOperatorUI()
+		{
+			var enable = Calibration_Calibration_GridView.Rows.Count > 0;
+			Calibration_Calibration_RemoveButton.Enabled =
+			Calibration_Calibration_RemoveAllButton.Enabled = enable;
+		}
+
+		private void updateQualityIssuedGride()
+		{
+			for (var i = 0; i < 5; i++)
+			{
+				Calibration_QualityIssue_GridView.Rows.Add(i.ToString(), " description " + i.ToString(), i.ToString() + "%", "detail " + DateTime.Now.Ticks.ToString());
+			}
+		}
+
+		
     }
 }
