@@ -1530,9 +1530,9 @@
 			this.label14.AutoSize = true;
 			this.label14.Location = new System.Drawing.Point(18, 113);
 			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(90, 15);
+			this.label14.Size = new System.Drawing.Size(93, 15);
 			this.label14.TabIndex = 3;
-			this.label14.Text = "Mark Threshod";
+			this.label14.Text = "Mark Threshold";
 			// 
 			// label13
 			// 

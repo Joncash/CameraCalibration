@@ -29,7 +29,7 @@ namespace App.Calibration
                     },
                     new CalibrationPlateExtractionParameterMapping()
                     {
-                        Key = "MarkThreshod",
+                        Key = "MarkThreshold",
                         DefaultValue = 112,
                         ResetButton = Calibration_PlateExtractionParameters_MarkThreshodResetButton,
                         ValueControls = new List<Control>(){ 
