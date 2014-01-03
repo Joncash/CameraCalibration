@@ -115,6 +115,7 @@ namespace App.Calibration
         {
             InitializeComponent();
 			initCalibrationGrideViewOperatorUI();
+			
         }
 
         private void flowLayoutPanel_Resize(object sender, EventArgs e)
@@ -330,23 +331,6 @@ namespace App.Calibration
             }
         }
 
-        private bool getObjectDefaultBoolValue(object obj)
-        {
-            var value = getObjectDefaultStringValue(obj);
-            bool result = false;
-            if (!Boolean.TryParse(value, out result))
-            {
-                result = false;
-            }
-
-            return result;
-        }
-
-        private string getObjectDefaultStringValue(object obj)
-        {
-            return obj != null ? obj.ToString() : String.Empty;
-        }
-
 		private void Calibration_Calibration_AutoUpdate_CheckedChanged(object sender, EventArgs e)
 		{
 			Calibration_Calibration_UpdateButton.Enabled = !Calibration_Calibration_AutoUpdate.Checked;
@@ -392,11 +376,10 @@ namespace App.Calibration
 						Calibration_Calibration_GridView.Rows.Add(imageModel.Image, imageModel.Status);
 					}
 					initCalibrationGrideViewOperatorUI();
-					updateQualityIssuedGride();
+					updateQualityIssuedGridView();
 				}
             }
         }
-
 
 		private void Calibration_Calibration_RemoveButton_Click(object sender, EventArgs e)
 		{
@@ -406,14 +389,15 @@ namespace App.Calibration
 			}
 			Calibration_Calibration_GridView.Refresh();
 			initCalibrationGrideViewOperatorUI();
+			updateQualityIssuedGridView();
 		}
 
-		
 		private void Calibration_Calibration_RemoveAllButton_Click(object sender, EventArgs e)
 		{
 			Calibration_Calibration_GridView.Rows.Clear();
 			Calibration_Calibration_GridView.Refresh();
 			initCalibrationGrideViewOperatorUI();
+			updateQualityIssuedGridView();
 		}
 
 		private void initCalibrationGrideViewOperatorUI()
@@ -423,7 +407,7 @@ namespace App.Calibration
 			Calibration_Calibration_RemoveAllButton.Enabled = enable;
 		}
 
-		private void updateQualityIssuedGride()
+		private void updateQualityIssuedGridView()
 		{
 			for (var i = 0; i < 5; i++)
 			{
@@ -431,6 +415,21 @@ namespace App.Calibration
 			}
 		}
 
-		
+        private string getObjectDefaultStringValue(object obj)
+        {
+            return obj != null ? obj.ToString() : String.Empty;
+        }
+
+		private bool getObjectDefaultBoolValue(object obj)
+        {
+            var value = getObjectDefaultStringValue(obj);
+            bool result = false;
+            if (!Boolean.TryParse(value, out result))
+            {
+                result = false;
+            }
+
+            return result;
+        }
     }
 }

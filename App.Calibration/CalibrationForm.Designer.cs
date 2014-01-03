@@ -190,6 +190,8 @@
 			this.label47 = new System.Windows.Forms.Label();
 			this.label48 = new System.Windows.Forms.Label();
 			this.Reult_CameraPose_ExportBatton = new System.Windows.Forms.Button();
+			this.CalibrateStatusStrip = new System.Windows.Forms.StatusStrip();
+			this.CalibrateStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.CalibrationTab.SuspendLayout();
 			this.SettingsTabPage.SuspendLayout();
 			this.SettingsFlowLayoutPanel.SuspendLayout();
@@ -238,6 +240,7 @@
 			this.panel4.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel1.SuspendLayout();
+			this.CalibrateStatusStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// CalibrationTab
@@ -2211,11 +2214,27 @@
 			this.Reult_CameraPose_ExportBatton.Text = "Save...";
 			this.Reult_CameraPose_ExportBatton.UseVisualStyleBackColor = true;
 			// 
+			// CalibrateStatusStrip
+			// 
+			this.CalibrateStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CalibrateStripStatusLabel});
+			this.CalibrateStatusStrip.Location = new System.Drawing.Point(0, 584);
+			this.CalibrateStatusStrip.Name = "CalibrateStatusStrip";
+			this.CalibrateStatusStrip.Size = new System.Drawing.Size(1017, 22);
+			this.CalibrateStatusStrip.TabIndex = 1;
+			this.CalibrateStatusStrip.Text = "statusStrip";
+			// 
+			// CalibrateStripStatusLabel
+			// 
+			this.CalibrateStripStatusLabel.Name = "CalibrateStripStatusLabel";
+			this.CalibrateStripStatusLabel.Size = new System.Drawing.Size(0, 17);
+			// 
 			// CalibrationForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1017, 606);
+			this.Controls.Add(this.CalibrateStatusStrip);
 			this.Controls.Add(this.CalibrationTab);
 			this.MinimumSize = new System.Drawing.Size(700, 600);
 			this.Name = "CalibrationForm";
@@ -2284,7 +2303,10 @@
 			this.panel2.PerformLayout();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			this.CalibrateStatusStrip.ResumeLayout(false);
+			this.CalibrateStatusStrip.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 
@@ -2452,6 +2474,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Description;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Quality;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Details;
+		private System.Windows.Forms.StatusStrip CalibrateStatusStrip;
+		private System.Windows.Forms.ToolStripStatusLabel CalibrateStripStatusLabel;
     }
 }
 
