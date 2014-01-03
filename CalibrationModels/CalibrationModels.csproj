@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="CalibImageViewModel.cs" />
     <Compile Include="CalibratedViewModel.cs" />
-    <Compile Include="CalibrationImage.cs" />
     <Compile Include="CalibrationPlateMarkViewModel.cs" />
     <Compile Include="CalibrationPlateParam.cs" />
     <Compile Include="CalibrationQualityIssueParam.cs" />

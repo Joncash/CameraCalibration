@@ -139,13 +139,13 @@ namespace CalibrationModule
 			AddCalibImage(image);
 		}
 
-		/// <summary>
-		/// 加入校正影像
-		/// </summary>
-		/// <param name="imageModel">image model</param>
-		public void AddCalibImage(CalibrationImage imageModel)
-		{
-		}
+		///// <summary>
+		///// 加入校正影像
+		///// </summary>
+		///// <param name="imageModel">image model</param>
+		//public void AddCalibImage(CalibrationImage imageModel)
+		//{
+		//}
 
 		/// <summary>
 		/// 移除校正影像

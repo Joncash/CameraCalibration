@@ -1,4 +1,5 @@
 ﻿using CalibrationModels;
+using CalibrationModule;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,12 +30,12 @@ namespace App.Calibration
                     },
                     new CalibrationPlateExtractionParameterMapping()
                     {
-                        Key = "MarkThreshold",
+                        Key = "MarkThreshod",
                         DefaultValue = 112,
-                        ResetButton = Calibration_PlateExtractionParameters_MarkThreshodResetButton,
+                        ResetButton = Calibration_PlateExtractionParameters_MarkThresholdResetButton,
                         ValueControls = new List<Control>(){ 
-                            this.Calibration_PlateExtractionParameters_MarkThreshodNumericUpDown, 
-                            this.Calibration_PlateExtractionParameters_MarkThreshodTrackBar 
+                            this.Calibration_PlateExtractionParameters_MarkThresholdNumericUpDown, 
+                            this.Calibration_PlateExtractionParameters_MarkThresholdTrackBar 
                         },
                     },
                     new CalibrationPlateExtractionParameterMapping()
@@ -110,12 +111,20 @@ namespace App.Calibration
                 };
             }
         }
-
+		private CalibrationAssistant _assistant = null;
         public CalibrationForm()
         {
             InitializeComponent();
 			initCalibrationGrideViewOperatorUI();
-			
+			_assistant = new CalibrationAssistant(
+									new CalibrationPlateParam(),
+									new CalibrationQualityIssueParam(),
+									new CameraParam(),
+									Settings_CalibrationPlate_DescriptionFile.Text,
+									(double)Settings_CalibrationPlate_Thickness.Value
+									);
+
+					
         }
 
         private void flowLayoutPanel_Resize(object sender, EventArgs e)
@@ -233,7 +242,7 @@ namespace App.Calibration
             parameters.Add(CalibrateType.QualityIssues_WarningLevel,                        Calibration_QualityIssue_WarningLevel.Value);
             parameters.Add(CalibrateType.QualityIssues_LiveTests,                           Calibration_QualityIssue_LiveTests.Checked);
             parameters.Add(CalibrateType.LocatingTheCalibrationPlate_GaussianFilterSize,    Calibration_PlateExtractionParameters_GaussianFilterSizeNumericUpDown.Value);
-            parameters.Add(CalibrateType.LocatingTheCalibrationPlate_MarkThreshod,          Calibration_PlateExtractionParameters_MarkThreshodNumericUpDown.Value);
+            parameters.Add(CalibrateType.LocatingTheCalibrationPlate_MarkThreshod,          Calibration_PlateExtractionParameters_MarkThresholdNumericUpDown.Value);
             parameters.Add(CalibrateType.LocatingTheCalibrationPlate_MinimumMarkDiameters,  Calibration_PlateExtractionParameters_MinimumMarkDiametersNumericUpDown.Value);
             parameters.Add(CalibrateType.ExtractingTheMarkRegions_InitialThreshold,         Calibration_PlateExtractionParameters_InitialThresholdNumericUpDown.Value);
             parameters.Add(CalibrateType.ExtractingTheMarkRegions_ThresholdDecremet,        Calibration_PlateExtractionParameters_ThresholdDecremetNumericUpDown.Value);
@@ -367,16 +376,18 @@ namespace App.Calibration
 				{
 					foreach (var fileName in fileNames)
 					{
+						
 						// todo asynchronous
-						CalibrationImage imageModel = new CalibrationImage()
-						{
-							Image = fileName
-						};
+						//CalibrationImage imageModel = new CalibrationImage()
+						//{
+						//	Image = fileName
+						//};
 
-						Calibration_Calibration_GridView.Rows.Add(imageModel.Image, imageModel.Status);
+						//Calibration_Calibration_GridView.Rows.Add(imageModel.Image, imageModel.Status);
+						_assistant.AddCalibImage(fileName);
 					}
-					initCalibrationGrideViewOperatorUI();
-					updateQualityIssuedGridView();
+					//initCalibrationGrideViewOperatorUI();
+					//updateQualityIssuedGridView();
 				}
             }
         }

@@ -84,6 +84,10 @@
       <Project>{4f62c2c5-d43b-4931-8e22-4e4ca4990232}</Project>
       <Name>CalibrationModels</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CalibrationModule\CalibrationModule.csproj">
+      <Project>{b2c2e780-7bbe-4ba8-92c8-bb70ba3a40dd}</Project>
+      <Name>CalibrationModule</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
