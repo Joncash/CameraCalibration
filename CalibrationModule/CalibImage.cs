@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CalibrationModule
 {
 	/// <summary>
-	/// Camera Calibration Image Object
+	/// Camera Calibration Image Object (校正影像)
 	/// </summary>
 	public class CalibImage
 	{
@@ -21,6 +21,10 @@ namespace CalibrationModule
 		public CalibImage()
 		{
 			ID = Guid.NewGuid().ToString();
+		}
+		public CalibImage(string filename)
+		{
+			SetImage(filename);
 		}
 
 		#region public Method
@@ -41,6 +45,15 @@ namespace CalibrationModule
 		public void SetImage(HImage image)
 		{
 			_image = new HImage(image);
+		}
+
+		/// <summary>
+		/// 取得影像
+		/// </summary>
+		/// <returns></returns>
+		public HImage GetImage()
+		{
+			return _image;
 		}
 		#endregion
 

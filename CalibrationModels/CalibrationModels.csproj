@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="halcondotnet">
+      <HintPath>C:\Program Files\MVTec\HALCON-10.0\bin\dotnet35\halcondotnet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,10 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalibImageViewModel.cs" />
+    <Compile Include="CalibratedViewModel.cs" />
     <Compile Include="CalibrationImage.cs" />
+    <Compile Include="CalibrationPlateMarkViewModel.cs" />
+    <Compile Include="CalibrationPlateParam.cs" />
+    <Compile Include="CalibrationQualityIssueParam.cs" />
+    <Compile Include="CameraParam.cs" />
     <Compile Include="Enum\CalibrateResultType.cs" />
     <Compile Include="Enum\CalibrateType.cs" />
     <Compile Include="Enum\CalibrateSettingType.cs" />
+    <Compile Include="Enum\CalibrationImageSequenceTestType.cs" />
+    <Compile Include="Enum\CalibrationImageTestType.cs" />
     <Compile Include="QualityIssue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

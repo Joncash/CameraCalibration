@@ -12,6 +12,6 @@ namespace CalibrationModels
 	public class QualityIssue
 	{
 		public double Score { get; set; }
-
+		public string Issue { get; set; }
 	}
 }

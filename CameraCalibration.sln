@@ -7,6 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalibrationModels", "Calibr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Calibration", "App.Calibration\App.Calibration.csproj", "{4B9E5618-F15D-4EA7-A969-EDB828C8A4B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Calibration.Demo", "App.Calibration.Demo\App.Calibration.Demo.csproj", "{A676E7D2-5EC5-458E-85F7-7DAB9B590A91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalibrationModule.Test", "CalibrationModule.Test\CalibrationModule.Test.csproj", "{34E3EC76-0ABE-421E-8B67-7587A0042EA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D3031025-D6C3-490F-A579-0C326F592463}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +36,14 @@ Global
 		{4B9E5618-F15D-4EA7-A969-EDB828C8A4B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B9E5618-F15D-4EA7-A969-EDB828C8A4B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B9E5618-F15D-4EA7-A969-EDB828C8A4B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A676E7D2-5EC5-458E-85F7-7DAB9B590A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A676E7D2-5EC5-458E-85F7-7DAB9B590A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A676E7D2-5EC5-458E-85F7-7DAB9B590A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A676E7D2-5EC5-458E-85F7-7DAB9B590A91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34E3EC76-0ABE-421E-8B67-7587A0042EA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E3EC76-0ABE-421E-8B67-7587A0042EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E3EC76-0ABE-421E-8B67-7587A0042EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E3EC76-0ABE-421E-8B67-7587A0042EA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
