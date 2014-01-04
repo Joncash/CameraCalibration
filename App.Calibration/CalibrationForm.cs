@@ -118,51 +118,147 @@ namespace App.Calibration
 		public CalibrationForm()
         {
 			InitializeComponent();
-			_assistant = new CalibrationAssistant(
-									new CalibrationPlateParam(),
-									new CalibrationQualityIssueParam(),
-									new CameraParam(),
-									Settings_CalibrationPlate_DescriptionFile.Text,
-									(double)Settings_CalibrationPlate_Thickness.Value
-									);
-			
+			initCalibrationAssistant();
 			initCalibrationGrideViewOperatorUI();
 			initCombox();
 		}
 
-		private void initCombox()
+		#region CalibrationAssistant event
+		private void initCalibrationAssistant()
 		{
-			Dictionary<CameraModelType, string> Settings_CameraParameters_CameraModelTypeData = new Dictionary<CameraModelType, string>();
-			Settings_CameraParameters_CameraModelTypeData.Add(CameraModelType.AreaScanDivision, "Area Scan ( Division )");
-			Settings_CameraParameters_CameraModelTypeData.Add(CameraModelType.AreaScanPolynomial, "Area Scan ( Polynomial )");
-			Settings_CameraParameters_CameraModelTypeData.Add(CameraModelType.LineScan, "Line Scan");
+			_assistant = new CalibrationAssistant(
+											 new CalibrationPlateParam(),
+											 new CalibrationQualityIssueParam(),
+											 new CameraParam(),
+											 Settings_CalibrationPlate_DescriptionFile.Text,
+											 (double)Settings_CalibrationPlate_Thickness.Value
+											 );
 
-			Settings_CameraParameters_CameraModel.DataSource = new BindingSource(Settings_CameraParameters_CameraModelTypeData, null);
-			Settings_CameraParameters_CameraModel.DisplayMember = "Value";
-			Settings_CameraParameters_CameraModel.ValueMember = "Key";
+			_assistant.On_ImageAdded += assistant_On_ImageAdded;
+			_assistant.On_ImageRemoved += assistant_On_ImageRemoved;
+			_assistant.On_ImageSaved += assistant_On_ImageSaved;
 
-			Dictionary<QualityIssueTestType, string> Settings_CameraParameters_QualityIssuedTestTypeData = new Dictionary<QualityIssueTestType, string>();
-			Settings_CameraParameters_QualityIssuedTestTypeData.Add(QualityIssueTestType.All, "All");
-			Settings_CameraParameters_QualityIssuedTestTypeData.Add(QualityIssueTestType.Quick, "Quick");
-			Settings_CameraParameters_QualityIssuedTestTypeData.Add(QualityIssueTestType.None, "None");
+			_assistant.On_CalibrationPlateParamChanged += assistant_On_CalibrationPlateParamChanged;
+			_assistant.On_CalibrationImageQualityIssueParamChanged += assistant_On_CalibrationImageQualityIssueParamChanged;
+			_assistant.On_CameraParamChanged += assistant_On_CameraParamChanged;
 
-			Calibration_QualityIssue_ImageTests.DataSource = new BindingSource(Settings_CameraParameters_QualityIssuedTestTypeData, null);
-			Calibration_QualityIssue_ImageTests.DisplayMember = "Value";
-			Calibration_QualityIssue_ImageTests.ValueMember = "Key";
+			_assistant.On_CalibrationImageQualityIssueChanged += assistant_On_CalibrationImageQualityIssueChanged;
+			_assistant.On_CalibrationCompleted += assistant_On_CalibrationCompleted;
 
+			_assistant.On_CalibratedFileSaved += assistant_On_CalibratedFileSaved;
 
-			Calibration_QualityIssue_SequenceTests.DataSource = new BindingSource(Settings_CameraParameters_QualityIssuedTestTypeData, null);
-			Calibration_QualityIssue_SequenceTests.DisplayMember = "Value";
-			Calibration_QualityIssue_SequenceTests.ValueMember = "Key";
+			_assistant.On_Error += assistant_On_Error;
 		}
 
+		private void assistant_On_Error(object sender, CalibrationEventArgs e)
+		{
+			if (e.Model is CalibImageViewModel)
+			{
+				updateCalibrationTabView((CalibImageViewModel)e.Model);
+			}	
+		}
+
+		private void assistant_On_CalibratedFileSaved(object sender, CalibrationEventArgs e)
+		{
+			if (e.Model is CalibImageViewModel)
+			{
+				updateCalibrationTabView((CalibImageViewModel)e.Model);
+			}	
+		}
+
+		private void assistant_On_CalibrationCompleted(object sender, CalibrationEventArgs e)
+		{
+			if (e.Model is CalibImageViewModel)
+			{
+				updateCalibrationTabView((CalibImageViewModel)e.Model);
+			}	
+		}
+
+		private void assistant_On_CalibrationImageQualityIssueChanged(object sender, CalibrationEventArgs e)
+		{
+			if (e.Model is CalibImageViewModel)
+			{
+				updateCalibrationTabView((CalibImageViewModel)e.Model);
+			}	
+		}
+
+		private void assistant_On_CameraParamChanged(object sender, CalibrationEventArgs e)
+		{
+			if (e.Model is CalibImageViewModel)
+			{
+				updateCalibrationTabView((CalibImageViewModel)e.Model);
+			}	
+		}
+
+		private void assistant_On_CalibrationImageQualityIssueParamChanged(object sender, CalibrationEventArgs e)
+		{
+			if (e.Model is CalibImageViewModel)
+			{
+				updateCalibrationTabView((CalibImageViewModel)e.Model);
+			}	
+		}
+
+		private void assistant_On_CalibrationPlateParamChanged(object sender, CalibrationEventArgs e)
+		{
+			if (e.Model is CalibImageViewModel)
+			{
+				updateCalibrationTabView((CalibImageViewModel)e.Model);
+			}	
+		}
+
+		private void assistant_On_ImageSaved(object sender, CalibrationEventArgs e)
+		{
+			throw new NotImplementedException();
+		}
+
+		private void assistant_On_ImageRemoved(object sender, CalibrationEventArgs e)
+		{
+			if (e.Model is CalibImageViewModel)
+			{
+				updateCalibrationTabView((CalibImageViewModel)e.Model);
+			}	
+		}
+
+		private void assistant_On_ImageAdded(object sender, CalibrationEventArgs e)
+		{
+			if (e.Model is CalibImageViewModel)
+			{
+				updateCalibrationTabView((CalibImageViewModel)e.Model);
+			}	
+		}
+
+		private void updateCalibrationTabView(CalibImageViewModel vm)
+		{
+			if (Calibration_Calibration_GridView.DataSource == null)
+			{
+				Calibration_Calibration_GridView.DataSource = new BindingSource(new List<CalibImageViewModel>(), null);
+			}
+
+			var calibrationGridViewDataSource = (BindingSource)Calibration_Calibration_GridView.DataSource;
+			calibrationGridViewDataSource.Add(vm);
+
+			initCalibrationGrideViewOperatorUI();
+			for (var i = 0; i < 5; i++)
+			{
+				Calibration_QualityIssue_GridView.Rows.Add(i.ToString(), " description " + i.ToString(), i.ToString() + "%", "detail " + DateTime.Now.Ticks.ToString());
+			}
+		}
+
+
+		#endregion
+
+		
+
+		#region form event
 		private void flowLayoutPanel_Resize(object sender, EventArgs e)
-        {
-            var flowPanel = sender as FlowLayoutPanel;
-            flowPanel.Controls.OfType<Panel>().ToList().ForEach(x => {
-                x.Width = flowPanel.Width - 25;
-            });
-        }
+		{
+			var flowPanel = sender as FlowLayoutPanel;
+			flowPanel.Controls.OfType<Panel>().ToList().ForEach(x =>
+			{
+				x.Width = flowPanel.Width - 25;
+			});
+		}
+		#endregion
 
 		#region SettingTab Event
 		private void Settings_CalibrationPlate_DescriptionFileButton_Click(object sender, EventArgs e)
@@ -276,18 +372,8 @@ namespace App.Calibration
 				{
 					foreach (var fileName in fileNames)
 					{
-
-						// todo asynchronous
-						//CalibrationImage imageModel = new CalibrationImage()
-						//{
-						//	Image = fileName
-						//};
-
-						//Calibration_Calibration_GridView.Rows.Add(imageModel.Image, imageModel.Status);
 						_assistant.AddCalibImage(fileName);
 					}
-					//initCalibrationGrideViewOperatorUI();
-					//updateQualityIssuedGridView();
 				}
 			}
 		}
@@ -421,19 +507,37 @@ namespace App.Calibration
 
 		#region private method
 
+		private void initCombox()
+		{
+			Dictionary<CameraModelType, string> Settings_CameraParameters_CameraModelTypeData = new Dictionary<CameraModelType, string>();
+			Settings_CameraParameters_CameraModelTypeData.Add(CameraModelType.AreaScanDivision, "Area Scan ( Division )");
+			Settings_CameraParameters_CameraModelTypeData.Add(CameraModelType.AreaScanPolynomial, "Area Scan ( Polynomial )");
+			Settings_CameraParameters_CameraModelTypeData.Add(CameraModelType.LineScan, "Line Scan");
+
+			Settings_CameraParameters_CameraModel.DataSource = new BindingSource(Settings_CameraParameters_CameraModelTypeData, null);
+			Settings_CameraParameters_CameraModel.DisplayMember = "Value";
+			Settings_CameraParameters_CameraModel.ValueMember = "Key";
+
+			Dictionary<QualityIssueTestType, string> Settings_CameraParameters_QualityIssuedTestTypeData = new Dictionary<QualityIssueTestType, string>();
+			Settings_CameraParameters_QualityIssuedTestTypeData.Add(QualityIssueTestType.All, "All");
+			Settings_CameraParameters_QualityIssuedTestTypeData.Add(QualityIssueTestType.Quick, "Quick");
+			Settings_CameraParameters_QualityIssuedTestTypeData.Add(QualityIssueTestType.None, "None");
+
+			Calibration_QualityIssue_ImageTests.DataSource = new BindingSource(Settings_CameraParameters_QualityIssuedTestTypeData, null);
+			Calibration_QualityIssue_ImageTests.DisplayMember = "Value";
+			Calibration_QualityIssue_ImageTests.ValueMember = "Key";
+
+
+			Calibration_QualityIssue_SequenceTests.DataSource = new BindingSource(Settings_CameraParameters_QualityIssuedTestTypeData, null);
+			Calibration_QualityIssue_SequenceTests.DisplayMember = "Value";
+			Calibration_QualityIssue_SequenceTests.ValueMember = "Key";
+		}
+
 		private void initCalibrationGrideViewOperatorUI()
 		{
 			var enable = Calibration_Calibration_GridView.Rows.Count > 0;
 			Calibration_Calibration_RemoveButton.Enabled =
 			Calibration_Calibration_RemoveAllButton.Enabled = enable;
-		}
-
-		private void updateQualityIssuedGridView()
-		{
-			for (var i = 0; i < 5; i++)
-			{
-				Calibration_QualityIssue_GridView.Rows.Add(i.ToString(), " description " + i.ToString(), i.ToString() + "%", "detail " + DateTime.Now.Ticks.ToString());
-			}
 		}
 
 		private Dictionary<CalibrateSettingType, object> getSettingParameters()
