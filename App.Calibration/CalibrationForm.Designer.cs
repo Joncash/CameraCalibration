@@ -197,6 +197,10 @@
 			this.CalibrateStatusStrip = new System.Windows.Forms.StatusStrip();
 			this.CalibrateStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.CalibrateStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+			this.ErrorToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.ErrorCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.StatusCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.CalibrationTab.SuspendLayout();
 			this.SettingsTabPage.SuspendLayout();
 			this.SettingsFlowLayoutPanel.SuspendLayout();
@@ -2265,7 +2269,11 @@
 			// 
 			this.CalibrateStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CalibrateStripStatusLabel,
-            this.CalibrateStripProgressBar});
+            this.CalibrateStripProgressBar,
+            this.toolStripStatusLabel1,
+            this.StatusCountToolStripStatusLabel,
+            this.ErrorToolStripStatusLabel,
+            this.ErrorCountToolStripStatusLabel});
 			this.CalibrateStatusStrip.Location = new System.Drawing.Point(0, 584);
 			this.CalibrateStatusStrip.Name = "CalibrateStatusStrip";
 			this.CalibrateStatusStrip.Size = new System.Drawing.Size(1017, 22);
@@ -2275,7 +2283,7 @@
 			// CalibrateStripStatusLabel
 			// 
 			this.CalibrateStripStatusLabel.Name = "CalibrateStripStatusLabel";
-			this.CalibrateStripStatusLabel.Size = new System.Drawing.Size(869, 17);
+			this.CalibrateStripStatusLabel.Size = new System.Drawing.Size(766, 17);
 			this.CalibrateStripStatusLabel.Spring = true;
 			this.CalibrateStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -2283,6 +2291,35 @@
 			// 
 			this.CalibrateStripProgressBar.Name = "CalibrateStripProgressBar";
 			this.CalibrateStripProgressBar.Size = new System.Drawing.Size(100, 16);
+			// 
+			// ErrorToolStripStatusLabel
+			// 
+			this.ErrorToolStripStatusLabel.Name = "ErrorToolStripStatusLabel";
+			this.ErrorToolStripStatusLabel.Size = new System.Drawing.Size(35, 17);
+			this.ErrorToolStripStatusLabel.Text = "Error:";
+			// 
+			// ErrorCountToolStripStatusLabel
+			// 
+			this.ErrorCountToolStripStatusLabel.ForeColor = System.Drawing.Color.Maroon;
+			this.ErrorCountToolStripStatusLabel.IsLink = true;
+			this.ErrorCountToolStripStatusLabel.Name = "ErrorCountToolStripStatusLabel";
+			this.ErrorCountToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+			this.ErrorCountToolStripStatusLabel.Text = "0";
+			this.ErrorCountToolStripStatusLabel.Click += new System.EventHandler(this.ErrorCountToolStripStatusLabel_Click);
+			// 
+			// toolStripStatusLabel1
+			// 
+			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+			this.toolStripStatusLabel1.Size = new System.Drawing.Size(42, 17);
+			this.toolStripStatusLabel1.Text = "Status:";
+			// 
+			// StatusCountToolStripStatusLabel
+			// 
+			this.StatusCountToolStripStatusLabel.IsLink = true;
+			this.StatusCountToolStripStatusLabel.Name = "StatusCountToolStripStatusLabel";
+			this.StatusCountToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+			this.StatusCountToolStripStatusLabel.Text = "0";
+			this.StatusCountToolStripStatusLabel.Click += new System.EventHandler(this.StatusCountToolStripStatusLabel_Click);
 			// 
 			// CalibrationForm
 			// 
@@ -2537,6 +2574,10 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Image;
 		private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
 		private System.Windows.Forms.ToolStripProgressBar CalibrateStripProgressBar;
+		private System.Windows.Forms.ToolStripStatusLabel ErrorToolStripStatusLabel;
+		private System.Windows.Forms.ToolStripStatusLabel ErrorCountToolStripStatusLabel;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+		private System.Windows.Forms.ToolStripStatusLabel StatusCountToolStripStatusLabel;
     }
 }
 

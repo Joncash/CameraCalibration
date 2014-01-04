@@ -112,7 +112,9 @@ namespace App.Calibration
                 };
             }
         }
-		
+
+		private List<string> _statusMessageList = new List<string>();
+		private List<string> _errorMessageList = new List<string>();
 		private CalibrationAssistant _assistant = null;
         
 		public CalibrationForm()
@@ -156,7 +158,8 @@ namespace App.Calibration
 		{
 			if (e.Model is CalibImageViewModel)
 			{
-				//updateCalibrationTabView((CalibImageViewModel)e.Model);
+				// TODO
+				//_errorMessageList.Add("");
 			}	
 		}
 
@@ -260,6 +263,21 @@ namespace App.Calibration
 
 		#region form event
 
+		private void ErrorCountToolStripStatusLabel_Click(object sender, EventArgs e)
+		{
+			StatusForm form = new StatusForm(_errorMessageList);
+			form.Text = "Error List";
+			form.ShowDialog(this);
+		}
+
+		private void StatusCountToolStripStatusLabel_Click(object sender, EventArgs e)
+		{
+			StatusForm form = new StatusForm(_statusMessageList);
+			form.Text = "Status List";
+			form.ShowDialog(this);
+		}
+
+		
 		private void setCalibrateStatus(string statusMessage)
 		{
 			setCalibrateStatus(statusMessage, false);
@@ -272,6 +290,8 @@ namespace App.Calibration
 
 		private void setCalibrateStatus(string statusMessage, bool isMarquee)
 		{
+			_statusMessageList.Add(statusMessage);
+			StatusCountToolStripStatusLabel.Text = _statusMessageList.Count.ToString();
 			CalibrateStripStatusLabel.Text = statusMessage;
 			CalibrateStripProgressBar.Style = isMarquee ? ProgressBarStyle.Marquee : ProgressBarStyle.Blocks;
 		}
@@ -759,5 +779,5 @@ namespace App.Calibration
 		#endregion
 
 		
-    }
+	}
 }
