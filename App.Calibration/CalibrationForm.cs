@@ -188,7 +188,8 @@ namespace App.Calibration
 #endif
 
 				Calibration_QualityIssue_GridView.DataSource = new BindingSource(vm.QualityIssues, null);
-			}	
+			}
+			setCalibrateStatus(false);
 		}
 
 		private void assistant_On_CameraParamChanged(object sender, CalibrationEventArgs e)
@@ -251,6 +252,7 @@ namespace App.Calibration
 
 				initCalibrationGrideViewOperatorUI();
 				Calibration_QualityIssue_GridView.DataSource = new BindingSource(vm.QualityIssues, null);
+				setCalibrateStatus(false);
 			}	
 		}
 
@@ -260,7 +262,18 @@ namespace App.Calibration
 
 		private void setCalibrateStatus(string statusMessage)
 		{
-			CalibrateStatusStrip.Text = statusMessage;
+			setCalibrateStatus(statusMessage, false);
+		}
+
+		private void setCalibrateStatus(bool isMarquee)
+		{
+			CalibrateStripProgressBar.Style = isMarquee ? ProgressBarStyle.Marquee : ProgressBarStyle.Blocks;
+		}
+
+		private void setCalibrateStatus(string statusMessage, bool isMarquee)
+		{
+			CalibrateStripStatusLabel.Text = statusMessage;
+			CalibrateStripProgressBar.Style = isMarquee ? ProgressBarStyle.Marquee : ProgressBarStyle.Blocks;
 		}
 
 		private void flowLayoutPanel_Resize(object sender, EventArgs e)
@@ -334,14 +347,19 @@ namespace App.Calibration
 		{
 			var imageID = getCalibrationGridViewSelectCalibImageID();
 			_assistant.SaveCalibImage(imageID);
+			setCalibrateStatus(true);
 		}
 
 		private void Calibration_Calibration_SaveAllButton_Click(object sender, EventArgs e)
 		{
-			foreach (DataGridViewRow row in Calibration_Calibration_GridView.Rows)
+			if (Calibration_Calibration_GridView.Rows.Count > 0)
 			{
-				var imageID = ((CalibImageViewModel)row.DataBoundItem).CalibImageID;
-				_assistant.SaveCalibImage(imageID);
+				foreach (DataGridViewRow row in Calibration_Calibration_GridView.Rows)
+				{
+					var imageID = ((CalibImageViewModel)row.DataBoundItem).CalibImageID;
+					_assistant.SaveCalibImage(imageID);
+				}
+				setCalibrateStatus(true);
 			}
 		}
 
@@ -349,17 +367,20 @@ namespace App.Calibration
 		{
 			var imageID = getCalibrationGridViewSelectCalibImageID();
 			_assistant.UpdateCalibImageQualityIssue(imageID);
+			setCalibrateStatus(true);
 		}
 
 		private void Calibration_Calibration_SetReferenceButton_Click(object sender, EventArgs e)
 		{
 			var imageID = getCalibrationGridViewSelectCalibImageID();
 			_assistant.SetCalibImageReference(imageID);
+			setCalibrateStatus(true);
 		}
 
 		private void Calibration_Calibration_CalibrateButton_Click(object sender, EventArgs e)
 		{
 			_assistant.Calibrate();
+			setCalibrateStatus(true);
 		}
 
 		private void Calibration_Calibration_AutoUpdate_CheckedChanged(object sender, EventArgs e)
@@ -382,6 +403,7 @@ namespace App.Calibration
 				var fileNames = openFileDialog.FileNames;
 				if (fileNames.Length > 0)
 				{
+					setCalibrateStatus(true);
 					foreach (var fileName in fileNames)
 					{
 						_assistant.AddCalibImage(fileName);
@@ -392,14 +414,18 @@ namespace App.Calibration
 
 		private void Calibration_Calibration_RemoveButton_Click(object sender, EventArgs e)
 		{
-			foreach (DataGridViewRow row in Calibration_Calibration_GridView.SelectedRows)
+			if (Calibration_Calibration_GridView.Rows.Count > 0)
 			{
-				var imageID = ((CalibImageViewModel)row.DataBoundItem).CalibImageID;
-				_assistant.RemoveCalibImage(imageID);
-				Calibration_Calibration_GridView.Rows.Remove(row);
+				setCalibrateStatus(true);
+				foreach (DataGridViewRow row in Calibration_Calibration_GridView.SelectedRows)
+				{
+					var imageID = ((CalibImageViewModel)row.DataBoundItem).CalibImageID;
+					_assistant.RemoveCalibImage(imageID);
+					Calibration_Calibration_GridView.Rows.Remove(row);
+				}
+				Calibration_Calibration_GridView.Refresh();
+				initCalibrationGrideViewOperatorUI();
 			}
-			Calibration_Calibration_GridView.Refresh();
-			initCalibrationGrideViewOperatorUI();
 		}
 
 		private void Calibration_Calibration_RemoveAllButton_Click(object sender, EventArgs e)
@@ -417,18 +443,21 @@ namespace App.Calibration
 		#region Quality Issue
 		private void Calibration_QualityIssue_WarningLevel_ValueChanged(object sender, EventArgs e)
 		{
+			setCalibrateStatus(Calibration_Calibration_AutoUpdate.Checked);
 			var control = ((ComboBox)sender);
 			_assistant.SetCalibrationPlateParam(CalibrateType.QualityIssues_WarningLevel, control.SelectedValue);
 		}
 
 		private void Calibration_QualityIssue_SequenceTests_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			setCalibrateStatus(Calibration_Calibration_AutoUpdate.Checked);
 			var control = ((ComboBox)sender);
 			_assistant.SetCalibrationPlateParam(CalibrateType.QualityIssues_SequenceTests, control.SelectedValue);
 		}
 
 		private void Calibration_QualityIssue_ImageTests_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			setCalibrateStatus(Calibration_Calibration_AutoUpdate.Checked);
 			var control = ((ComboBox)sender);
 			_assistant.SetCalibrationPlateParam(CalibrateType.QualityIssues_ImageTests, control.SelectedValue);
 		}
@@ -495,6 +524,7 @@ namespace App.Calibration
 			var mapping = _calibrationPlateExtractionParameterMapping.SingleOrDefault(x => x.ValueControls.Any(vc => vc == sender));
 			if (mapping != null)
 			{
+				setCalibrateStatus(Calibration_Calibration_AutoUpdate.Checked);
 				var currentValue = currentNumericUpDown.Value;
 				mapping.ValueControls.OfType<TrackBar>().All(x =>
 				{
@@ -521,7 +551,6 @@ namespace App.Calibration
 
 		private void updateCalibratedViewModelToView(CalibratedViewModel vm)
 		{
-			// TODO
 			Result_CalibrationStatus.Text					= vm.CalibrationStatus_Status;
 			Result_CalibrationMeanError.Text				= vm.CalibrationStatus_MeanError;
 			Result_CameraParameter_CellWidthSx.Text			= vm.CameraParameters_CellWidthSx;
@@ -539,7 +568,7 @@ namespace App.Calibration
 			Result_CameraPose_Z.Text						= vm.CameraPose_Z;
 			Result_CameraPose_RotationZ.Text				= vm.CameraPose_RotationZ;
 			Result_CameraPose_OriginalAtImageCorner.Checked = vm.CameraPose_OriginalAtImageCorner;
-
+			setCalibrateStatus("Calibrated!");
 		}
 
 		private string getCalibrationGridViewSelectCalibImageID()
