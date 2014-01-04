@@ -22,4 +22,11 @@ namespace CalibrationModels
     {
         FullCalibration
     }
+
+	public enum CameraModelType
+	{
+		AreaScanDivision,
+		AreaScanPolynomial,
+		LineScan
+	}
 }

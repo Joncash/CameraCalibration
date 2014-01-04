@@ -371,6 +371,7 @@
             0,
             0,
             196608});
+			this.Settings_CalibrationPlate_Thickness.ValueChanged += new System.EventHandler(this.Settings_CalibrationPlate_Thickness_ValueChanged);
 			// 
 			// label2
 			// 
@@ -426,6 +427,7 @@
 			this.Settings_CameraParameters_Telecentric.TabIndex = 55;
 			this.Settings_CameraParameters_Telecentric.Text = "Telecentric";
 			this.Settings_CameraParameters_Telecentric.UseVisualStyleBackColor = true;
+			this.Settings_CameraParameters_Telecentric.CheckedChanged += new System.EventHandler(this.Settings_CameraParameters_Telecentric_CheckedChanged);
 			// 
 			// label11
 			// 
@@ -468,6 +470,7 @@
             0,
             0,
             0});
+			this.Settings_CameraParameters_CameraForcal.ValueChanged += new System.EventHandler(this.Settings_CameraParameters_CameraForcal_ValueChanged);
 			// 
 			// label10
 			// 
@@ -504,6 +507,7 @@
             0,
             0,
             65536});
+			this.Settings_CameraParameters_CameraCellHeightSy.ValueChanged += new System.EventHandler(this.Settings_CameraParameters_CameraCellHeightSy_ValueChanged);
 			// 
 			// label8
 			// 
@@ -545,6 +549,7 @@
             0,
             0,
             65536});
+			this.Settings_CameraParameters_CameraCellWithSx.ValueChanged += new System.EventHandler(this.Settings_CameraParameters_CameraCellWithSx_ValueChanged);
 			// 
 			// label6
 			// 
@@ -567,6 +572,7 @@
 			this.Settings_CameraParameters_CameraModel.Size = new System.Drawing.Size(231, 21);
 			this.Settings_CameraParameters_CameraModel.TabIndex = 4;
 			this.Settings_CameraParameters_CameraModel.Text = "Area Scan ( Division )";
+			this.Settings_CameraParameters_CameraModel.SelectedValueChanged += new System.EventHandler(this.Settings_CameraParameters_CameraModel_SelectedValueChanged);
 			// 
 			// label3
 			// 
@@ -740,6 +746,7 @@
 			this.Calibration_Calibration_SetReferenceButton.TabIndex = 9;
 			this.Calibration_Calibration_SetReferenceButton.Text = "Set Reference";
 			this.Calibration_Calibration_SetReferenceButton.UseVisualStyleBackColor = true;
+			this.Calibration_Calibration_SetReferenceButton.Click += new System.EventHandler(this.Calibration_Calibration_SetReferenceButton_Click);
 			// 
 			// Calibration_Calibration_UpdateButton
 			// 
@@ -751,6 +758,7 @@
 			this.Calibration_Calibration_UpdateButton.TabIndex = 8;
 			this.Calibration_Calibration_UpdateButton.Text = "Update ...";
 			this.Calibration_Calibration_UpdateButton.UseVisualStyleBackColor = true;
+			this.Calibration_Calibration_UpdateButton.Click += new System.EventHandler(this.Calibration_Calibration_UpdateButton_Click);
 			// 
 			// Calibration_Calibration_SaveAllButton
 			// 
@@ -762,6 +770,7 @@
 			this.Calibration_Calibration_SaveAllButton.TabIndex = 7;
 			this.Calibration_Calibration_SaveAllButton.Text = "Save All ...";
 			this.Calibration_Calibration_SaveAllButton.UseVisualStyleBackColor = true;
+			this.Calibration_Calibration_SaveAllButton.Click += new System.EventHandler(this.Calibration_Calibration_SaveAllButton_Click);
 			// 
 			// Calibration_Calibration_SaveButton
 			// 
@@ -773,6 +782,7 @@
 			this.Calibration_Calibration_SaveButton.TabIndex = 6;
 			this.Calibration_Calibration_SaveButton.Text = "Save ...";
 			this.Calibration_Calibration_SaveButton.UseVisualStyleBackColor = true;
+			this.Calibration_Calibration_SaveButton.Click += new System.EventHandler(this.Calibration_Calibration_SaveButton_Click);
 			// 
 			// Calibration_Calibration_RemoveAllButton
 			// 
@@ -874,6 +884,7 @@
 			this.Calibration_QualityIssue_LiveTests.TabIndex = 8;
 			this.Calibration_QualityIssue_LiveTests.Text = "Live Tests";
 			this.Calibration_QualityIssue_LiveTests.UseVisualStyleBackColor = true;
+			this.Calibration_QualityIssue_LiveTests.CheckedChanged += new System.EventHandler(this.Calibration_QualityIssue_LiveTests_CheckedChanged);
 			// 
 			// Calibration_QualityIssue_WarningLevel
 			// 
@@ -892,6 +903,7 @@
             0,
             0,
             0});
+			this.Calibration_QualityIssue_WarningLevel.ValueChanged += new System.EventHandler(this.Calibration_QualityIssue_WarningLevel_ValueChanged);
 			// 
 			// label56
 			// 
@@ -916,6 +928,7 @@
 			this.Calibration_QualityIssue_SequenceTests.Size = new System.Drawing.Size(90, 21);
 			this.Calibration_QualityIssue_SequenceTests.TabIndex = 5;
 			this.Calibration_QualityIssue_SequenceTests.Text = "All";
+			this.Calibration_QualityIssue_SequenceTests.SelectedIndexChanged += new System.EventHandler(this.Calibration_QualityIssue_SequenceTests_SelectedIndexChanged);
 			// 
 			// label55
 			// 
@@ -940,6 +953,7 @@
 			this.Calibration_QualityIssue_ImageTests.Size = new System.Drawing.Size(90, 21);
 			this.Calibration_QualityIssue_ImageTests.TabIndex = 3;
 			this.Calibration_QualityIssue_ImageTests.Text = "All";
+			this.Calibration_QualityIssue_ImageTests.SelectedIndexChanged += new System.EventHandler(this.Calibration_QualityIssue_ImageTests_SelectedIndexChanged);
 			// 
 			// label28
 			// 

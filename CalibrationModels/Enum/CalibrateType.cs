@@ -16,7 +16,7 @@ namespace CalibrationModels
         QualityIssues_WarningLevel,
         QualityIssues_LiveTests,
         LocatingTheCalibrationPlate_GaussianFilterSize,
-        LocatingTheCalibrationPlate_MarkThreshod,
+        LocatingTheCalibrationPlate_MarkThreshold,
         LocatingTheCalibrationPlate_MinimumMarkDiameters,
         ExtractingTheMarkRegions_InitialThreshold,
         ExtractingTheMarkRegions_ThresholdDecremet,
@@ -31,4 +31,11 @@ namespace CalibrationModels
         ImageFiles,
         ImageAcquisitionAssistant
     }
+
+	public enum QualityIssueTestType
+	{
+		All,
+		Quick,
+		None
+	}
 }
