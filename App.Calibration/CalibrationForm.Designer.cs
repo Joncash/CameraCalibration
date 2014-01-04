@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			this.components = new System.ComponentModel.Container();
 			this.CalibrationTab = new System.Windows.Forms.TabControl();
 			this.SettingsTabPage = new System.Windows.Forms.TabPage();
 			this.SettingsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -73,8 +74,6 @@
 			this.Calibration_Calibration_RemoveButton = new System.Windows.Forms.Button();
 			this.Calibration_Calibration_LoadButton = new System.Windows.Forms.Button();
 			this.Calibration_Calibration_GridView = new System.Windows.Forms.DataGridView();
-			this.Image = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.QualityIssuesExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
 			this.Calibration_QualityIssue_LiveTests = new System.Windows.Forms.CheckBox();
 			this.Calibration_QualityIssue_WarningLevel = new System.Windows.Forms.NumericUpDown();
@@ -84,10 +83,6 @@
 			this.Calibration_QualityIssue_ImageTests = new System.Windows.Forms.ComboBox();
 			this.label28 = new System.Windows.Forms.Label();
 			this.Calibration_QualityIssue_GridView = new System.Windows.Forms.DataGridView();
-			this.Scope = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Quality = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Details = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.CalibrationPlateExtractionParametersExpandCollapsePanel = new MakarovDev.ExpandCollapsePanel.ExpandCollapsePanel();
 			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersResetButton = new System.Windows.Forms.Button();
 			this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton = new System.Windows.Forms.Button();
@@ -192,6 +187,15 @@
 			this.Reult_CameraPose_ExportBatton = new System.Windows.Forms.Button();
 			this.CalibrateStatusStrip = new System.Windows.Forms.StatusStrip();
 			this.CalibrateStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.calibImageViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.qualityIssueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.scoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.issueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.scopeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.detailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.calibImageIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Image = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.CalibrationTab.SuspendLayout();
 			this.SettingsTabPage.SuspendLayout();
 			this.SettingsFlowLayoutPanel.SuspendLayout();
@@ -241,6 +245,8 @@
 			this.panel2.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.CalibrateStatusStrip.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.calibImageViewModelBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.qualityIssueBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// CalibrationTab
@@ -824,31 +830,21 @@
 			this.Calibration_Calibration_GridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.Calibration_Calibration_GridView.AutoGenerateColumns = false;
 			this.Calibration_Calibration_GridView.BackgroundColor = System.Drawing.Color.White;
 			this.Calibration_Calibration_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.Calibration_Calibration_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.calibImageIDDataGridViewTextBoxColumn,
             this.Image,
-            this.Status});
+            this.statusDataGridViewTextBoxColumn});
+			this.Calibration_Calibration_GridView.DataSource = this.calibImageViewModelBindingSource;
 			this.Calibration_Calibration_GridView.Location = new System.Drawing.Point(21, 59);
+			this.Calibration_Calibration_GridView.MultiSelect = false;
 			this.Calibration_Calibration_GridView.Name = "Calibration_Calibration_GridView";
 			this.Calibration_Calibration_GridView.ReadOnly = true;
 			this.Calibration_Calibration_GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.Calibration_Calibration_GridView.Size = new System.Drawing.Size(820, 323);
 			this.Calibration_Calibration_GridView.TabIndex = 2;
-			// 
-			// Image
-			// 
-			this.Image.HeaderText = "Image";
-			this.Image.Name = "Image";
-			this.Image.ReadOnly = true;
-			this.Image.Width = 150;
-			// 
-			// Status
-			// 
-			this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Status.HeaderText = "Status";
-			this.Status.Name = "Status";
-			this.Status.ReadOnly = true;
 			// 
 			// QualityIssuesExpandCollapsePanel
 			// 
@@ -972,46 +968,21 @@
 			this.Calibration_QualityIssue_GridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.Calibration_QualityIssue_GridView.AutoGenerateColumns = false;
 			this.Calibration_QualityIssue_GridView.BackgroundColor = System.Drawing.Color.White;
 			this.Calibration_QualityIssue_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.Calibration_QualityIssue_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Scope,
-            this.Description,
-            this.Quality,
-            this.Details});
+            this.scoreDataGridViewTextBoxColumn,
+            this.issueDataGridViewTextBoxColumn,
+            this.scopeDataGridViewTextBoxColumn,
+            this.detailDataGridViewTextBoxColumn});
+			this.Calibration_QualityIssue_GridView.DataSource = this.qualityIssueBindingSource;
 			this.Calibration_QualityIssue_GridView.Location = new System.Drawing.Point(21, 45);
 			this.Calibration_QualityIssue_GridView.Name = "Calibration_QualityIssue_GridView";
 			this.Calibration_QualityIssue_GridView.ReadOnly = true;
+			this.Calibration_QualityIssue_GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.Calibration_QualityIssue_GridView.Size = new System.Drawing.Size(820, 200);
 			this.Calibration_QualityIssue_GridView.TabIndex = 1;
-			// 
-			// Scope
-			// 
-			this.Scope.HeaderText = "Scope";
-			this.Scope.Name = "Scope";
-			this.Scope.ReadOnly = true;
-			this.Scope.Width = 150;
-			// 
-			// Description
-			// 
-			this.Description.HeaderText = "Description";
-			this.Description.Name = "Description";
-			this.Description.ReadOnly = true;
-			this.Description.Width = 150;
-			// 
-			// Quality
-			// 
-			this.Quality.HeaderText = "Quality";
-			this.Quality.Name = "Quality";
-			this.Quality.ReadOnly = true;
-			this.Quality.Width = 80;
-			// 
-			// Details
-			// 
-			this.Details.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Details.HeaderText = "Details";
-			this.Details.Name = "Details";
-			this.Details.ReadOnly = true;
 			// 
 			// CalibrationPlateExtractionParametersExpandCollapsePanel
 			// 
@@ -2243,6 +2214,67 @@
 			this.CalibrateStripStatusLabel.Name = "CalibrateStripStatusLabel";
 			this.CalibrateStripStatusLabel.Size = new System.Drawing.Size(0, 17);
 			// 
+			// calibImageViewModelBindingSource
+			// 
+			this.calibImageViewModelBindingSource.DataSource = typeof(CalibrationModels.CalibImageViewModel);
+			// 
+			// qualityIssueBindingSource
+			// 
+			this.qualityIssueBindingSource.DataSource = typeof(CalibrationModels.QualityIssue);
+			// 
+			// scoreDataGridViewTextBoxColumn
+			// 
+			this.scoreDataGridViewTextBoxColumn.DataPropertyName = "Score";
+			this.scoreDataGridViewTextBoxColumn.HeaderText = "Score";
+			this.scoreDataGridViewTextBoxColumn.Name = "scoreDataGridViewTextBoxColumn";
+			this.scoreDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// issueDataGridViewTextBoxColumn
+			// 
+			this.issueDataGridViewTextBoxColumn.DataPropertyName = "Issue";
+			this.issueDataGridViewTextBoxColumn.HeaderText = "Issue";
+			this.issueDataGridViewTextBoxColumn.Name = "issueDataGridViewTextBoxColumn";
+			this.issueDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// scopeDataGridViewTextBoxColumn
+			// 
+			this.scopeDataGridViewTextBoxColumn.DataPropertyName = "Scope";
+			this.scopeDataGridViewTextBoxColumn.HeaderText = "Scope";
+			this.scopeDataGridViewTextBoxColumn.Name = "scopeDataGridViewTextBoxColumn";
+			this.scopeDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// detailDataGridViewTextBoxColumn
+			// 
+			this.detailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.detailDataGridViewTextBoxColumn.DataPropertyName = "Detail";
+			this.detailDataGridViewTextBoxColumn.HeaderText = "Detail";
+			this.detailDataGridViewTextBoxColumn.Name = "detailDataGridViewTextBoxColumn";
+			this.detailDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// calibImageIDDataGridViewTextBoxColumn
+			// 
+			this.calibImageIDDataGridViewTextBoxColumn.DataPropertyName = "CalibImageID";
+			this.calibImageIDDataGridViewTextBoxColumn.HeaderText = "CalibImageID";
+			this.calibImageIDDataGridViewTextBoxColumn.Name = "calibImageIDDataGridViewTextBoxColumn";
+			this.calibImageIDDataGridViewTextBoxColumn.ReadOnly = true;
+			this.calibImageIDDataGridViewTextBoxColumn.Visible = false;
+			// 
+			// Image
+			// 
+			this.Image.DataPropertyName = "CalibImageID";
+			this.Image.HeaderText = "Image";
+			this.Image.Name = "Image";
+			this.Image.ReadOnly = true;
+			this.Image.Width = 150;
+			// 
+			// statusDataGridViewTextBoxColumn
+			// 
+			this.statusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+			this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+			this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+			this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
 			// CalibrationForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2319,6 +2351,8 @@
 			this.panel1.PerformLayout();
 			this.CalibrateStatusStrip.ResumeLayout(false);
 			this.CalibrateStatusStrip.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.calibImageViewModelBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.qualityIssueBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -2463,9 +2497,7 @@
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.NumericUpDown Calibration_QualityIssue_WarningLevel;
         private System.Windows.Forms.CheckBox Calibration_QualityIssue_LiveTests;
-        private System.Windows.Forms.DataGridView Calibration_Calibration_GridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Image;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+		private System.Windows.Forms.DataGridView Calibration_Calibration_GridView;
         private System.Windows.Forms.Button Calibration_Calibration_LoadButton;
         private System.Windows.Forms.Button Calibration_Calibration_CalibrateButton;
         private System.Windows.Forms.Button Calibration_Calibration_SetReferenceButton;
@@ -2483,13 +2515,18 @@
         private System.Windows.Forms.CheckBox Settings_CameraParameters_Telecentric;
         private System.Windows.Forms.RadioButton Calibration_ImageSource_ImageAcquisitionAssistantRadioButton;
         private System.Windows.Forms.Button Calibration_ImageSource_ImageAcquisitionAssistantOpenButton;
-        private System.Windows.Forms.ComboBox Calibration_ImageSource_ImageAcquisitionAssistantComboBox;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Scope;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Quality;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Details;
+		private System.Windows.Forms.ComboBox Calibration_ImageSource_ImageAcquisitionAssistantComboBox;
 		private System.Windows.Forms.StatusStrip CalibrateStatusStrip;
 		private System.Windows.Forms.ToolStripStatusLabel CalibrateStripStatusLabel;
+		private System.Windows.Forms.BindingSource calibImageViewModelBindingSource;
+		private System.Windows.Forms.BindingSource qualityIssueBindingSource;
+		private System.Windows.Forms.DataGridViewTextBoxColumn scoreDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn issueDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn scopeDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn detailDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn calibImageIDDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Image;
+		private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
     }
 }
 

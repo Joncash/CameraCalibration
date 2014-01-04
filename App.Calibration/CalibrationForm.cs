@@ -121,6 +121,8 @@ namespace App.Calibration
 			initCalibrationAssistant();
 			initCalibrationGrideViewOperatorUI();
 			initCombox();
+			Calibration_Calibration_GridView.DataSource = new BindingSource(new List<CalibImageViewModel>(), null);
+
 		}
 
 		#region CalibrationAssistant event
@@ -154,23 +156,24 @@ namespace App.Calibration
 		{
 			if (e.Model is CalibImageViewModel)
 			{
-				updateCalibrationTabView((CalibImageViewModel)e.Model);
+				//updateCalibrationTabView((CalibImageViewModel)e.Model);
 			}	
 		}
 
 		private void assistant_On_CalibratedFileSaved(object sender, CalibrationEventArgs e)
 		{
-			if (e.Model is CalibImageViewModel)
+			if (e.Model is bool)
 			{
-				updateCalibrationTabView((CalibImageViewModel)e.Model);
-			}	
+				var msg = String.Format("save file - {0}!", (bool)e.Model ? "successed" : "failed");
+				setCalibrateStatus(msg);
+			}
 		}
 
 		private void assistant_On_CalibrationCompleted(object sender, CalibrationEventArgs e)
 		{
-			if (e.Model is CalibImageViewModel)
+			if (e.Model is CalibratedViewModel)
 			{
-				updateCalibrationTabView((CalibImageViewModel)e.Model);
+				updateCalibratedViewModelToView((CalibratedViewModel)e.Model);
 			}	
 		}
 
@@ -178,44 +181,58 @@ namespace App.Calibration
 		{
 			if (e.Model is CalibImageViewModel)
 			{
-				updateCalibrationTabView((CalibImageViewModel)e.Model);
+				CalibImageViewModel vm = (CalibImageViewModel)e.Model;
+#if DEBUG
+				if (String.IsNullOrEmpty(vm.CalibImageID))
+					vm.CalibImageID = Guid.NewGuid().ToString();
+#endif
+
+				Calibration_QualityIssue_GridView.DataSource = new BindingSource(vm.QualityIssues, null);
 			}	
 		}
 
 		private void assistant_On_CameraParamChanged(object sender, CalibrationEventArgs e)
 		{
-			if (e.Model is CalibImageViewModel)
+			if (e.Model is bool)
 			{
-				updateCalibrationTabView((CalibImageViewModel)e.Model);
-			}	
+				var msg = String.Format("Calibration Camera param changed - {0}!", (bool)e.Model ? "successed" : "failed");
+				setCalibrateStatus(msg);
+			}
 		}
 
 		private void assistant_On_CalibrationImageQualityIssueParamChanged(object sender, CalibrationEventArgs e)
 		{
-			if (e.Model is CalibImageViewModel)
+			if (e.Model is bool)
 			{
-				updateCalibrationTabView((CalibImageViewModel)e.Model);
+				var msg = String.Format("Calibration Image Quality Issue param changed - {0}!", (bool)e.Model ? "successed" : "failed");
+				setCalibrateStatus(msg);
 			}	
 		}
 
 		private void assistant_On_CalibrationPlateParamChanged(object sender, CalibrationEventArgs e)
 		{
-			if (e.Model is CalibImageViewModel)
+			if (e.Model is bool)
 			{
-				updateCalibrationTabView((CalibImageViewModel)e.Model);
+				var msg = String.Format("Calibration plate param changed - {0}!", (bool)e.Model ? "successed" : "failed");
+				setCalibrateStatus(msg);
 			}	
 		}
 
 		private void assistant_On_ImageSaved(object sender, CalibrationEventArgs e)
 		{
-			throw new NotImplementedException();
+			if (e.Model is bool)
+			{
+				var msg = String.Format("Save image {0}!", (bool)e.Model ? "successed" : "failed");
+				setCalibrateStatus(msg);
+			}	
 		}
 
 		private void assistant_On_ImageRemoved(object sender, CalibrationEventArgs e)
 		{
-			if (e.Model is CalibImageViewModel)
+			if (e.Model is bool)
 			{
-				updateCalibrationTabView((CalibImageViewModel)e.Model);
+				var msg = String.Format("Remove image {0}!", (bool)e.Model ? "successed" : "failed");
+				setCalibrateStatus(msg);
 			}	
 		}
 
@@ -223,33 +240,29 @@ namespace App.Calibration
 		{
 			if (e.Model is CalibImageViewModel)
 			{
-				updateCalibrationTabView((CalibImageViewModel)e.Model);
+				CalibImageViewModel vm = (CalibImageViewModel)e.Model;
+#if DEBUG
+				if (String.IsNullOrEmpty(vm.CalibImageID))
+					vm.CalibImageID = Guid.NewGuid().ToString();
+#endif
+
+				var calibrationGridViewDataSource = (BindingSource)Calibration_Calibration_GridView.DataSource;
+				calibrationGridViewDataSource.Add(vm);
+
+				initCalibrationGrideViewOperatorUI();
+				Calibration_QualityIssue_GridView.DataSource = new BindingSource(vm.QualityIssues, null);
 			}	
 		}
 
-		private void updateCalibrationTabView(CalibImageViewModel vm)
-		{
-			if (Calibration_Calibration_GridView.DataSource == null)
-			{
-				Calibration_Calibration_GridView.DataSource = new BindingSource(new List<CalibImageViewModel>(), null);
-			}
-
-			var calibrationGridViewDataSource = (BindingSource)Calibration_Calibration_GridView.DataSource;
-			calibrationGridViewDataSource.Add(vm);
-
-			initCalibrationGrideViewOperatorUI();
-			for (var i = 0; i < 5; i++)
-			{
-				Calibration_QualityIssue_GridView.Rows.Add(i.ToString(), " description " + i.ToString(), i.ToString() + "%", "detail " + DateTime.Now.Ticks.ToString());
-			}
-		}
-
-
 		#endregion
 
-		
-
 		#region form event
+
+		private void setCalibrateStatus(string statusMessage)
+		{
+			CalibrateStatusStrip.Text = statusMessage;
+		}
+
 		private void flowLayoutPanel_Resize(object sender, EventArgs e)
 		{
 			var flowPanel = sender as FlowLayoutPanel;
@@ -319,35 +332,34 @@ namespace App.Calibration
 
 		private void Calibration_Calibration_SaveButton_Click(object sender, EventArgs e)
 		{
-			// todo get imageID
-			_assistant.SaveCalibImage("");
+			var imageID = getCalibrationGridViewSelectCalibImageID();
+			_assistant.SaveCalibImage(imageID);
 		}
 
 		private void Calibration_Calibration_SaveAllButton_Click(object sender, EventArgs e)
 		{
-			// todo each images
-			// todo get imageID
-			_assistant.SaveCalibImage("");
+			foreach (DataGridViewRow row in Calibration_Calibration_GridView.Rows)
+			{
+				var imageID = ((CalibImageViewModel)row.DataBoundItem).CalibImageID;
+				_assistant.SaveCalibImage(imageID);
+			}
 		}
 
 		private void Calibration_Calibration_UpdateButton_Click(object sender, EventArgs e)
 		{
-			// todo get imageID
-			_assistant.UpdateCalibImageQualityIssue("");
+			var imageID = getCalibrationGridViewSelectCalibImageID();
+			_assistant.UpdateCalibImageQualityIssue(imageID);
 		}
 
 		private void Calibration_Calibration_SetReferenceButton_Click(object sender, EventArgs e)
 		{
-			// todo get imageID
-			_assistant.SetCalibImageReference("");
+			var imageID = getCalibrationGridViewSelectCalibImageID();
+			_assistant.SetCalibImageReference(imageID);
 		}
 
 		private void Calibration_Calibration_CalibrateButton_Click(object sender, EventArgs e)
 		{
 			_assistant.Calibrate();
-			//var dict = new Dictionary<CalibrateResultType, object>();
-			//dict.Add(CalibrateResultType.CalibrationStatus_Status, "XX");
-			//setCalibrateResultParameters(dict);
 		}
 
 		private void Calibration_Calibration_AutoUpdate_CheckedChanged(object sender, EventArgs e)
@@ -380,25 +392,25 @@ namespace App.Calibration
 
 		private void Calibration_Calibration_RemoveButton_Click(object sender, EventArgs e)
 		{
-			// TODO Get ImageID
-			_assistant.RemoveCalibImage("");
-			//foreach (DataGridViewRow row in Calibration_Calibration_GridView.SelectedRows)
-			//{
-			//	Calibration_Calibration_GridView.Rows.Remove(row);
-			//}
-			//Calibration_Calibration_GridView.Refresh();
-			//initCalibrationGrideViewOperatorUI();
-			//updateQualityIssuedGridView();
+			foreach (DataGridViewRow row in Calibration_Calibration_GridView.SelectedRows)
+			{
+				var imageID = ((CalibImageViewModel)row.DataBoundItem).CalibImageID;
+				_assistant.RemoveCalibImage(imageID);
+				Calibration_Calibration_GridView.Rows.Remove(row);
+			}
+			Calibration_Calibration_GridView.Refresh();
+			initCalibrationGrideViewOperatorUI();
 		}
 
 		private void Calibration_Calibration_RemoveAllButton_Click(object sender, EventArgs e)
 		{
 			_assistant.RemoveAllCalibImages();
 
-			//Calibration_Calibration_GridView.Rows.Clear();
-			//Calibration_Calibration_GridView.Refresh();
-			//initCalibrationGrideViewOperatorUI();
-			//updateQualityIssuedGridView();
+			Calibration_Calibration_GridView.Rows.Clear();
+			Calibration_Calibration_GridView.Refresh();
+			Calibration_QualityIssue_GridView.Rows.Clear();
+			Calibration_QualityIssue_GridView.Refresh();
+			initCalibrationGrideViewOperatorUI();
 		}  
 		#endregion
 
@@ -506,6 +518,37 @@ namespace App.Calibration
 		#endregion
 
 		#region private method
+
+		private void updateCalibratedViewModelToView(CalibratedViewModel vm)
+		{
+			// TODO
+			Result_CalibrationStatus.Text					= vm.CalibrationStatus_Status;
+			Result_CalibrationMeanError.Text				= vm.CalibrationStatus_MeanError;
+			Result_CameraParameter_CellWidthSx.Text			= vm.CameraParameters_CellWidthSx;
+			Result_CameraParameter_CellHeightSy.Text		= vm.CameraParameters_CellHeightSy;
+			Result_CameraParameter_FocalLength.Text			= vm.CameraParameters_FocalLength;
+			Result_CameraParameter_Kappa.Text				= vm.CameraParameters_Kappa;
+			Result_CameraParameter_CenterColumnCx.Text		= vm.CameraParameters_CenterColumnCx;
+			Result_CameraParameter_CenterRowCy.Text			= vm.CameraParameters_CenterRowCy;
+			Result_CameraParameter_ImageWidth.Text			= vm.CameraParameters_ImageWidth;
+			Result_CameraParameter_ImageHeight.Text			= vm.CameraParameters_ImageHeight;
+			Result_CameraPose_X.Text						= vm.CameraPose_X;
+			Result_CameraPose_RotationX.Text				= vm.CameraPose_RotationX;
+			Result_CameraPose_Y.Text						= vm.CameraPose_Y;
+			Result_CameraPose_RotationY.Text				= vm.CameraPose_RotationY;
+			Result_CameraPose_Z.Text						= vm.CameraPose_Z;
+			Result_CameraPose_RotationZ.Text				= vm.CameraPose_RotationZ;
+			Result_CameraPose_OriginalAtImageCorner.Checked = vm.CameraPose_OriginalAtImageCorner;
+
+		}
+
+		private string getCalibrationGridViewSelectCalibImageID()
+		{
+			if (Calibration_Calibration_GridView.SelectedRows.Count > 0)
+				return ((CalibImageViewModel)Calibration_Calibration_GridView.SelectedRows[0].DataBoundItem).CalibImageID;
+			else
+				return null;
+		}
 
 		private void initCombox()
 		{
@@ -643,7 +686,7 @@ namespace App.Calibration
                         Result_CameraParameter_ImageHeight.Text = getObjectDefaultStringValue(parameter.Value);
                         break;
                     case CalibrateResultType.CameraPose_X:
-                        Result_CameraPose_RotationX.Text = getObjectDefaultStringValue(parameter.Value);
+                        Result_CameraPose_X.Text = getObjectDefaultStringValue(parameter.Value);
                         break;
                     case CalibrateResultType.CameraPose_RotationX:
                         Result_CameraPose_RotationX.Text = getObjectDefaultStringValue(parameter.Value);

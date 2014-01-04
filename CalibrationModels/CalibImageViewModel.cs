@@ -15,6 +15,7 @@ namespace CalibrationModels
 			QualityIssues = new List<QualityIssue>();
 #if DEBUG
 			//Fake Data
+			this.CalibImageID = Guid.NewGuid().ToString();
 			this.Status = "OK @" + DateTime.Now.ToString("yyyyMMddHHmmss");
 			var qIssue = new QualityIssue()
 			{

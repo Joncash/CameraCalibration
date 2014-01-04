@@ -11,7 +11,20 @@ namespace CalibrationModels
 	/// </summary>
 	public class QualityIssue
 	{
+		/// <summary>
+		/// Quality
+		/// </summary>
 		public double Score { get; set; }
+		// description
 		public string Issue { get; set; }
+		/// <summary>
+		/// Scope
+		/// </summary>
+		public string Scope { get; set; }
+		/// <summary>
+		/// Detail
+		/// </summary>
+		public string Detail { get; set; }
+
 	}
 }
