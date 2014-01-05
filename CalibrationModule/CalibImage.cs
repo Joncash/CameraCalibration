@@ -12,12 +12,30 @@ namespace CalibrationModule
 	/// </summary>
 	public class CalibImage
 	{
+		#region private variables
+		private int _imageWidth;
+		private int _imageHeight;
+		private HImage _image;
+		#endregion
+
+		#region pulic variables
 		/// <summary>
 		/// Calibration 影像ID
 		/// </summary>
 		public readonly string ID;
 
-		private HImage _image;
+		/// <summary>
+		/// ImageWidth
+		/// </summary>
+		public int ImageWidth { get { return _imageWidth; } }
+
+		/// <summary>
+		/// ImageHeight
+		/// </summary>
+		public int ImageHeight { get { return _imageHeight; } }
+		#endregion
+
+		#region 建構子
 		public CalibImage()
 		{
 			ID = Guid.NewGuid().ToString();
@@ -25,7 +43,9 @@ namespace CalibrationModule
 		public CalibImage(string filename)
 		{
 			SetImage(filename);
+			ID = Guid.NewGuid().ToString();
 		}
+		#endregion
 
 		#region public Method
 
@@ -36,6 +56,7 @@ namespace CalibrationModule
 		public void SetImage(string filename)
 		{
 			_image = new HImage(filename);
+			setImageInfo();
 		}
 
 		/// <summary>
@@ -45,6 +66,7 @@ namespace CalibrationModule
 		public void SetImage(HImage image)
 		{
 			_image = new HImage(image);
+			setImageInfo();
 		}
 
 		/// <summary>
@@ -54,6 +76,17 @@ namespace CalibrationModule
 		public HImage GetImage()
 		{
 			return _image;
+		}
+		#endregion
+
+		#region private Methods
+		/// <summary>
+		/// 設定影像 Width, Height
+		/// </summary>
+		private void setImageInfo()
+		{
+			string typeOfImage;
+			_image.GetImagePointer1(out typeOfImage, out _imageWidth, out _imageHeight);
 		}
 		#endregion
 
