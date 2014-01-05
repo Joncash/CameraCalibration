@@ -22,7 +22,7 @@ namespace CalibrationModule
 
 	public delegate void SaveCalibratedFileEventHandler(object sender, CalibrationEventArgs e);
 
-	public delegate void ErrorEventHandler(object sender, CalibrationEventArgs e);
+	public delegate void ErrorEventHandler(object sender, CalibrationErrorEventArgs e);
 
 	/// <summary>
 	/// 鏡頭校正 Assistant
@@ -138,14 +138,6 @@ namespace CalibrationModule
 			var image = new CalibImage(filename);
 			AddCalibImage(image);
 		}
-
-		///// <summary>
-		///// 加入校正影像
-		///// </summary>
-		///// <param name="imageModel">image model</param>
-		//public void AddCalibImage(CalibrationImage imageModel)
-		//{
-		//}
 
 		/// <summary>
 		/// 移除校正影像

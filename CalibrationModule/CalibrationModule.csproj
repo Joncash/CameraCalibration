@@ -46,6 +46,7 @@
     <Compile Include="CalibImage.cs" />
     <Compile Include="CalibrationAssistant.cs" />
     <Compile Include="CalibImageCalculator.cs" />
+    <Compile Include="CalibrationErrorEventArgs.cs" />
     <Compile Include="CalibrationEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
