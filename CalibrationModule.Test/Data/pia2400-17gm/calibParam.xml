@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<CalibrationPlateParamModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <GaussianFilterSize>3</GaussianFilterSize>
-  <MarkThreshold>112</MarkThreshold>
-  <MinMarkDiam>5</MinMarkDiam>
-  <StartThresh>128</StartThresh>
-  <DeltaThresh>10</DeltaThresh>
-  <MinThresh>18</MinThresh>
-  <Alpha>0.5</Alpha>
-  <MinContourLength>15</MinContourLength>
-  <MaxDiameterMarks>100</MaxDiameterMarks>
-</CalibrationPlateParamModel>
+<CalibrationPlateParam>
+	<GaussianFilterSize>3</GaussianFilterSize>
+	<MarkThreshold>112</MarkThreshold>
+	<MinMarkDiam>5</MinMarkDiam>
+	<StartThresh>128</StartThresh>
+	<DeltaThresh>10</DeltaThresh>
+	<MinThresh>18</MinThresh>
+	<Alpha>0.5</Alpha>
+	<MinContourLength>15</MinContourLength>
+	<MaxDiameterMarks>100</MaxDiameterMarks>
+</CalibrationPlateParam>
