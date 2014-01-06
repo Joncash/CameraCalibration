@@ -154,13 +154,14 @@ namespace App.Calibration
 			_assistant.On_Error += assistant_On_Error;
 		}
 
-		private void assistant_On_Error(object sender, CalibrationEventArgs e)
+		private void assistant_On_Error(object sender, CalibrationErrorEventArgs e)
 		{
-			if (e.Model is CalibImageViewModel)
+			var msg = e.Message;
+			if (e.Ex != null && !String.IsNullOrEmpty(e.Ex.StackTrace))
 			{
-				// TODO
-				//_errorMessageList.Add("");
-			}	
+				msg += Environment.NewLine + e.Ex.StackTrace;
+			}
+			setCalibrateErrorStatus(msg);
 		}
 
 		private void assistant_On_CalibratedFileSaved(object sender, CalibrationEventArgs e)
@@ -277,6 +278,12 @@ namespace App.Calibration
 			form.ShowDialog(this);
 		}
 
+		private void setCalibrateErrorStatus(string msg)
+		{
+			_errorMessageList.Add(msg);
+			ErrorCountToolStripStatusLabel.Text = _errorMessageList.Count.ToString();
+			CalibrateStripStatusLabel.Text = "[ERROR]" + msg;
+		}
 		
 		private void setCalibrateStatus(string statusMessage)
 		{
