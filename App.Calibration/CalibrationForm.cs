@@ -152,6 +152,7 @@ namespace App.Calibration
 			_assistant.On_CalibratedFileSaved += assistant_On_CalibratedFileSaved;
 
 			_assistant.On_Error += assistant_On_Error;
+
 		}
 
 		private void assistant_On_Error(object sender, CalibrationErrorEventArgs e)

@@ -637,7 +637,7 @@
 			this.ImageSourceExpandCollapsePanel.IsExpanded = true;
 			this.ImageSourceExpandCollapsePanel.Location = new System.Drawing.Point(3, 3);
 			this.ImageSourceExpandCollapsePanel.Name = "ImageSourceExpandCollapsePanel";
-			this.ImageSourceExpandCollapsePanel.Size = new System.Drawing.Size(973, 94);
+			this.ImageSourceExpandCollapsePanel.Size = new System.Drawing.Size(973, 118);
 			this.ImageSourceExpandCollapsePanel.TabIndex = 0;
 			this.ImageSourceExpandCollapsePanel.Text = "Image Source";
 			this.ImageSourceExpandCollapsePanel.UseAnimation = false;
@@ -645,7 +645,7 @@
 			// Calibration_ImageSource_ImageAcquisitionAssistantOpenButton
 			// 
 			this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Location = new System.Drawing.Point(924, 65);
+			this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Location = new System.Drawing.Point(924, 83);
 			this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Name = "Calibration_ImageSource_ImageAcquisitionAssistantOpenButton";
 			this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.Size = new System.Drawing.Size(45, 23);
 			this.Calibration_ImageSource_ImageAcquisitionAssistantOpenButton.TabIndex = 5;
@@ -658,7 +658,7 @@
 			this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.FormattingEnabled = true;
 			this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Items.AddRange(new object[] {
             "Image Acquisition 01"});
-			this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Location = new System.Drawing.Point(537, 66);
+			this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Location = new System.Drawing.Point(537, 84);
 			this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Name = "Calibration_ImageSource_ImageAcquisitionAssistantComboBox";
 			this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.Size = new System.Drawing.Size(381, 21);
 			this.Calibration_ImageSource_ImageAcquisitionAssistantComboBox.TabIndex = 4;
@@ -667,7 +667,7 @@
 			// Calibration_ImageSource_ImageAcquisitionAssistantRadioButton
 			// 
 			this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.AutoSize = true;
-			this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Location = new System.Drawing.Point(35, 66);
+			this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Location = new System.Drawing.Point(23, 84);
 			this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Name = "Calibration_ImageSource_ImageAcquisitionAssistantRadioButton";
 			this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.Size = new System.Drawing.Size(173, 19);
 			this.Calibration_ImageSource_ImageAcquisitionAssistantRadioButton.TabIndex = 3;
@@ -678,7 +678,7 @@
 			// 
 			this.Calibration_ImageSource_ImageFiles.AutoSize = true;
 			this.Calibration_ImageSource_ImageFiles.Checked = true;
-			this.Calibration_ImageSource_ImageFiles.Location = new System.Drawing.Point(35, 41);
+			this.Calibration_ImageSource_ImageFiles.Location = new System.Drawing.Point(23, 52);
 			this.Calibration_ImageSource_ImageFiles.Name = "Calibration_ImageSource_ImageFiles";
 			this.Calibration_ImageSource_ImageFiles.Size = new System.Drawing.Size(89, 19);
 			this.Calibration_ImageSource_ImageFiles.TabIndex = 2;
@@ -704,9 +704,9 @@
 			this.CalibrationExpandCollapsePanel.Controls.Add(this.Calibration_Calibration_GridView);
 			this.CalibrationExpandCollapsePanel.ExpandedHeight = 0;
 			this.CalibrationExpandCollapsePanel.IsExpanded = true;
-			this.CalibrationExpandCollapsePanel.Location = new System.Drawing.Point(3, 103);
+			this.CalibrationExpandCollapsePanel.Location = new System.Drawing.Point(3, 127);
 			this.CalibrationExpandCollapsePanel.Name = "CalibrationExpandCollapsePanel";
-			this.CalibrationExpandCollapsePanel.Size = new System.Drawing.Size(973, 396);
+			this.CalibrationExpandCollapsePanel.Size = new System.Drawing.Size(973, 436);
 			this.CalibrationExpandCollapsePanel.TabIndex = 2;
 			this.CalibrationExpandCollapsePanel.Text = "Calibration";
 			this.CalibrationExpandCollapsePanel.UseAnimation = false;
@@ -717,7 +717,7 @@
 			this.Calibration_Calibration_AutoUpdate.AutoSize = true;
 			this.Calibration_Calibration_AutoUpdate.Checked = true;
 			this.Calibration_Calibration_AutoUpdate.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.Calibration_Calibration_AutoUpdate.Location = new System.Drawing.Point(861, 279);
+			this.Calibration_Calibration_AutoUpdate.Location = new System.Drawing.Point(861, 331);
 			this.Calibration_Calibration_AutoUpdate.Name = "Calibration_Calibration_AutoUpdate";
 			this.Calibration_Calibration_AutoUpdate.Size = new System.Drawing.Size(93, 19);
 			this.Calibration_Calibration_AutoUpdate.TabIndex = 12;
@@ -730,7 +730,7 @@
 			this.Calibration_Calibration_LiveTests.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.Calibration_Calibration_LiveTests.AutoSize = true;
 			this.Calibration_Calibration_LiveTests.Enabled = false;
-			this.Calibration_Calibration_LiveTests.Location = new System.Drawing.Point(861, 88);
+			this.Calibration_Calibration_LiveTests.Location = new System.Drawing.Point(861, 106);
 			this.Calibration_Calibration_LiveTests.Name = "Calibration_Calibration_LiveTests";
 			this.Calibration_Calibration_LiveTests.Size = new System.Drawing.Size(80, 19);
 			this.Calibration_Calibration_LiveTests.TabIndex = 11;
@@ -740,7 +740,7 @@
 			// Calibration_Calibration_CalibrateButton
 			// 
 			this.Calibration_Calibration_CalibrateButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_Calibration_CalibrateButton.Location = new System.Drawing.Point(859, 343);
+			this.Calibration_Calibration_CalibrateButton.Location = new System.Drawing.Point(859, 398);
 			this.Calibration_Calibration_CalibrateButton.Name = "Calibration_Calibration_CalibrateButton";
 			this.Calibration_Calibration_CalibrateButton.Size = new System.Drawing.Size(110, 23);
 			this.Calibration_Calibration_CalibrateButton.TabIndex = 10;
@@ -751,7 +751,7 @@
 			// Calibration_Calibration_SetReferenceButton
 			// 
 			this.Calibration_Calibration_SetReferenceButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_Calibration_SetReferenceButton.Location = new System.Drawing.Point(859, 314);
+			this.Calibration_Calibration_SetReferenceButton.Location = new System.Drawing.Point(859, 366);
 			this.Calibration_Calibration_SetReferenceButton.Name = "Calibration_Calibration_SetReferenceButton";
 			this.Calibration_Calibration_SetReferenceButton.Size = new System.Drawing.Size(110, 23);
 			this.Calibration_Calibration_SetReferenceButton.TabIndex = 9;
@@ -763,7 +763,7 @@
 			// 
 			this.Calibration_Calibration_UpdateButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.Calibration_Calibration_UpdateButton.Enabled = false;
-			this.Calibration_Calibration_UpdateButton.Location = new System.Drawing.Point(859, 250);
+			this.Calibration_Calibration_UpdateButton.Location = new System.Drawing.Point(859, 295);
 			this.Calibration_Calibration_UpdateButton.Name = "Calibration_Calibration_UpdateButton";
 			this.Calibration_Calibration_UpdateButton.Size = new System.Drawing.Size(110, 23);
 			this.Calibration_Calibration_UpdateButton.TabIndex = 8;
@@ -775,7 +775,7 @@
 			// 
 			this.Calibration_Calibration_SaveAllButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.Calibration_Calibration_SaveAllButton.Enabled = false;
-			this.Calibration_Calibration_SaveAllButton.Location = new System.Drawing.Point(859, 206);
+			this.Calibration_Calibration_SaveAllButton.Location = new System.Drawing.Point(859, 254);
 			this.Calibration_Calibration_SaveAllButton.Name = "Calibration_Calibration_SaveAllButton";
 			this.Calibration_Calibration_SaveAllButton.Size = new System.Drawing.Size(110, 23);
 			this.Calibration_Calibration_SaveAllButton.TabIndex = 7;
@@ -787,7 +787,7 @@
 			// 
 			this.Calibration_Calibration_SaveButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.Calibration_Calibration_SaveButton.Enabled = false;
-			this.Calibration_Calibration_SaveButton.Location = new System.Drawing.Point(859, 177);
+			this.Calibration_Calibration_SaveButton.Location = new System.Drawing.Point(859, 214);
 			this.Calibration_Calibration_SaveButton.Name = "Calibration_Calibration_SaveButton";
 			this.Calibration_Calibration_SaveButton.Size = new System.Drawing.Size(110, 23);
 			this.Calibration_Calibration_SaveButton.TabIndex = 6;
@@ -798,7 +798,7 @@
 			// Calibration_Calibration_RemoveAllButton
 			// 
 			this.Calibration_Calibration_RemoveAllButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_Calibration_RemoveAllButton.Location = new System.Drawing.Point(859, 148);
+			this.Calibration_Calibration_RemoveAllButton.Location = new System.Drawing.Point(859, 173);
 			this.Calibration_Calibration_RemoveAllButton.Name = "Calibration_Calibration_RemoveAllButton";
 			this.Calibration_Calibration_RemoveAllButton.Size = new System.Drawing.Size(110, 23);
 			this.Calibration_Calibration_RemoveAllButton.TabIndex = 5;
@@ -809,7 +809,7 @@
 			// Calibration_Calibration_RemoveButton
 			// 
 			this.Calibration_Calibration_RemoveButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_Calibration_RemoveButton.Location = new System.Drawing.Point(859, 119);
+			this.Calibration_Calibration_RemoveButton.Location = new System.Drawing.Point(859, 141);
 			this.Calibration_Calibration_RemoveButton.Name = "Calibration_Calibration_RemoveButton";
 			this.Calibration_Calibration_RemoveButton.Size = new System.Drawing.Size(110, 23);
 			this.Calibration_Calibration_RemoveButton.TabIndex = 4;
@@ -820,7 +820,7 @@
 			// Calibration_Calibration_LoadButton
 			// 
 			this.Calibration_Calibration_LoadButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_Calibration_LoadButton.Location = new System.Drawing.Point(859, 59);
+			this.Calibration_Calibration_LoadButton.Location = new System.Drawing.Point(859, 75);
 			this.Calibration_Calibration_LoadButton.Name = "Calibration_Calibration_LoadButton";
 			this.Calibration_Calibration_LoadButton.Size = new System.Drawing.Size(110, 23);
 			this.Calibration_Calibration_LoadButton.TabIndex = 3;
@@ -843,12 +843,12 @@
             this.Image,
             this.statusDataGridViewTextBoxColumn});
 			this.Calibration_Calibration_GridView.DataSource = this.calibImageViewModelBindingSource;
-			this.Calibration_Calibration_GridView.Location = new System.Drawing.Point(21, 59);
+			this.Calibration_Calibration_GridView.Location = new System.Drawing.Point(21, 58);
 			this.Calibration_Calibration_GridView.MultiSelect = false;
 			this.Calibration_Calibration_GridView.Name = "Calibration_Calibration_GridView";
 			this.Calibration_Calibration_GridView.ReadOnly = true;
 			this.Calibration_Calibration_GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.Calibration_Calibration_GridView.Size = new System.Drawing.Size(820, 323);
+			this.Calibration_Calibration_GridView.Size = new System.Drawing.Size(820, 366);
 			this.Calibration_Calibration_GridView.TabIndex = 2;
 			// 
 			// calibImageIDDataGridViewTextBoxColumn
@@ -892,11 +892,11 @@
 			this.QualityIssuesExpandCollapsePanel.Controls.Add(this.Calibration_QualityIssue_ImageTests);
 			this.QualityIssuesExpandCollapsePanel.Controls.Add(this.label28);
 			this.QualityIssuesExpandCollapsePanel.Controls.Add(this.Calibration_QualityIssue_GridView);
-			this.QualityIssuesExpandCollapsePanel.ExpandedHeight = 0;
+			this.QualityIssuesExpandCollapsePanel.ExpandedHeight = 317;
 			this.QualityIssuesExpandCollapsePanel.IsExpanded = true;
-			this.QualityIssuesExpandCollapsePanel.Location = new System.Drawing.Point(3, 505);
+			this.QualityIssuesExpandCollapsePanel.Location = new System.Drawing.Point(3, 569);
 			this.QualityIssuesExpandCollapsePanel.Name = "QualityIssuesExpandCollapsePanel";
-			this.QualityIssuesExpandCollapsePanel.Size = new System.Drawing.Size(973, 248);
+			this.QualityIssuesExpandCollapsePanel.Size = new System.Drawing.Size(973, 305);
 			this.QualityIssuesExpandCollapsePanel.TabIndex = 3;
 			this.QualityIssuesExpandCollapsePanel.Text = "Quality Issues";
 			this.QualityIssuesExpandCollapsePanel.UseAnimation = false;
@@ -907,7 +907,7 @@
 			this.Calibration_QualityIssue_LiveTests.AutoSize = true;
 			this.Calibration_QualityIssue_LiveTests.Checked = true;
 			this.Calibration_QualityIssue_LiveTests.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.Calibration_QualityIssue_LiveTests.Location = new System.Drawing.Point(861, 219);
+			this.Calibration_QualityIssue_LiveTests.Location = new System.Drawing.Point(859, 249);
 			this.Calibration_QualityIssue_LiveTests.Name = "Calibration_QualityIssue_LiveTests";
 			this.Calibration_QualityIssue_LiveTests.Size = new System.Drawing.Size(80, 19);
 			this.Calibration_QualityIssue_LiveTests.TabIndex = 8;
@@ -918,7 +918,7 @@
 			// Calibration_QualityIssue_WarningLevel
 			// 
 			this.Calibration_QualityIssue_WarningLevel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_QualityIssue_WarningLevel.Location = new System.Drawing.Point(861, 180);
+			this.Calibration_QualityIssue_WarningLevel.Location = new System.Drawing.Point(859, 209);
 			this.Calibration_QualityIssue_WarningLevel.Maximum = new decimal(new int[] {
             99,
             0,
@@ -938,7 +938,7 @@
 			// 
 			this.label56.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label56.AutoSize = true;
-			this.label56.Location = new System.Drawing.Point(858, 159);
+			this.label56.Location = new System.Drawing.Point(856, 188);
 			this.label56.Name = "label56";
 			this.label56.Size = new System.Drawing.Size(113, 15);
 			this.label56.TabIndex = 6;
@@ -952,7 +952,7 @@
             "All",
             "Quick",
             "None"});
-			this.Calibration_QualityIssue_SequenceTests.Location = new System.Drawing.Point(861, 119);
+			this.Calibration_QualityIssue_SequenceTests.Location = new System.Drawing.Point(859, 149);
 			this.Calibration_QualityIssue_SequenceTests.Name = "Calibration_QualityIssue_SequenceTests";
 			this.Calibration_QualityIssue_SequenceTests.Size = new System.Drawing.Size(90, 21);
 			this.Calibration_QualityIssue_SequenceTests.TabIndex = 5;
@@ -963,7 +963,7 @@
 			// 
 			this.label55.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label55.AutoSize = true;
-			this.label55.Location = new System.Drawing.Point(858, 99);
+			this.label55.Location = new System.Drawing.Point(856, 129);
 			this.label55.Name = "label55";
 			this.label55.Size = new System.Drawing.Size(95, 15);
 			this.label55.TabIndex = 4;
@@ -977,7 +977,7 @@
             "All",
             "Quick",
             "None"});
-			this.Calibration_QualityIssue_ImageTests.Location = new System.Drawing.Point(861, 65);
+			this.Calibration_QualityIssue_ImageTests.Location = new System.Drawing.Point(859, 95);
 			this.Calibration_QualityIssue_ImageTests.Name = "Calibration_QualityIssue_ImageTests";
 			this.Calibration_QualityIssue_ImageTests.Size = new System.Drawing.Size(90, 21);
 			this.Calibration_QualityIssue_ImageTests.TabIndex = 3;
@@ -988,7 +988,7 @@
 			// 
 			this.label28.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.label28.AutoSize = true;
-			this.label28.Location = new System.Drawing.Point(858, 45);
+			this.label28.Location = new System.Drawing.Point(856, 75);
 			this.label28.Name = "label28";
 			this.label28.Size = new System.Drawing.Size(74, 15);
 			this.label28.TabIndex = 2;
@@ -1010,11 +1010,11 @@
             this.scopeDataGridViewTextBoxColumn,
             this.detailDataGridViewTextBoxColumn});
 			this.Calibration_QualityIssue_GridView.DataSource = this.qualityIssueBindingSource;
-			this.Calibration_QualityIssue_GridView.Location = new System.Drawing.Point(21, 45);
+			this.Calibration_QualityIssue_GridView.Location = new System.Drawing.Point(21, 63);
 			this.Calibration_QualityIssue_GridView.Name = "Calibration_QualityIssue_GridView";
 			this.Calibration_QualityIssue_GridView.ReadOnly = true;
 			this.Calibration_QualityIssue_GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.Calibration_QualityIssue_GridView.Size = new System.Drawing.Size(820, 200);
+			this.Calibration_QualityIssue_GridView.Size = new System.Drawing.Size(820, 237);
 			this.Calibration_QualityIssue_GridView.TabIndex = 1;
 			// 
 			// scoreDataGridViewTextBoxColumn
@@ -1094,11 +1094,11 @@
 			this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label14);
 			this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label13);
 			this.CalibrationPlateExtractionParametersExpandCollapsePanel.Controls.Add(this.label12);
-			this.CalibrationPlateExtractionParametersExpandCollapsePanel.ExpandedHeight = 0;
+			this.CalibrationPlateExtractionParametersExpandCollapsePanel.ExpandedHeight = 525;
 			this.CalibrationPlateExtractionParametersExpandCollapsePanel.IsExpanded = true;
-			this.CalibrationPlateExtractionParametersExpandCollapsePanel.Location = new System.Drawing.Point(3, 759);
+			this.CalibrationPlateExtractionParametersExpandCollapsePanel.Location = new System.Drawing.Point(3, 880);
 			this.CalibrationPlateExtractionParametersExpandCollapsePanel.Name = "CalibrationPlateExtractionParametersExpandCollapsePanel";
-			this.CalibrationPlateExtractionParametersExpandCollapsePanel.Size = new System.Drawing.Size(973, 490);
+			this.CalibrationPlateExtractionParametersExpandCollapsePanel.Size = new System.Drawing.Size(973, 525);
 			this.CalibrationPlateExtractionParametersExpandCollapsePanel.TabIndex = 4;
 			this.CalibrationPlateExtractionParametersExpandCollapsePanel.Text = "Calibration Plate Extraction Parameters";
 			this.CalibrationPlateExtractionParametersExpandCollapsePanel.UseAnimation = false;
@@ -1106,7 +1106,7 @@
 			// Calibration_PlateExtractionParameters_MaximumMarkDiametersResetButton
 			// 
 			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersResetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersResetButton.Location = new System.Drawing.Point(925, 427);
+			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersResetButton.Location = new System.Drawing.Point(925, 469);
 			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersResetButton.Name = "Calibration_PlateExtractionParameters_MaximumMarkDiametersResetButton";
 			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersResetButton.Size = new System.Drawing.Size(48, 23);
 			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersResetButton.TabIndex = 53;
@@ -1117,7 +1117,7 @@
 			// Calibration_PlateExtractionParameters_MinimumContourLengthResetButton
 			// 
 			this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton.Location = new System.Drawing.Point(925, 390);
+			this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton.Location = new System.Drawing.Point(925, 432);
 			this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton.Name = "Calibration_PlateExtractionParameters_MinimumContourLengthResetButton";
 			this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton.Size = new System.Drawing.Size(48, 23);
 			this.Calibration_PlateExtractionParameters_MinimumContourLengthResetButton.TabIndex = 52;
@@ -1128,7 +1128,7 @@
 			// Calibration_PlateExtractionParameters_SmoothingAlphaResetButton
 			// 
 			this.Calibration_PlateExtractionParameters_SmoothingAlphaResetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_PlateExtractionParameters_SmoothingAlphaResetButton.Location = new System.Drawing.Point(925, 353);
+			this.Calibration_PlateExtractionParameters_SmoothingAlphaResetButton.Location = new System.Drawing.Point(925, 395);
 			this.Calibration_PlateExtractionParameters_SmoothingAlphaResetButton.Name = "Calibration_PlateExtractionParameters_SmoothingAlphaResetButton";
 			this.Calibration_PlateExtractionParameters_SmoothingAlphaResetButton.Size = new System.Drawing.Size(48, 23);
 			this.Calibration_PlateExtractionParameters_SmoothingAlphaResetButton.TabIndex = 51;
@@ -1141,7 +1141,7 @@
 			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar.BackColor = System.Drawing.Color.White;
-			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar.Location = new System.Drawing.Point(239, 428);
+			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar.Location = new System.Drawing.Point(239, 466);
 			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar.Maximum = 500;
 			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar.Name = "Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar";
 			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersTrackBar.Size = new System.Drawing.Size(674, 45);
@@ -1153,7 +1153,7 @@
 			this.Calibration_PlateExtractionParameters_MinimumContourLengthTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Calibration_PlateExtractionParameters_MinimumContourLengthTrackBar.BackColor = System.Drawing.Color.White;
-			this.Calibration_PlateExtractionParameters_MinimumContourLengthTrackBar.Location = new System.Drawing.Point(239, 391);
+			this.Calibration_PlateExtractionParameters_MinimumContourLengthTrackBar.Location = new System.Drawing.Point(239, 429);
 			this.Calibration_PlateExtractionParameters_MinimumContourLengthTrackBar.Maximum = 500;
 			this.Calibration_PlateExtractionParameters_MinimumContourLengthTrackBar.Name = "Calibration_PlateExtractionParameters_MinimumContourLengthTrackBar";
 			this.Calibration_PlateExtractionParameters_MinimumContourLengthTrackBar.Size = new System.Drawing.Size(674, 45);
@@ -1165,7 +1165,7 @@
 			this.Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar.BackColor = System.Drawing.Color.White;
-			this.Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar.Location = new System.Drawing.Point(239, 356);
+			this.Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar.Location = new System.Drawing.Point(239, 394);
 			this.Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar.Maximum = 20;
 			this.Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar.Minimum = 1;
 			this.Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar.Name = "Calibration_PlateExtractionParameters_SmoothingAlphaTrackBar";
@@ -1177,7 +1177,7 @@
 			// Calibration_PlateExtractionParameters_MinimumContourLengthNumericUpDown
 			// 
 			this.Calibration_PlateExtractionParameters_MinimumContourLengthNumericUpDown.DecimalPlaces = 2;
-			this.Calibration_PlateExtractionParameters_MinimumContourLengthNumericUpDown.Location = new System.Drawing.Point(176, 392);
+			this.Calibration_PlateExtractionParameters_MinimumContourLengthNumericUpDown.Location = new System.Drawing.Point(176, 430);
 			this.Calibration_PlateExtractionParameters_MinimumContourLengthNumericUpDown.Maximum = new decimal(new int[] {
             500,
             0,
@@ -1201,7 +1201,7 @@
             0,
             0,
             65536});
-			this.Calibration_PlateExtractionParameters_SmoothingAlphaNumericUpDown.Location = new System.Drawing.Point(176, 357);
+			this.Calibration_PlateExtractionParameters_SmoothingAlphaNumericUpDown.Location = new System.Drawing.Point(176, 395);
 			this.Calibration_PlateExtractionParameters_SmoothingAlphaNumericUpDown.Maximum = new decimal(new int[] {
             200,
             0,
@@ -1225,7 +1225,7 @@
 			// Calibration_PlateExtractionParameters_MaximumMarkDiametersNumericUpDown
 			// 
 			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersNumericUpDown.DecimalPlaces = 2;
-			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersNumericUpDown.Location = new System.Drawing.Point(176, 429);
+			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersNumericUpDown.Location = new System.Drawing.Point(176, 467);
 			this.Calibration_PlateExtractionParameters_MaximumMarkDiametersNumericUpDown.Maximum = new decimal(new int[] {
             500,
             0,
@@ -1244,7 +1244,7 @@
 			// label20
 			// 
 			this.label20.AutoSize = true;
-			this.label20.Location = new System.Drawing.Point(18, 431);
+			this.label20.Location = new System.Drawing.Point(18, 469);
 			this.label20.Name = "label20";
 			this.label20.Size = new System.Drawing.Size(154, 15);
 			this.label20.TabIndex = 44;
@@ -1253,7 +1253,7 @@
 			// label21
 			// 
 			this.label21.AutoSize = true;
-			this.label21.Location = new System.Drawing.Point(18, 394);
+			this.label21.Location = new System.Drawing.Point(18, 432);
 			this.label21.Name = "label21";
 			this.label21.Size = new System.Drawing.Size(147, 15);
 			this.label21.TabIndex = 43;
@@ -1262,7 +1262,7 @@
 			// label22
 			// 
 			this.label22.AutoSize = true;
-			this.label22.Location = new System.Drawing.Point(18, 357);
+			this.label22.Location = new System.Drawing.Point(18, 395);
 			this.label22.Name = "label22";
 			this.label22.Size = new System.Drawing.Size(115, 15);
 			this.label22.TabIndex = 42;
@@ -1272,7 +1272,7 @@
 			// 
 			this.label23.AutoSize = true;
 			this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label23.Location = new System.Drawing.Point(15, 325);
+			this.label23.Location = new System.Drawing.Point(15, 363);
 			this.label23.Name = "label23";
 			this.label23.Size = new System.Drawing.Size(164, 15);
 			this.label23.TabIndex = 41;
@@ -1281,7 +1281,7 @@
 			// Calibration_PlateExtractionParameters_MinimumThresholdResetButton
 			// 
 			this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton.Location = new System.Drawing.Point(925, 287);
+			this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton.Location = new System.Drawing.Point(925, 329);
 			this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton.Name = "Calibration_PlateExtractionParameters_MinimumThresholdResetButton";
 			this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton.Size = new System.Drawing.Size(48, 23);
 			this.Calibration_PlateExtractionParameters_MinimumThresholdResetButton.TabIndex = 40;
@@ -1292,7 +1292,7 @@
 			// Calibration_PlateExtractionParameters_ThresholdDecremetResetButton
 			// 
 			this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton.Location = new System.Drawing.Point(925, 250);
+			this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton.Location = new System.Drawing.Point(925, 292);
 			this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton.Name = "Calibration_PlateExtractionParameters_ThresholdDecremetResetButton";
 			this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton.Size = new System.Drawing.Size(48, 23);
 			this.Calibration_PlateExtractionParameters_ThresholdDecremetResetButton.TabIndex = 39;
@@ -1303,7 +1303,7 @@
 			// Calibration_PlateExtractionParameters_InitialThresholdResetButton
 			// 
 			this.Calibration_PlateExtractionParameters_InitialThresholdResetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_PlateExtractionParameters_InitialThresholdResetButton.Location = new System.Drawing.Point(925, 213);
+			this.Calibration_PlateExtractionParameters_InitialThresholdResetButton.Location = new System.Drawing.Point(925, 255);
 			this.Calibration_PlateExtractionParameters_InitialThresholdResetButton.Name = "Calibration_PlateExtractionParameters_InitialThresholdResetButton";
 			this.Calibration_PlateExtractionParameters_InitialThresholdResetButton.Size = new System.Drawing.Size(48, 23);
 			this.Calibration_PlateExtractionParameters_InitialThresholdResetButton.TabIndex = 38;
@@ -1316,7 +1316,7 @@
 			this.Calibration_PlateExtractionParameters_MinimumThresholdTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Calibration_PlateExtractionParameters_MinimumThresholdTrackBar.BackColor = System.Drawing.Color.White;
-			this.Calibration_PlateExtractionParameters_MinimumThresholdTrackBar.Location = new System.Drawing.Point(239, 288);
+			this.Calibration_PlateExtractionParameters_MinimumThresholdTrackBar.Location = new System.Drawing.Point(239, 314);
 			this.Calibration_PlateExtractionParameters_MinimumThresholdTrackBar.Maximum = 100;
 			this.Calibration_PlateExtractionParameters_MinimumThresholdTrackBar.Minimum = 1;
 			this.Calibration_PlateExtractionParameters_MinimumThresholdTrackBar.Name = "Calibration_PlateExtractionParameters_MinimumThresholdTrackBar";
@@ -1330,7 +1330,7 @@
 			this.Calibration_PlateExtractionParameters_ThresholdDecremetTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Calibration_PlateExtractionParameters_ThresholdDecremetTrackBar.BackColor = System.Drawing.Color.White;
-			this.Calibration_PlateExtractionParameters_ThresholdDecremetTrackBar.Location = new System.Drawing.Point(239, 251);
+			this.Calibration_PlateExtractionParameters_ThresholdDecremetTrackBar.Location = new System.Drawing.Point(239, 276);
 			this.Calibration_PlateExtractionParameters_ThresholdDecremetTrackBar.Maximum = 100;
 			this.Calibration_PlateExtractionParameters_ThresholdDecremetTrackBar.Minimum = 1;
 			this.Calibration_PlateExtractionParameters_ThresholdDecremetTrackBar.Name = "Calibration_PlateExtractionParameters_ThresholdDecremetTrackBar";
@@ -1344,7 +1344,7 @@
 			this.Calibration_PlateExtractionParameters_InitialThresholdTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Calibration_PlateExtractionParameters_InitialThresholdTrackBar.BackColor = System.Drawing.Color.White;
-			this.Calibration_PlateExtractionParameters_InitialThresholdTrackBar.Location = new System.Drawing.Point(239, 216);
+			this.Calibration_PlateExtractionParameters_InitialThresholdTrackBar.Location = new System.Drawing.Point(239, 241);
 			this.Calibration_PlateExtractionParameters_InitialThresholdTrackBar.Maximum = 255;
 			this.Calibration_PlateExtractionParameters_InitialThresholdTrackBar.Minimum = 1;
 			this.Calibration_PlateExtractionParameters_InitialThresholdTrackBar.Name = "Calibration_PlateExtractionParameters_InitialThresholdTrackBar";
@@ -1355,7 +1355,7 @@
 			// 
 			// Calibration_PlateExtractionParameters_ThresholdDecremetNumericUpDown
 			// 
-			this.Calibration_PlateExtractionParameters_ThresholdDecremetNumericUpDown.Location = new System.Drawing.Point(176, 252);
+			this.Calibration_PlateExtractionParameters_ThresholdDecremetNumericUpDown.Location = new System.Drawing.Point(176, 277);
 			this.Calibration_PlateExtractionParameters_ThresholdDecremetNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1373,7 +1373,7 @@
 			// 
 			// Calibration_PlateExtractionParameters_InitialThresholdNumericUpDown
 			// 
-			this.Calibration_PlateExtractionParameters_InitialThresholdNumericUpDown.Location = new System.Drawing.Point(176, 217);
+			this.Calibration_PlateExtractionParameters_InitialThresholdNumericUpDown.Location = new System.Drawing.Point(176, 242);
 			this.Calibration_PlateExtractionParameters_InitialThresholdNumericUpDown.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1396,7 +1396,7 @@
 			// 
 			// Calibration_PlateExtractionParameters_MinimumThresholdNumericUpDown
 			// 
-			this.Calibration_PlateExtractionParameters_MinimumThresholdNumericUpDown.Location = new System.Drawing.Point(176, 289);
+			this.Calibration_PlateExtractionParameters_MinimumThresholdNumericUpDown.Location = new System.Drawing.Point(176, 314);
 			this.Calibration_PlateExtractionParameters_MinimumThresholdNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1415,7 +1415,7 @@
 			// label16
 			// 
 			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(18, 291);
+			this.label16.Location = new System.Drawing.Point(18, 316);
 			this.label16.Name = "label16";
 			this.label16.Size = new System.Drawing.Size(118, 15);
 			this.label16.TabIndex = 31;
@@ -1424,7 +1424,7 @@
 			// label17
 			// 
 			this.label17.AutoSize = true;
-			this.label17.Location = new System.Drawing.Point(18, 254);
+			this.label17.Location = new System.Drawing.Point(18, 279);
 			this.label17.Name = "label17";
 			this.label17.Size = new System.Drawing.Size(119, 15);
 			this.label17.TabIndex = 30;
@@ -1433,7 +1433,7 @@
 			// label18
 			// 
 			this.label18.AutoSize = true;
-			this.label18.Location = new System.Drawing.Point(18, 217);
+			this.label18.Location = new System.Drawing.Point(18, 242);
 			this.label18.Name = "label18";
 			this.label18.Size = new System.Drawing.Size(94, 15);
 			this.label18.TabIndex = 29;
@@ -1443,7 +1443,7 @@
 			// 
 			this.label19.AutoSize = true;
 			this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label19.Location = new System.Drawing.Point(15, 185);
+			this.label19.Location = new System.Drawing.Point(15, 210);
 			this.label19.Name = "label19";
 			this.label19.Size = new System.Drawing.Size(161, 15);
 			this.label19.TabIndex = 28;
@@ -1452,7 +1452,7 @@
 			// Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton
 			// 
 			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton.Location = new System.Drawing.Point(925, 146);
+			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton.Location = new System.Drawing.Point(925, 176);
 			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton.Name = "Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton";
 			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton.Size = new System.Drawing.Size(48, 23);
 			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersResetButton.TabIndex = 27;
@@ -1463,7 +1463,7 @@
 			// Calibration_PlateExtractionParameters_MarkThresholdResetButton
 			// 
 			this.Calibration_PlateExtractionParameters_MarkThresholdResetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_PlateExtractionParameters_MarkThresholdResetButton.Location = new System.Drawing.Point(925, 109);
+			this.Calibration_PlateExtractionParameters_MarkThresholdResetButton.Location = new System.Drawing.Point(925, 139);
 			this.Calibration_PlateExtractionParameters_MarkThresholdResetButton.Name = "Calibration_PlateExtractionParameters_MarkThresholdResetButton";
 			this.Calibration_PlateExtractionParameters_MarkThresholdResetButton.Size = new System.Drawing.Size(48, 23);
 			this.Calibration_PlateExtractionParameters_MarkThresholdResetButton.TabIndex = 26;
@@ -1474,7 +1474,7 @@
 			// Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton
 			// 
 			this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton.Location = new System.Drawing.Point(925, 72);
+			this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton.Location = new System.Drawing.Point(925, 102);
 			this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton.Name = "Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton";
 			this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton.Size = new System.Drawing.Size(48, 23);
 			this.Calibration_PlateExtractionParameters_GaussianFilterSizeResetButton.TabIndex = 25;
@@ -1487,7 +1487,7 @@
 			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersTrackBar.BackColor = System.Drawing.Color.White;
-			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersTrackBar.Location = new System.Drawing.Point(239, 147);
+			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersTrackBar.Location = new System.Drawing.Point(239, 160);
 			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersTrackBar.Maximum = 100;
 			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersTrackBar.Name = "Calibration_PlateExtractionParameters_MinimumMarkDiametersTrackBar";
 			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersTrackBar.Size = new System.Drawing.Size(674, 45);
@@ -1500,7 +1500,7 @@
 			this.Calibration_PlateExtractionParameters_MarkThresholdTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Calibration_PlateExtractionParameters_MarkThresholdTrackBar.BackColor = System.Drawing.Color.White;
-			this.Calibration_PlateExtractionParameters_MarkThresholdTrackBar.Location = new System.Drawing.Point(239, 110);
+			this.Calibration_PlateExtractionParameters_MarkThresholdTrackBar.Location = new System.Drawing.Point(239, 123);
 			this.Calibration_PlateExtractionParameters_MarkThresholdTrackBar.Maximum = 255;
 			this.Calibration_PlateExtractionParameters_MarkThresholdTrackBar.Name = "Calibration_PlateExtractionParameters_MarkThresholdTrackBar";
 			this.Calibration_PlateExtractionParameters_MarkThresholdTrackBar.Size = new System.Drawing.Size(674, 45);
@@ -1513,7 +1513,7 @@
 			this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar.BackColor = System.Drawing.Color.White;
-			this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar.Location = new System.Drawing.Point(239, 75);
+			this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar.Location = new System.Drawing.Point(239, 88);
 			this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar.Maximum = 11;
 			this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar.Name = "Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar";
 			this.Calibration_PlateExtractionParameters_GaussianFilterSizeTrackBar.Size = new System.Drawing.Size(674, 45);
@@ -1523,7 +1523,7 @@
 			// 
 			// Calibration_PlateExtractionParameters_MarkThresholdNumericUpDown
 			// 
-			this.Calibration_PlateExtractionParameters_MarkThresholdNumericUpDown.Location = new System.Drawing.Point(176, 111);
+			this.Calibration_PlateExtractionParameters_MarkThresholdNumericUpDown.Location = new System.Drawing.Point(176, 124);
 			this.Calibration_PlateExtractionParameters_MarkThresholdNumericUpDown.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1541,7 +1541,7 @@
 			// 
 			// Calibration_PlateExtractionParameters_GaussianFilterSizeNumericUpDown
 			// 
-			this.Calibration_PlateExtractionParameters_GaussianFilterSizeNumericUpDown.Location = new System.Drawing.Point(176, 76);
+			this.Calibration_PlateExtractionParameters_GaussianFilterSizeNumericUpDown.Location = new System.Drawing.Point(176, 89);
 			this.Calibration_PlateExtractionParameters_GaussianFilterSizeNumericUpDown.Maximum = new decimal(new int[] {
             11,
             0,
@@ -1559,7 +1559,7 @@
 			// 
 			// Calibration_PlateExtractionParameters_MinimumMarkDiametersNumericUpDown
 			// 
-			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersNumericUpDown.Location = new System.Drawing.Point(176, 148);
+			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersNumericUpDown.Location = new System.Drawing.Point(176, 161);
 			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersNumericUpDown.Name = "Calibration_PlateExtractionParameters_MinimumMarkDiametersNumericUpDown";
 			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersNumericUpDown.Size = new System.Drawing.Size(58, 21);
 			this.Calibration_PlateExtractionParameters_MinimumMarkDiametersNumericUpDown.TabIndex = 5;
@@ -1573,7 +1573,7 @@
 			// label15
 			// 
 			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(18, 150);
+			this.label15.Location = new System.Drawing.Point(18, 163);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(151, 15);
 			this.label15.TabIndex = 4;
@@ -1582,7 +1582,7 @@
 			// label14
 			// 
 			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(18, 113);
+			this.label14.Location = new System.Drawing.Point(18, 126);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(93, 15);
 			this.label14.TabIndex = 3;
@@ -1591,7 +1591,7 @@
 			// label13
 			// 
 			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(18, 76);
+			this.label13.Location = new System.Drawing.Point(18, 89);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(116, 15);
 			this.label13.TabIndex = 2;
@@ -1601,7 +1601,7 @@
 			// 
 			this.label12.AutoSize = true;
 			this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label12.Location = new System.Drawing.Point(15, 44);
+			this.label12.Location = new System.Drawing.Point(15, 57);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(167, 15);
 			this.label12.TabIndex = 1;
@@ -1752,7 +1752,7 @@
 			// Result_CameraParameter_ExportButton
 			// 
 			this.Result_CameraParameter_ExportButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.Result_CameraParameter_ExportButton.Location = new System.Drawing.Point(901, 48);
+			this.Result_CameraParameter_ExportButton.Location = new System.Drawing.Point(895, 49);
 			this.Result_CameraParameter_ExportButton.Name = "Result_CameraParameter_ExportButton";
 			this.Result_CameraParameter_ExportButton.Size = new System.Drawing.Size(75, 23);
 			this.Result_CameraParameter_ExportButton.TabIndex = 31;
@@ -2258,7 +2258,7 @@
 			// Reult_CameraPose_ExportBatton
 			// 
 			this.Reult_CameraPose_ExportBatton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.Reult_CameraPose_ExportBatton.Location = new System.Drawing.Point(901, 44);
+			this.Reult_CameraPose_ExportBatton.Location = new System.Drawing.Point(901, 45);
 			this.Reult_CameraPose_ExportBatton.Name = "Reult_CameraPose_ExportBatton";
 			this.Reult_CameraPose_ExportBatton.Size = new System.Drawing.Size(75, 23);
 			this.Reult_CameraPose_ExportBatton.TabIndex = 49;
@@ -2284,7 +2284,7 @@
 			// CalibrateStripStatusLabel
 			// 
 			this.CalibrateStripStatusLabel.Name = "CalibrateStripStatusLabel";
-			this.CalibrateStripStatusLabel.Size = new System.Drawing.Size(766, 17);
+			this.CalibrateStripStatusLabel.Size = new System.Drawing.Size(797, 17);
 			this.CalibrateStripStatusLabel.Spring = true;
 			this.CalibrateStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
