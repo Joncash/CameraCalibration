@@ -20,7 +20,7 @@ namespace App.Calibration
 			int index = messageList.Count;
 			foreach (var message in messageList.AsEnumerable().Reverse())
 			{
-				StatusRichTextBox.AppendText(String.Format("[{0}] {1}" + Environment.NewLine, index--, message));
+				StatusRichTextBox.AppendText(String.Format("[{0}] {1}" + Environment.NewLine + Environment.NewLine, index--, message));
 			}
 		}
 	}

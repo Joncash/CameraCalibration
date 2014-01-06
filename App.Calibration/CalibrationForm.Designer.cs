@@ -197,10 +197,10 @@
 			this.CalibrateStatusStrip = new System.Windows.Forms.StatusStrip();
 			this.CalibrateStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.CalibrateStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-			this.ErrorToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-			this.ErrorCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.StatusCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.ErrorToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.ErrorCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.CalibrationTab.SuspendLayout();
 			this.SettingsTabPage.SuspendLayout();
 			this.SettingsFlowLayoutPanel.SuspendLayout();
@@ -2275,6 +2275,7 @@
             this.ErrorToolStripStatusLabel,
             this.ErrorCountToolStripStatusLabel});
 			this.CalibrateStatusStrip.Location = new System.Drawing.Point(0, 584);
+			this.CalibrateStatusStrip.MaximumSize = new System.Drawing.Size(0, 22);
 			this.CalibrateStatusStrip.Name = "CalibrateStatusStrip";
 			this.CalibrateStatusStrip.Size = new System.Drawing.Size(1017, 22);
 			this.CalibrateStatusStrip.TabIndex = 1;
@@ -2292,6 +2293,20 @@
 			this.CalibrateStripProgressBar.Name = "CalibrateStripProgressBar";
 			this.CalibrateStripProgressBar.Size = new System.Drawing.Size(100, 16);
 			// 
+			// toolStripStatusLabel1
+			// 
+			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+			this.toolStripStatusLabel1.Size = new System.Drawing.Size(42, 17);
+			this.toolStripStatusLabel1.Text = "Status:";
+			// 
+			// StatusCountToolStripStatusLabel
+			// 
+			this.StatusCountToolStripStatusLabel.IsLink = true;
+			this.StatusCountToolStripStatusLabel.Name = "StatusCountToolStripStatusLabel";
+			this.StatusCountToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
+			this.StatusCountToolStripStatusLabel.Text = "0";
+			this.StatusCountToolStripStatusLabel.Click += new System.EventHandler(this.StatusCountToolStripStatusLabel_Click);
+			// 
 			// ErrorToolStripStatusLabel
 			// 
 			this.ErrorToolStripStatusLabel.Name = "ErrorToolStripStatusLabel";
@@ -2306,20 +2321,6 @@
 			this.ErrorCountToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
 			this.ErrorCountToolStripStatusLabel.Text = "0";
 			this.ErrorCountToolStripStatusLabel.Click += new System.EventHandler(this.ErrorCountToolStripStatusLabel_Click);
-			// 
-			// toolStripStatusLabel1
-			// 
-			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-			this.toolStripStatusLabel1.Size = new System.Drawing.Size(42, 17);
-			this.toolStripStatusLabel1.Text = "Status:";
-			// 
-			// StatusCountToolStripStatusLabel
-			// 
-			this.StatusCountToolStripStatusLabel.IsLink = true;
-			this.StatusCountToolStripStatusLabel.Name = "StatusCountToolStripStatusLabel";
-			this.StatusCountToolStripStatusLabel.Size = new System.Drawing.Size(13, 17);
-			this.StatusCountToolStripStatusLabel.Text = "0";
-			this.StatusCountToolStripStatusLabel.Click += new System.EventHandler(this.StatusCountToolStripStatusLabel_Click);
 			// 
 			// CalibrationForm
 			// 
