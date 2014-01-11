@@ -63,5 +63,11 @@ namespace CalibrationModule
 			}
 			return model;
 		}
+
+		public List<QualityIssue> GetQualityIssues()
+		{
+			var qualityIssues = new List<QualityIssue>();
+			return qualityIssues;
+		}
 	}
 }

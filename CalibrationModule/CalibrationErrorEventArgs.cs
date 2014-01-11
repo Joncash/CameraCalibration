@@ -15,6 +15,7 @@ namespace CalibrationModule
 		public object _sender;
 		public object Sender { get { return _sender; } }
 		public readonly Exception Ex;
+		public object Model;
 		public CalibrationErrorEventArgs(object sender, Exception ex)
 		{
 			this.Ex = ex;

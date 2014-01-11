@@ -1,4 +1,5 @@
 ﻿using CalibrationModels;
+using HalconDotNet;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +41,7 @@ namespace CalibrationModule
 			CalibrationImageQualityIssueChanged,
 			CalibrationCompletd,
 			CalibratedFileSave,
+			Error
 		};
 
 		#region private variables
@@ -51,6 +53,9 @@ namespace CalibrationModule
 		private CameraParam _cameraParam;
 		private string _calibPlateDescFile;
 		private double _thickness = 0.63; //millimeter
+
+		//workers
+		private CalibrationWorker _worker;
 		#endregion
 
 		#region public variables
@@ -77,6 +82,7 @@ namespace CalibrationModule
 			_cameraParam = cameraParam;
 			_calibPlateDescFile = calibPlateDescrFile;
 			_thickness = thickness;
+			init();
 		}
 
 		/// <summary>
@@ -89,6 +95,7 @@ namespace CalibrationModule
 		{
 			_cameraParam = cameraParam;
 			_calibPlateDescFile = calibPlateDescrFile;
+			init();
 		}
 		#endregion
 
@@ -110,6 +117,89 @@ namespace CalibrationModule
 		#endregion
 
 		#region Public Methods
+		public double GetThickness()
+		{
+			return _thickness;
+		}
+		public CalibrationQualityIssueParam GetCalibrationQualityIssueParam()
+		{
+			return _calibQualityIssueParam;
+		}
+		public CalibrationPlateParam GetCalibrationPlateParam()
+		{
+			return _calibPlateParam;
+		}
+		public CalibImage GetCalibImage(string imageID)
+		{
+			return _calibImages.SingleOrDefault(p => p.ID == imageID);
+		}
+		public HTuple GetCameraParamHTuple(CalibImage image)
+		{
+			HTuple campar;
+			int paramsListSize = 8;
+			int offset = 0;
+			bool areaScanPoly = false;
+			var mKappa = 0.0;
+			var mK1 = 0.0;
+			var mK2 = 0.0;
+			var mK3 = 0.0;
+			var mP1 = 0.0;
+			var mP2 = 0.0;
+			var mMotionVx = 0.0;
+			var mMotionVy = 500.0;
+			var mMotionVz = 0.0;
+			var mCameraType = _cameraParam.CameraType;
+			if (mCameraType == CameraModelType.AreaScanPolynomial)
+			{
+				paramsListSize = 12;
+				offset = 4;
+				areaScanPoly = true;
+			}
+
+			paramsListSize += (mCameraType == CameraModelType.LineScan) ? 3 : 0;
+
+			campar = new HTuple(paramsListSize);
+			campar[0] = (_cameraParam.IsTelecentric ? 0.0 : ((double)_cameraParam.Focus / 1000000.0));
+
+			if (areaScanPoly)
+			{
+				campar[1] = mK1;
+				campar[2] = mK2;
+				campar[3] = mK3;
+				campar[4] = mP1;
+				campar[5] = mP2;
+			}
+			else
+			{
+				campar[1] = mKappa;
+			}
+
+			campar[2 + offset] = (double)_cameraParam.Sx / 1000000000.0;   // Sx -width   -> * 10^ -9 
+			campar[3 + offset] = (double)_cameraParam.Sy / 1000000000.0;  // Sy -height  -> * 10^ -9 
+			campar[4 + offset] = image.ImageWidth * 0.5;                  // x -principal point 
+			campar[5 + offset] = image.ImageHeight * 0.5;                 // y -principal point 
+			campar[6 + offset] = image.ImageWidth;                      // imagewidth 
+			campar[7 + offset] = image.ImageHeight;                     // imageheight 
+
+			if (paramsListSize == 11)
+			{
+				campar[8] = mMotionVx / 1000000.0;
+				campar[9] = mMotionVy / 1000000.0;
+				campar[10] = mMotionVz / 1000000.0;
+
+				campar[5 + offset] = 0;     // y -principal point = 0 for line scan camera 
+			}
+			return campar;
+		}
+		public HTuple GetCameraParamHTuple(string imageID)
+		{
+			var image = GetCalibImage(imageID);
+			return GetCameraParamHTuple(image);
+		}
+		public string GetCalibPlateDescrFile()
+		{
+			return _calibPlateDescFile;
+		}
 
 		/// <summary>
 		/// 加入校正影像
@@ -120,13 +210,13 @@ namespace CalibrationModule
 			if (_calibImages == null) _calibImages = new List<CalibImage>();
 			_calibImages.Add(image);
 
-			//ToDo
-			var model = new CalibImageViewModel() { CalibImageID = image.ID };
-			var eventArgs = new CalibrationEventArgs(model);
-			var sender = this;
+			//_worker.RequestCalibrationImageReport(image.ID, "ImageAdded");
+			//var model = new CalibImageViewModel() { CalibImageID = image.ID };
+			//var eventArgs = new CalibrationEventArgs(model);
+			//var sender = this;
 
 
-			eventNotify(EventNotifyType.ImageAdded, sender, eventArgs);
+			//eventNotify(EventNotifyType.ImageAdded, sender, eventArgs);
 		}
 
 		/// <summary>
@@ -277,6 +367,15 @@ namespace CalibrationModule
 		#endregion
 
 		#region private Methods
+		private void init()
+		{
+			_worker = new CalibrationWorker(this);
+			_worker.ResponseCalibrationReport += responseMessage;
+		}
+		private void responseMessage(object sender, CalibrationEventArgs e)
+		{
+			//ToDo
+		}
 		private void eventNotify(EventNotifyType eventType, object sender, CalibrationEventArgs e)
 		{
 			switch (eventType)
