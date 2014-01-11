@@ -326,7 +326,9 @@ namespace App.Calibration
 
 			if (openFileDialog.ShowDialog() == DialogResult.OK)
 			{
-				_assistant.SetCameraParam(CalibrateSettingType.DescriptionFile, openFileDialog.FileName);
+				var fileName = openFileDialog.FileName;
+				_assistant.SetCameraParam(CalibrateSettingType.DescriptionFile, fileName);
+				Settings_CalibrationPlate_DescriptionFile.Text = fileName;
 			}
 		}
 
@@ -472,8 +474,8 @@ namespace App.Calibration
 		private void Calibration_QualityIssue_WarningLevel_ValueChanged(object sender, EventArgs e)
 		{
 			setCalibrateStatus(Calibration_Calibration_AutoUpdate.Checked);
-			var control = ((ComboBox)sender);
-			_assistant.SetCalibrationPlateParam(CalibrateType.QualityIssues_WarningLevel, control.SelectedValue);
+			var control = ((NumericUpDown)sender);
+			_assistant.SetCalibrationPlateParam(CalibrateType.QualityIssues_WarningLevel, control.Value);
 		}
 
 		private void Calibration_QualityIssue_SequenceTests_SelectedIndexChanged(object sender, EventArgs e)
