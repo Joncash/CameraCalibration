@@ -124,10 +124,10 @@ namespace App.Calibration
 			initCalibrationGrideViewOperatorUI();
 			initCombox();
 			Calibration_Calibration_GridView.DataSource = new BindingSource(new List<CalibImageViewModel>(), null);
-
 		}
 
 		#region CalibrationAssistant event
+
 		private void initCalibrationAssistant()
 		{
 			_assistant = new CalibrationAssistant(
@@ -152,22 +152,24 @@ namespace App.Calibration
 			_assistant.On_CalibratedFileSaved += assistant_On_CalibratedFileSaved;
 
 			_assistant.On_Error += assistant_On_Error;
+
 		}
 
-		private void assistant_On_Error(object sender, CalibrationEventArgs e)
+		private void assistant_On_Error(object sender, CalibrationErrorEventArgs e)
 		{
-			if (e.Model is CalibImageViewModel)
+			var msg = e.Message;
+			if (e.Ex != null && !String.IsNullOrEmpty(e.Ex.StackTrace))
 			{
-				// TODO
-				//_errorMessageList.Add("");
-			}	
+				msg += Environment.NewLine + e.Ex.StackTrace;
+			}
+			setCalibrateErrorStatus(msg);
 		}
 
 		private void assistant_On_CalibratedFileSaved(object sender, CalibrationEventArgs e)
 		{
 			if (e.Model is bool)
 			{
-				var msg = String.Format("save file - {0}!", (bool)e.Model ? "successed" : "failed");
+				var msg = String.Format("Save file - {0}!", (bool)e.Model ? "successed" : "failed");
 				setCalibrateStatus(msg);
 			}
 		}
@@ -192,14 +194,14 @@ namespace App.Calibration
 
 				Calibration_QualityIssue_GridView.DataSource = new BindingSource(vm.QualityIssues, null);
 			}
-			setCalibrateStatus(false);
+			setCalibrateStatus("Calibration Image Quality Issue Changed!", false);
 		}
 
 		private void assistant_On_CameraParamChanged(object sender, CalibrationEventArgs e)
 		{
 			if (e.Model is bool)
 			{
-				var msg = String.Format("Calibration Camera param changed - {0}!", (bool)e.Model ? "successed" : "failed");
+				var msg = String.Format("Camera param changed - {0}!", (bool)e.Model ? "successed" : "failed");
 				setCalibrateStatus(msg);
 			}
 		}
@@ -226,7 +228,7 @@ namespace App.Calibration
 		{
 			if (e.Model is bool)
 			{
-				var msg = String.Format("Save image {0}!", (bool)e.Model ? "successed" : "failed");
+				var msg = String.Format("Image saved  - {0}!", (bool)e.Model ? "successed" : "failed");
 				setCalibrateStatus(msg);
 			}	
 		}
@@ -235,7 +237,7 @@ namespace App.Calibration
 		{
 			if (e.Model is bool)
 			{
-				var msg = String.Format("Remove image {0}!", (bool)e.Model ? "successed" : "failed");
+				var msg = String.Format("Image removed - {0}!", (bool)e.Model ? "successed" : "failed");
 				setCalibrateStatus(msg);
 			}	
 		}
@@ -255,7 +257,7 @@ namespace App.Calibration
 
 				initCalibrationGrideViewOperatorUI();
 				Calibration_QualityIssue_GridView.DataSource = new BindingSource(vm.QualityIssues, null);
-				setCalibrateStatus(false);
+				setCalibrateStatus("Image added!", false);
 			}	
 		}
 
@@ -277,6 +279,12 @@ namespace App.Calibration
 			form.ShowDialog(this);
 		}
 
+		private void setCalibrateErrorStatus(string msg)
+		{
+			_errorMessageList.Add(String.Format(@"[{0}] {1}", DateTime.Now.ToString(@"yyyy\/MM\/dd hh:mm:ss ffff"), msg));
+			ErrorCountToolStripStatusLabel.Text = _errorMessageList.Count.ToString();
+			CalibrateStripStatusLabel.Text = "[ERROR]" + msg;
+		}
 		
 		private void setCalibrateStatus(string statusMessage)
 		{
@@ -290,7 +298,7 @@ namespace App.Calibration
 
 		private void setCalibrateStatus(string statusMessage, bool isMarquee)
 		{
-			_statusMessageList.Add(statusMessage);
+			_statusMessageList.Add(String.Format(@"[{0}] {1}", DateTime.Now.ToString(@"yyyy\/MM\/dd hh:mm:ss ffff"), statusMessage));
 			StatusCountToolStripStatusLabel.Text = _statusMessageList.Count.ToString();
 			CalibrateStripStatusLabel.Text = statusMessage;
 			CalibrateStripProgressBar.Style = isMarquee ? ProgressBarStyle.Marquee : ProgressBarStyle.Blocks;
@@ -777,7 +785,6 @@ namespace App.Calibration
 		} 
 		
 		#endregion
-
-		
+	
 	}
 }
