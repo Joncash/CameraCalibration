@@ -265,7 +265,7 @@
 			this.CalibrationTab.Location = new System.Drawing.Point(0, 0);
 			this.CalibrationTab.Name = "CalibrationTab";
 			this.CalibrationTab.SelectedIndex = 0;
-			this.CalibrationTab.Size = new System.Drawing.Size(1017, 606);
+			this.CalibrationTab.Size = new System.Drawing.Size(1017, 621);
 			this.CalibrationTab.TabIndex = 0;
 			// 
 			// SettingsTabPage
@@ -275,7 +275,7 @@
 			this.SettingsTabPage.Location = new System.Drawing.Point(4, 22);
 			this.SettingsTabPage.Name = "SettingsTabPage";
 			this.SettingsTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this.SettingsTabPage.Size = new System.Drawing.Size(1009, 580);
+			this.SettingsTabPage.Size = new System.Drawing.Size(1009, 595);
 			this.SettingsTabPage.TabIndex = 0;
 			this.SettingsTabPage.Text = "設定";
 			// 
@@ -290,7 +290,7 @@
 			this.SettingsFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.SettingsFlowLayoutPanel.Location = new System.Drawing.Point(3, 3);
 			this.SettingsFlowLayoutPanel.Name = "SettingsFlowLayoutPanel";
-			this.SettingsFlowLayoutPanel.Size = new System.Drawing.Size(1003, 574);
+			this.SettingsFlowLayoutPanel.Size = new System.Drawing.Size(1003, 589);
 			this.SettingsFlowLayoutPanel.TabIndex = 4;
 			this.SettingsFlowLayoutPanel.WrapContents = false;
 			this.SettingsFlowLayoutPanel.Resize += new System.EventHandler(this.flowLayoutPanel_Resize);
@@ -1612,7 +1612,7 @@
 			this.ResultTabPage.Controls.Add(this.ResultFlowLayoutPanel);
 			this.ResultTabPage.Location = new System.Drawing.Point(4, 22);
 			this.ResultTabPage.Name = "ResultTabPage";
-			this.ResultTabPage.Size = new System.Drawing.Size(1009, 580);
+			this.ResultTabPage.Size = new System.Drawing.Size(1009, 595);
 			this.ResultTabPage.TabIndex = 2;
 			this.ResultTabPage.Text = "結果";
 			this.ResultTabPage.UseVisualStyleBackColor = true;
@@ -1628,7 +1628,7 @@
 			this.ResultFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.ResultFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
 			this.ResultFlowLayoutPanel.Name = "ResultFlowLayoutPanel";
-			this.ResultFlowLayoutPanel.Size = new System.Drawing.Size(1009, 580);
+			this.ResultFlowLayoutPanel.Size = new System.Drawing.Size(1009, 595);
 			this.ResultFlowLayoutPanel.TabIndex = 6;
 			this.ResultFlowLayoutPanel.WrapContents = false;
 			this.ResultFlowLayoutPanel.Resize += new System.EventHandler(this.flowLayoutPanel_Resize);
@@ -1666,6 +1666,7 @@
 			// 
 			this.Result_CalibrationMeanError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CalibrationMeanError.Enabled = false;
 			this.Result_CalibrationMeanError.Location = new System.Drawing.Point(107, 76);
 			this.Result_CalibrationMeanError.Name = "Result_CalibrationMeanError";
 			this.Result_CalibrationMeanError.Size = new System.Drawing.Size(818, 21);
@@ -1675,6 +1676,7 @@
 			// 
 			this.Result_CalibrationStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CalibrationStatus.Enabled = false;
 			this.Result_CalibrationStatus.Location = new System.Drawing.Point(107, 46);
 			this.Result_CalibrationStatus.Name = "Result_CalibrationStatus";
 			this.Result_CalibrationStatus.Size = new System.Drawing.Size(864, 21);
@@ -1773,6 +1775,7 @@
 			// 
 			this.Result_CameraParameter_ImageHeight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraParameter_ImageHeight.Enabled = false;
 			this.Result_CameraParameter_ImageHeight.Location = new System.Drawing.Point(145, 235);
 			this.Result_CameraParameter_ImageHeight.Name = "Result_CameraParameter_ImageHeight";
 			this.Result_CameraParameter_ImageHeight.Size = new System.Drawing.Size(491, 21);
@@ -1801,6 +1804,7 @@
 			// 
 			this.Result_CameraParameter_ImageWidth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraParameter_ImageWidth.Enabled = false;
 			this.Result_CameraParameter_ImageWidth.Location = new System.Drawing.Point(145, 208);
 			this.Result_CameraParameter_ImageWidth.Name = "Result_CameraParameter_ImageWidth";
 			this.Result_CameraParameter_ImageWidth.Size = new System.Drawing.Size(491, 21);
@@ -1829,6 +1833,7 @@
 			// 
 			this.Result_CameraParameter_CenterRowCy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraParameter_CenterRowCy.Enabled = false;
 			this.Result_CameraParameter_CenterRowCy.Location = new System.Drawing.Point(145, 181);
 			this.Result_CameraParameter_CenterRowCy.Name = "Result_CameraParameter_CenterRowCy";
 			this.Result_CameraParameter_CenterRowCy.Size = new System.Drawing.Size(491, 21);
@@ -1857,6 +1862,7 @@
 			// 
 			this.Result_CameraParameter_CenterColumnCx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraParameter_CenterColumnCx.Enabled = false;
 			this.Result_CameraParameter_CenterColumnCx.Location = new System.Drawing.Point(145, 154);
 			this.Result_CameraParameter_CenterColumnCx.Name = "Result_CameraParameter_CenterColumnCx";
 			this.Result_CameraParameter_CenterColumnCx.Size = new System.Drawing.Size(491, 21);
@@ -1885,6 +1891,7 @@
 			// 
 			this.Result_CameraParameter_Kappa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraParameter_Kappa.Enabled = false;
 			this.Result_CameraParameter_Kappa.Location = new System.Drawing.Point(145, 127);
 			this.Result_CameraParameter_Kappa.Name = "Result_CameraParameter_Kappa";
 			this.Result_CameraParameter_Kappa.Size = new System.Drawing.Size(491, 21);
@@ -1913,6 +1920,7 @@
 			// 
 			this.Result_CameraParameter_FocalLength.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraParameter_FocalLength.Enabled = false;
 			this.Result_CameraParameter_FocalLength.Location = new System.Drawing.Point(145, 100);
 			this.Result_CameraParameter_FocalLength.Name = "Result_CameraParameter_FocalLength";
 			this.Result_CameraParameter_FocalLength.Size = new System.Drawing.Size(491, 21);
@@ -1941,6 +1949,7 @@
 			// 
 			this.Result_CameraParameter_CellHeightSy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraParameter_CellHeightSy.Enabled = false;
 			this.Result_CameraParameter_CellHeightSy.Location = new System.Drawing.Point(145, 73);
 			this.Result_CameraParameter_CellHeightSy.Name = "Result_CameraParameter_CellHeightSy";
 			this.Result_CameraParameter_CellHeightSy.Size = new System.Drawing.Size(491, 21);
@@ -1969,6 +1978,7 @@
 			// 
 			this.Result_CameraParameter_CellWidthSx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraParameter_CellWidthSx.Enabled = false;
 			this.Result_CameraParameter_CellWidthSx.Location = new System.Drawing.Point(145, 46);
 			this.Result_CameraParameter_CellWidthSx.Name = "Result_CameraParameter_CellWidthSx";
 			this.Result_CameraParameter_CellWidthSx.Size = new System.Drawing.Size(491, 21);
@@ -2030,6 +2040,7 @@
 			// Result_CameraPose_RotationZ
 			// 
 			this.Result_CameraPose_RotationZ.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraPose_RotationZ.Enabled = false;
 			this.Result_CameraPose_RotationZ.Location = new System.Drawing.Point(69, 4);
 			this.Result_CameraPose_RotationZ.Name = "Result_CameraPose_RotationZ";
 			this.Result_CameraPose_RotationZ.Size = new System.Drawing.Size(333, 21);
@@ -2070,6 +2081,7 @@
 			// Result_CameraPose_Z
 			// 
 			this.Result_CameraPose_Z.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraPose_Z.Enabled = false;
 			this.Result_CameraPose_Z.Location = new System.Drawing.Point(20, 4);
 			this.Result_CameraPose_Z.Name = "Result_CameraPose_Z";
 			this.Result_CameraPose_Z.Size = new System.Drawing.Size(338, 21);
@@ -2110,6 +2122,7 @@
 			// Result_CameraPose_RotationY
 			// 
 			this.Result_CameraPose_RotationY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraPose_RotationY.Enabled = false;
 			this.Result_CameraPose_RotationY.Location = new System.Drawing.Point(69, 4);
 			this.Result_CameraPose_RotationY.Name = "Result_CameraPose_RotationY";
 			this.Result_CameraPose_RotationY.Size = new System.Drawing.Size(333, 21);
@@ -2150,6 +2163,7 @@
 			// Result_CameraPose_Y
 			// 
 			this.Result_CameraPose_Y.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraPose_Y.Enabled = false;
 			this.Result_CameraPose_Y.Location = new System.Drawing.Point(20, 4);
 			this.Result_CameraPose_Y.Name = "Result_CameraPose_Y";
 			this.Result_CameraPose_Y.Size = new System.Drawing.Size(338, 21);
@@ -2190,6 +2204,7 @@
 			// Result_CameraPose_RotationX
 			// 
 			this.Result_CameraPose_RotationX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraPose_RotationX.Enabled = false;
 			this.Result_CameraPose_RotationX.Location = new System.Drawing.Point(69, 4);
 			this.Result_CameraPose_RotationX.Name = "Result_CameraPose_RotationX";
 			this.Result_CameraPose_RotationX.Size = new System.Drawing.Size(333, 21);
@@ -2230,6 +2245,7 @@
 			// Result_CameraPose_X
 			// 
 			this.Result_CameraPose_X.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.Result_CameraPose_X.Enabled = false;
 			this.Result_CameraPose_X.Location = new System.Drawing.Point(20, 4);
 			this.Result_CameraPose_X.Name = "Result_CameraPose_X";
 			this.Result_CameraPose_X.Size = new System.Drawing.Size(338, 21);
@@ -2274,7 +2290,7 @@
             this.StatusCountToolStripStatusLabel,
             this.ErrorToolStripStatusLabel,
             this.ErrorCountToolStripStatusLabel});
-			this.CalibrateStatusStrip.Location = new System.Drawing.Point(0, 584);
+			this.CalibrateStatusStrip.Location = new System.Drawing.Point(0, 599);
 			this.CalibrateStatusStrip.MaximumSize = new System.Drawing.Size(0, 22);
 			this.CalibrateStatusStrip.Name = "CalibrateStatusStrip";
 			this.CalibrateStatusStrip.Size = new System.Drawing.Size(1017, 22);
@@ -2326,7 +2342,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1017, 606);
+			this.ClientSize = new System.Drawing.Size(1017, 621);
 			this.Controls.Add(this.CalibrateStatusStrip);
 			this.Controls.Add(this.CalibrationTab);
 			this.MinimumSize = new System.Drawing.Size(700, 600);
