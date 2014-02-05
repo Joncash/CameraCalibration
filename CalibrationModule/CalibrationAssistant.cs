@@ -30,7 +30,7 @@ namespace CalibrationModule
 	/// </summary>
 	public class CalibrationAssistant
 	{
-		private enum EventNotifyType
+		public enum EventNotifyType
 		{
 			ImageAdded,
 			ImageRemoved,
@@ -210,13 +210,7 @@ namespace CalibrationModule
 			if (_calibImages == null) _calibImages = new List<CalibImage>();
 			_calibImages.Add(image);
 
-			//_worker.RequestCalibrationImageReport(image.ID, "ImageAdded");
-			//var model = new CalibImageViewModel() { CalibImageID = image.ID };
-			//var eventArgs = new CalibrationEventArgs(model);
-			//var sender = this;
-
-
-			//eventNotify(EventNotifyType.ImageAdded, sender, eventArgs);
+			_worker.RequestCalibrationImageReport(new CalibImageDTO() { ImageID = image.ID, UserState = "ImageAdded" });
 		}
 
 		/// <summary>
@@ -234,12 +228,30 @@ namespace CalibrationModule
 		/// </summary>
 		public void RemoveCalibImage(string imageID)
 		{
-			//ToDo
-			var model = true;
-			var eventArgs = new CalibrationEventArgs(model);
+			var model = new CalibImageViewModel()
+			{
+				CalibImageID = imageID,
+			};
+			var eventArgs = new CalibrationEventArgs(model) { EventType = EventNotifyType.ImageRemoved, };
 			var sender = this;
 
-			eventNotify(EventNotifyType.ImageRemoved, sender, eventArgs);
+			try
+			{
+				var calibImage = _calibImages.SingleOrDefault(p => p.ID == imageID);
+				if (calibImage != null)
+				{
+					_calibImages.Remove(calibImage);
+				}
+			}
+			catch (Exception ex)
+			{
+				eventArgs.EventType = EventNotifyType.Error;
+				eventArgs.ResetModel(ex.Message);
+			}
+			finally
+			{
+				eventNotify(sender, eventArgs);
+			}
 		}
 
 		/// <summary>
@@ -247,12 +259,21 @@ namespace CalibrationModule
 		/// </summary>
 		public void RemoveAllCalibImages()
 		{
-			//ToDo
-			var model = true;
-			var eventArgs = new CalibrationEventArgs(model);
+			var eventArgs = new CalibrationEventArgs(null) { EventType = EventNotifyType.ImageRemoved, };
 			var sender = this;
-
-			eventNotify(EventNotifyType.ImageRemoved, sender, eventArgs);
+			try
+			{
+				_calibImages.Clear();
+			}
+			catch (Exception ex)
+			{
+				eventArgs.EventType = EventNotifyType.Error;
+				eventArgs.ResetModel(ex.Message);
+			}
+			finally
+			{
+				eventNotify(sender, eventArgs);
+			}
 		}
 
 		/// <summary>
@@ -262,10 +283,10 @@ namespace CalibrationModule
 		{
 			//ToDo
 			var model = true;
-			var eventArgs = new CalibrationEventArgs(model);
+			var eventArgs = new CalibrationEventArgs(model) { EventType = EventNotifyType.ImageSaved };
 			var sender = this;
 
-			eventNotify(EventNotifyType.ImageSaved, sender, eventArgs);
+			eventNotify(sender, eventArgs);
 		}
 
 		/// <summary>
@@ -275,10 +296,10 @@ namespace CalibrationModule
 		{
 			//ToDo
 			var model = new CalibImageViewModel() { CalibImageID = imageID };
-			var eventArgs = new CalibrationEventArgs(model);
+			var eventArgs = new CalibrationEventArgs(model) { EventType = EventNotifyType.CalibrationImageQualityIssueChanged };
 			var sender = this;
 
-			eventNotify(EventNotifyType.CalibrationImageQualityIssueChanged, sender, eventArgs);
+			eventNotify(sender, eventArgs);
 		}
 
 		/// <summary>
@@ -299,10 +320,10 @@ namespace CalibrationModule
 		{
 			//ToDo
 			var model = true;
-			var eventArgs = new CalibrationEventArgs(model);
+			var eventArgs = new CalibrationEventArgs(model) { EventType = EventNotifyType.CalibrationImageQualityIssueParamChanged };
 			var sender = this;
 
-			eventNotify(EventNotifyType.CalibrationImageQualityIssueParamChanged, sender, eventArgs);
+			eventNotify(sender, eventArgs);
 		}
 
 		/// <summary>
@@ -314,20 +335,20 @@ namespace CalibrationModule
 		{
 			//ToDo
 			var model = true;
-			var eventArgs = new CalibrationEventArgs(model);
+			var eventArgs = new CalibrationEventArgs(model) { EventType = EventNotifyType.CalibrationPlateParamChanged };
 			var sender = this;
 
-			eventNotify(EventNotifyType.CalibrationPlateParamChanged, sender, eventArgs);
+			eventNotify(sender, eventArgs);
 		}
 
 		public void SetCameraParam(CalibrateSettingType type, object value)
 		{
 			//ToDo
 			var model = true;
-			var eventArgs = new CalibrationEventArgs(model);
+			var eventArgs = new CalibrationEventArgs(model) { EventType = EventNotifyType.CameraParamChanged };
 			var sender = this;
 
-			eventNotify(EventNotifyType.CameraParamChanged, sender, eventArgs);
+			eventNotify(sender, eventArgs);
 		}
 
 
@@ -338,30 +359,30 @@ namespace CalibrationModule
 		{
 			//ToDo
 			var model = new CalibratedViewModel();
-			var eventArgs = new CalibrationEventArgs(model);
+			var eventArgs = new CalibrationEventArgs(model) { EventType = EventNotifyType.CalibrationCompletd };
 			var sender = this;
 
-			eventNotify(EventNotifyType.CalibrationCompletd, sender, eventArgs);
+			eventNotify(sender, eventArgs);
 		}
 
 		public void SaveCalibratedCameraParam(string filepath)
 		{
 			//ToDo
 			var model = true;
-			var eventArgs = new CalibrationEventArgs(model);
+			var eventArgs = new CalibrationEventArgs(model) { EventType = EventNotifyType.CalibratedFileSave };
 			var sender = this;
 
-			eventNotify(EventNotifyType.CalibratedFileSave, sender, eventArgs);
+			eventNotify(sender, eventArgs);
 		}
 
 		public void SaveCalibratedCameraPose(string filepath)
 		{
 			//ToDo
 			var model = true;
-			var eventArgs = new CalibrationEventArgs(model);
+			var eventArgs = new CalibrationEventArgs(model) { EventType = EventNotifyType.CalibratedFileSave };
 			var sender = this;
 
-			eventNotify(EventNotifyType.CalibratedFileSave, sender, eventArgs);
+			eventNotify(sender, eventArgs);
 		}
 
 		#endregion
@@ -370,15 +391,12 @@ namespace CalibrationModule
 		private void init()
 		{
 			_worker = new CalibrationWorker(this);
-			_worker.ResponseCalibrationReport += responseMessage;
+			_worker.ResponseCalibrationReport += eventNotify;
 		}
-		private void responseMessage(object sender, CalibrationEventArgs e)
+
+		private void eventNotify(object sender, CalibrationEventArgs e)
 		{
-			//ToDo
-		}
-		private void eventNotify(EventNotifyType eventType, object sender, CalibrationEventArgs e)
-		{
-			switch (eventType)
+			switch (e.EventType)
 			{
 				case EventNotifyType.CalibratedFileSave:
 					if (On_CalibratedFileSaved != null)
