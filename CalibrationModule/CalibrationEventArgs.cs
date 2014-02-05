@@ -16,5 +16,7 @@ namespace CalibrationModule
 			_model = model;
 		}
 		public object Model { get { return _model; } }
+
+		public CalibrationModule.CalibrationAssistant.EventNotifyType EventType;
 	}
 }
