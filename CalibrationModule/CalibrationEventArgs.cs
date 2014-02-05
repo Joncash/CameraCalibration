@@ -17,6 +17,11 @@ namespace CalibrationModule
 		}
 		public object Model { get { return _model; } }
 
+		public void ResetModel(object model)
+		{
+			_model = model;
+		}
+
 		public CalibrationModule.CalibrationAssistant.EventNotifyType EventType;
 	}
 }
