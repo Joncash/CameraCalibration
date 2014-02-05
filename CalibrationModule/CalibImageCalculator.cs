@@ -69,5 +69,19 @@ namespace CalibrationModule
 			var qualityIssues = new List<QualityIssue>();
 			return qualityIssues;
 		}
+
+		/// <summary>
+		/// 取得校正影像品質報告
+		/// </summary>
+		/// <param name="descFile"></param>
+		/// <param name="calibImage"></param>
+		/// <param name="plateParam"></param>
+		/// <param name="startCameraParam"></param>
+		/// <returns></returns>
+		public CalibImageViewModel GetCalibtionImageReport(string descFile, CalibImage calibImage, CalibrationPlateParam plateParam, HTuple startCameraParam)
+		{
+			//ToDo
+			return new CalibImageViewModel();
+		}
 	}
 }
