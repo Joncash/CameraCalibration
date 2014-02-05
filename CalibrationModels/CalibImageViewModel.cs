@@ -15,12 +15,21 @@ namespace CalibrationModels
 			QualityIssues = new List<QualityIssue>();
 #if DEBUG
 			//Fake Data
+			var scopes = new string[] { "影像", "序列" };
+			var details = new string[] { "", "影像數太少", "Mark 抽取失敗", "校正片影像不在範圍內", "" };
+			Random random = new Random();
 			this.CalibImageID = Guid.NewGuid().ToString();
-			this.Status = "OK @" + DateTime.Now.ToString("yyyyMMddHHmmss");
+			var score = Math.Round(random.NextDouble(), 2);
+			var issue = score > 0.5 ? "Good" : "Bad";
+			var scope = scopes[(int)(random.NextDouble() * 10) % 2];
+			var detail = details[(int)(random.NextDouble() * 100) % 5];
+			this.Status = issue == "Good" ? "OK" : "NG";
 			var qIssue = new QualityIssue()
 			{
-				Issue = "Good",
-				Score = 0.8,
+				Issue = issue,
+				Score = score,
+				Scope = scope,
+				Detail = detail,
 			};
 			QualityIssues.Add(qIssue);
 #endif
