@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalibImageDTO.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CalibImageViewModel.cs" />
     <Compile Include="CalibratedViewModel.cs" />
     <Compile Include="CalibrationPlateMarkViewModel.cs" />
